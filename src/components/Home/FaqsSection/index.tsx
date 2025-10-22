@@ -46,7 +46,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faqs" className="w-full py-12 overflow-hidden">
+    <section id="faqs" className="w-full py-6 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <motion.div
@@ -89,7 +89,7 @@ const FAQSection = () => {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="space-y-4">
+          <div className="space-y-2">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -101,10 +101,10 @@ const FAQSection = () => {
               >
                 <motion.button
                   onClick={() => toggleFAQ(index)}
-                  className="flex justify-between items-center w-full p-6 text-left"
+                  className="flex justify-between items-center w-full p-4 text-left"
                   whileHover={{ backgroundColor: "#f9fafb" }}
                 >
-                  <h3 className="text-lg text-gray-800 pr-8 font-medium">
+                  <h3 className="text-sm text-gray-800 pr-8 font-medium">
                     {faq.question}
                   </h3>
                   <motion.div
@@ -127,7 +127,7 @@ const FAQSection = () => {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="p-6 pt-0 text-gray-600">
+                      <div className="p-4 text-xs pt-0 text-gray-600">
                         <p>{faq.answer}</p>
                       </div>
                     </motion.div>
@@ -137,7 +137,7 @@ const FAQSection = () => {
             ))}
           </div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -152,7 +152,7 @@ const FAQSection = () => {
               Still have questions? Contact us
               <ArrowRight className="ml-2" size={18} />
             </motion.button>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

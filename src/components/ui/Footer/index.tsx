@@ -55,14 +55,7 @@ export default function Footer() {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="hover:text-gray-900 transition-colors"
-                >
-                  About Us
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/services"
@@ -71,14 +64,7 @@ export default function Footer() {
                   Services
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/work"
-                  className="hover:text-gray-900 transition-colors"
-                >
-                  Portfolio
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/contact"

@@ -4,6 +4,7 @@ import ContactForm from "./ContactForm";
 import { Mail, Phone, Sparkles } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import SpotlightCard from "../ui/SpotLightCard";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 interface ContactCartProps {
   icon: React.ReactNode;
@@ -30,7 +31,14 @@ const contactMethods = [
     actionText: "Call Us",
     actionLink: "tel:+918696136907",
   },
-
+  {
+    id: 2,
+    icon: <IoLogoWhatsapp className=" text-primary" />,
+    title: "Whatsapp",
+    contactInfo: "+918696136907",
+    actionText: "Chat",
+    actionLink: "https://wa.me/918696136907",
+  },
 ];
 
 const containerVariants: Variants = {

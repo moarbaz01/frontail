@@ -8,7 +8,7 @@ const SecondFooter = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
       viewport={{ once: true, amount: 0.1 }}
-      className="text-center mt-12 py-12 bg-white rounded-2xl mb-4 mx-4 md:container md:mx-auto border border-gray-300"
+      className="text-center  py-12 bg-gray/20 backdrop-blur-xl rounded-2xl mb-4 mx-4 md:container md:mx-auto border border-gray-300"
     >
       <div className="max-w-4xl mx-auto px-4">
         <motion.h2
@@ -16,7 +16,7 @@ const SecondFooter = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
           viewport={{ once: true, amount: 0.1 }}
-          className="text-3xl font-bold mb-4 text-gray-800"
+          className="md:text-3xl text-xl font-bold mb-4 text-gray-800"
         >
           Ready to Grow Online?
         </motion.h2>
@@ -25,7 +25,7 @@ const SecondFooter = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true, amount: 0.1 }}
-          className="text-lg text-gray-600 mb-8"
+          className="md:text-lg text-sm text-gray-600 mb-8"
         >
           Launch your startup with a professional website that converts
         </motion.p>

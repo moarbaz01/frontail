@@ -1,7 +1,14 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Lightbulb, Palette, Code, CheckCircle, Rocket, Sparkles } from "lucide-react";
+import {
+  Lightbulb,
+  Palette,
+  Code,
+  CheckCircle,
+  Rocket,
+  Sparkles,
+} from "lucide-react";
 
 const processSteps = [
   {
@@ -41,11 +48,17 @@ const ProcessTimeline: React.FC = () => {
             viewport={{ once: true }}
             className="inline-block relative mb-2"
           >
-            <Sparkles className="text-gray-600 absolute -top-6 -left-6" size={24} />
+            <Sparkles
+              className="text-gray-600 absolute -top-6 -left-6"
+              size={24}
+            />
             <span className="text-sm uppercase tracking-widest text-gray-800 font-mono">
               Our Process
             </span>
-            <Sparkles className="text-gray-600 absolute -top-6 -right-6" size={24} />
+            <Sparkles
+              className="text-gray-600 absolute -top-6 -right-6"
+              size={24}
+            />
           </motion.div>
 
           <motion.h2
@@ -63,11 +76,12 @@ const ProcessTimeline: React.FC = () => {
             viewport={{ once: true }}
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
-            We follow a structured approach to ensure your project&apos;s success.
+            We follow a structured approach to ensure your project&apos;s
+            success.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-8">
           {processSteps.map((step, index) => (
             <motion.div
               key={step.id}
@@ -80,9 +94,7 @@ const ProcessTimeline: React.FC = () => {
               <div className="bg-white rounded-xl p-6 border border-gray-300 mb-4 h-full flex flex-col">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <div className="text-primary">
-                      {step.icon}
-                    </div>
+                    <div className="text-primary">{step.icon}</div>
                   </div>
                   <div className="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
                     Step {step.id}
@@ -91,9 +103,7 @@ const ProcessTimeline: React.FC = () => {
                 <h3 className="text-lg font-bold text-gray-800 mb-2">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-sm">
-                  {step.description}
-                </p>
+                <p className="text-gray-600 text-sm">{step.description}</p>
               </div>
             </motion.div>
           ))}

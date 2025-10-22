@@ -109,7 +109,7 @@ const HeroPage = () => {
           <GradientButton
             onClick={() =>
               window.open(
-                "https://cal.com/frontail/30min",
+                "https://wa.me/918696136907",
                 "_blank",
                 "width=800,height=600"
               )

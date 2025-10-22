@@ -9,8 +9,9 @@ import Image from "next/image";
 // Navigation items
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "Our Work", path: "/work" },
+  // { label: "Our Work", path: "/work" },
   { label: "Contact", path: "/contact" },
+  { label: "Services", path: "/services" },
 ];
 
 // Animation variants

@@ -1,16 +1,17 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { services } from "@/data";
+import { Sparkles } from "lucide-react";
 
-const Services = () => {
+const ServicesPage = () => {
   const router = useRouter();
+
   return (
-    <section className="py-12 px-4">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
+    <div className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -36,22 +37,20 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-6xl font-bold mb-4 text-gray-800"
           >
-            What We Offer
+            Services
           </motion.h2>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-gray-600 mb-12"
           >
-            We provide comprehensive digital solutions to help your business
-            grow online.
+            Comprehensive IT solutions to drive your business forward
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8">
-          {services?.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+          {services.map((service, index) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 20 }}
@@ -82,8 +81,8 @@ const Services = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Services;
+export default ServicesPage;
