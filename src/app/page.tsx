@@ -2,6 +2,7 @@ import ComparisonSection from "@/components/Home/ComparisonSection";
 import ContactSection from "@/components/Home/ContactSection";
 import FAQSection from "@/components/Home/FaqsSection";
 import HeroPage from "@/components/Home/HeroPage";
+import Partners from "@/components/Home/Partners";
 import ProjectShowcase from "@/components/Home/ProjectShowcase";
 import Services from "@/components/Home/Services";
 import Testimonials from "@/components/Home/Testimonials";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <HeroPage />
       <ProjectShowcase />
+      {/* <Partners /> */}
       {/* <Achievement /> */}
       <Services />
       <ProcessTimeline />

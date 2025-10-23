@@ -32,4 +32,5 @@ export const projectImages = {
   kirastore: '/kirastore.png',
   getotopup: '/getotopup.png',
   likeflames: '/likeflames_project.png',
+  winwintopup : '/winwintopup.png',
 };

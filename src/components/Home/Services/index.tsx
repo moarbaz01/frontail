@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -7,6 +7,19 @@ import { services } from "@/data";
 
 const Services = () => {
   const router = useRouter();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const displayedServices = isMobile ? services.slice(0, 4) : services.slice(0, 8);
   return (
     <section className="py-12 px-4">
       <div className="container mx-auto">
@@ -51,7 +64,7 @@ const Services = () => {
         </div>
 
         <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8">
-          {services?.map((service, index) => (
+          {displayedServices?.map((service, index) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 20 }}
@@ -80,6 +93,18 @@ const Services = () => {
               </motion.button>
             </motion.div>
           ))}
+        </div>
+
+        {/* View More Button */}
+        <div className="text-center mt-12">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => router.push('/services')}
+            className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors"
+          >
+            View All Services
+          </motion.button>
         </div>
       </div>
     </section>

@@ -145,7 +145,7 @@ const Navbar: React.FC = () => {
                 >
                   <motion.div className="px-2 py-1 rounded-md flex items-center gap-1 relative z-10">
                     <span
-                      className={`text-xl transition-colors duration-300 ${
+                      className={`text-md font-semibold transition-colors duration-300 ${
                         isActive ? "text-emerald-500" : "text-gray-800"
                       }`}
                     >

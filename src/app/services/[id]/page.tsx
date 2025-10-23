@@ -76,6 +76,22 @@ export default function ServiceDetails({ params }: ServiceDetailsProps) {
           ))}
         </ul>
       </section>
+
+      {/* Technologies */}
+      {service.technologies && (
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+            Technologies We Use
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {service.technologies.map((tech, index) => (
+              <span key={index} className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium border border-primary/20">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

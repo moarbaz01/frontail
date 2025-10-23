@@ -12,6 +12,7 @@ const projects = [
   { image: projectImages.inspired },
   { image: projectImages.kirastore },
   { image: projectImages.getotopup },
+  { image: projectImages.winwintopup }
 ];
 
 // Variants for each project card
@@ -40,7 +41,7 @@ const ProjectShowcase = () => {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="rounded-md relative"
+            className="rounded-md relative border-[5px] border-gray-300 shadow-sm"
             custom={index}
             variants={cardVariants}
             initial="closed"

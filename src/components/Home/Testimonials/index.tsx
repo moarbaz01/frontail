@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import Image from "next/image";
 
 interface Testimonial {
   id: number;
@@ -20,7 +21,7 @@ const testimonials: Testimonial[] = [
     company: "Inspired Event And Tours",
     message:
       "Frontail saved our business when no other agency could deliver on time. Their team worked miracles to launch our booking platform before peak season - the clean interface and reliable payments have our customers raving!",
-    image: "/travellogo.png",
+    image: "/partners/travellogo.png",
   },
   {
     id: 2,
@@ -29,7 +30,7 @@ const testimonials: Testimonial[] = [
     company: "Kiragame Store",
     message:
       "Hands down the best development team we've worked with. Frontail built our gaming top-up platform so well that we've had ZERO downtime during major game releases - something our competitors still struggle with!",
-    image: "/kirastorelogo.png",
+    image: "/partners/kirastorelogo.png",
   },
   {
     id: 3,
@@ -38,7 +39,7 @@ const testimonials: Testimonial[] = [
     company: "Getotopup",
     message:
       "Frontail doesn't just build websites - they build business solutions. Our top-up system works flawlessly 24/7, and their support team responds faster than any other agency we've tried. Worth every penny!",
-    image: "/getologo.png",
+    image: "/partners/getologo.png",
   },
   {
     id: 4,
@@ -56,7 +57,7 @@ const testimonials: Testimonial[] = [
     company: "Zoland Store",
     message:
       "Frontail transformed our gaming store into a conversion machine. Their checkout process is so smooth we've seen a 30% increase in completed purchases. Simply the best in the business!",
-    image: "/zolandlogo.png",
+    image: "/partners/zolandlogo.png",
   },
 ];
 
@@ -87,7 +88,6 @@ const sliderVariants = {
   }),
 };
 
-
 const buttonVariants = {
   rest: { scale: 1 },
   hover: {
@@ -102,7 +102,6 @@ const buttonVariants = {
   },
   tap: { scale: 0.9 },
 };
-
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -269,26 +268,34 @@ const TestimonialSlider: React.FC = () => {
 
         <motion.button
           onClick={prevSlide}
-          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 p-3 rounded-full border border-gray-300 z-10 text-gray-800 hover:bg-primary"
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 p-3 rounded-full border border-gray-300 z-10"
           variants={buttonVariants}
           initial="rest"
           whileHover="hover"
           whileTap="tap"
+          style={{
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            color: "#374151",
+          }}
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6 text-gray-800" />
+          <ChevronLeft className="w-6 h-6" />
         </motion.button>
 
         <motion.button
           onClick={nextSlide}
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 p-3 rounded-full border border-gray-300 z-10 text-gray-800 hover:bg-primary"
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 p-3 rounded-full border border-gray-300 z-10"
           variants={buttonVariants}
           initial="rest"
           whileHover="hover"
           whileTap="tap"
+          style={{
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            color: "#374151",
+          }}
           aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6 text-gray-800" />
+          <ChevronRight className="w-6 h-6" />
         </motion.button>
       </motion.div>
 
@@ -332,9 +339,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       <div className="p-8">
         <motion.div className="flex items-center mb-4">
           <div className="relative">
-            <img
+            <Image
               src={testimonial.image}
               alt={testimonial.name}
+              height={100}
+              width={100}
               className="w-16 h-16 rounded-full object-cover border-2 border-primary"
             />
             <div className="absolute -bottom-1 -right-1 bg-primary text-white rounded-full p-1">
@@ -390,11 +399,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
               </svg>
             ))}
           </div>
-          <span
-            className="text-xs text-gray-500 italic"
-          >
-            Verified Client
-          </span>
+          <span className="text-xs text-gray-500 italic">Verified Client</span>
         </div>
       </div>
     </div>

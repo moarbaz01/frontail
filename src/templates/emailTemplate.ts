@@ -2,11 +2,13 @@ export function generateContactEmailTemplate({
   name,
   email,
   phone,
+  service,
   message,
 }: {
   name: string;
   email: string;
   phone?: string;
+  service?: string;
   message?: string;
 }) {
   return `
@@ -86,6 +88,7 @@ export function generateContactEmailTemplate({
               <p><strong>Name:</strong> ${name}</p>
               <p><strong>Email:</strong> ${email}</p>
               ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+              ${service ? `<p><strong>Service Required:</strong> ${service}</p>` : ""}
               ${message ? `<p><strong>Message:</strong> ${message}</p>` : ""}
               <p>Best regards,</p>
               <p>Your Contact Form</p>

@@ -5,9 +5,9 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   try {
     // Get Data
-    const { email, name, phone, message } = await req.json();
+    const { email, name, phone, service, message } = await req.json();
     // Validation
-    if (!email || !name) {
+    if (!email || !name || !phone || !service) {
       return NextResponse.json(
         { message: "All fields are required" },
         { status: 400 }
@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     await sendEmail(
       email,
       "New Client Arrived",
-      generateContactEmailTemplate({ name, email, phone, message })
+      generateContactEmailTemplate({ name, email, phone, service, message })
     );
 
     return NextResponse.json(

@@ -103,7 +103,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-300 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-600">
-            © 2025 Frontail. All Rights Reserved.
+            © 2023 Frontail. All Rights Reserved.
           </p>
           <p className="text-xs text-gray-500 mt-4 md:mt-0">
             Powered by Nuvex LLC
