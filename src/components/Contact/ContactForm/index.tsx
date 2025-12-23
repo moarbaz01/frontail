@@ -236,7 +236,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">Email</h4>
-                  <p className="text-gray-600">frontailtechnology@gmail.com</p>
+                  <p className="text-gray-600">contact@frontail.com</p>
                 </div>
               </div>
 
@@ -247,7 +247,7 @@ const ContactForm = () => {
                 <div>
                   <h4 className="font-semibold text-gray-800">Address</h4>
                   <p className="text-gray-600">
-                    1811, Subhash Chowk,Jaipur, Rajasthan, India
+                    1811, Subhash Chowk, Jaipur, Rajasthan, India
                   </p>
                 </div>
               </div>
