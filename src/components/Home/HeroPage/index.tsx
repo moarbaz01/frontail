@@ -8,6 +8,7 @@ import GradientButton from "@/components/ui/GradientButton";
 import { ArrowRight } from "lucide-react";
 import { logoImages } from "@/utils/imageOptimization";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const features = [
   { icon: <IoIosTrendingUp />, text: "Scalable Solutions" },
@@ -36,8 +37,9 @@ const heroVariants = {
 };
 
 const HeroPage = () => {
+  const router = useRouter();
   return (
-    <section className=" md:min-h-[80vh] hero-section md:py-6 py-12  flex items-center justify-center px-4 relative">
+    <section className=" md:min-h-[60vh]  md:py-6 py-10  flex items-center justify-center px-4 relative">
       <div className="md:mt-0 mt-4 mb-8 flex items-center relative text-center flex-col">
         {/* Tagline */}
         <motion.div
@@ -47,7 +49,7 @@ const HeroPage = () => {
           animate="open"
           className="w-fit"
         >
-          <Chip text="✨ Custom Software Solutions" />
+          <Chip text="✨ For Startups & SMEs. Fast, Scalable, AI-Ready." />
         </motion.div>
 
         {/* Heading */}
@@ -56,13 +58,14 @@ const HeroPage = () => {
           variants={heroVariants}
           initial="closed"
           animate="open"
-          className="max-w-3xl"
+          className="max-w-7xl mx-4 md:mx-0"
         >
-          <h1 className="lg:text-7xl line-clamp-2 text-center text-gray-800 text-5xl mt-4 md:text-5xl font-extrabold leading-snug tracking-tight lg:leading-tight">
-            Building Digital Solutions
-            With{" "}
+          <h1 className="lg:text-8xl font-anton   text-center text-gray-800 text-4xl mt-4 md:text-5xl font-extrabold leading-snug tracking-normal lg:leading-tight">
+            Launch Your App <span className="text-primary">Faster</span>
+            <br />
+            Than You <span className="text-primary">Think</span>.
           </h1>
-          <div >
+          {/* <div>
             <Image
               src="/logo.svg"
               alt="Frontail Logo"
@@ -70,11 +73,11 @@ const HeroPage = () => {
               height={300}
               className="inline md:h-[150px] h-[96px]"
             />
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Features */}
-        <motion.div
+        {/* <motion.div
           custom={2}
           variants={heroVariants}
           initial="closed"
@@ -84,7 +87,7 @@ const HeroPage = () => {
           {features.map((feature, index) => (
             <Chip key={index} {...feature} />
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Logos */}
         {/* <motion.div
@@ -98,28 +101,17 @@ const HeroPage = () => {
         </motion.div> */}
 
         {/* CTA */}
-        <motion.div
-          custom={4}
-          variants={heroVariants}
-          initial="closed"
-          animate="open"
-          className="flex mt-8 items-center gap-4 w-[200px] relative"
-        >
-          <div className="h-[100px] left-0 top-0 absolute w-full -z-2   opacity-50"></div>
-          <GradientButton
-            onClick={() =>
-              window.open(
-                "https://wa.me/918696136907",
-                "_blank",
-                "width=800,height=600"
-              )
-            }
-            className="flex items-center justify-center gap-2 relative group"
+        <div className="flex items-center mt-4 gap-4">
+          <button
+            onClick={() => router.push("/contact")}
+            className="py-3 font-bold px-6 bg-primary text-white rounded-full"
           >
-            Get Free Quote
-            <ArrowRight className="group-hover:ml-2 transition-all" />
-          </GradientButton>
-        </motion.div>
+            Get a qoute
+          </button>
+          {/* <button className="bg-white flex gap-2 items-center border py-3 px-6 rounded-full">
+            <span>View portfolio</span> <ArrowRight />
+          </button> */}
+        </div>
       </div>
     </section>
   );

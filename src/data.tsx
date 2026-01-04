@@ -108,13 +108,13 @@ export const services = [
       "Beautiful, user-friendly designs that convert visitors into customers.",
     icon: <Palette className="w-8 h-8" />,
   },
-  {
-    id: 3,
-    title: "E-Commerce Solutions",
-    description:
-      "Complete online stores with secure payment processing and inventory management.",
-    icon: <ShoppingCart className="w-8 h-8" />,
-  },
+  // {
+  //   id: 3,
+  //   title: "E-Commerce Solutions",
+  //   description:
+  //     "Complete online stores with secure payment processing and inventory management.",
+  //   icon: <ShoppingCart className="w-8 h-8" />,
+  // },
   {
     id: 4,
     title: "Software Development",
@@ -187,7 +187,14 @@ export const detailedServices = [
       "Tailored to your brand and goals",
     ],
     technologies: [
-      "React.js", "Next.js", "Node.js", "MongoDB", "PostgreSQL", "TypeScript", "Tailwind CSS", "Express.js"
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "PostgreSQL",
+      "TypeScript",
+      "Tailwind CSS",
+      "Express.js",
     ],
     metaTitle: "Web Development Services | Frontail Technology",
     metaDescription:
@@ -233,7 +240,14 @@ export const detailedServices = [
       "Strong focus on conversion-driven layouts",
     ],
     technologies: [
-      "Figma", "Adobe XD", "Sketch", "Principle", "InVision", "Framer", "Webflow", "Photoshop"
+      "Figma",
+      "Adobe XD",
+      "Sketch",
+      "Principle",
+      "InVision",
+      "Framer",
+      "Webflow",
+      "Photoshop",
     ],
     metaTitle: "UI/UX Design Services | Frontail Technology",
     metaDescription:
@@ -280,7 +294,14 @@ export const detailedServices = [
       "Secure payments and smooth user experience",
     ],
     technologies: [
-      "Next.js", "Stripe", "PayPal", "Razorpay", "MongoDB", "Redis", "AWS", "Shopify API"
+      "Next.js",
+      "Stripe",
+      "PayPal",
+      "Razorpay",
+      "MongoDB",
+      "Redis",
+      "AWS",
+      "Shopify API",
     ],
     metaTitle: "E-Commerce Development Solutions | Frontail Technology",
     metaDescription:
@@ -326,7 +347,14 @@ export const detailedServices = [
       "Scalable and secure codebase",
     ],
     technologies: [
-      "Python", "Java", "Node.js", "React", "PostgreSQL", "Docker", "AWS", "Microservices"
+      "Python",
+      "Java",
+      "Node.js",
+      "React",
+      "PostgreSQL",
+      "Docker",
+      "AWS",
+      "Microservices",
     ],
     metaTitle: "Custom Software Development Services | Frontail Technology",
     metaDescription:
@@ -372,7 +400,14 @@ export const detailedServices = [
       "Comprehensive end-to-end development support",
     ],
     technologies: [
-      "React", "Node.js", "PostgreSQL", "Redis", "Docker", "Kubernetes", "AWS", "Stripe"
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "Stripe",
     ],
     metaTitle: "SaaS Development Services | Frontail Technology",
     metaDescription:
@@ -418,7 +453,14 @@ export const detailedServices = [
       "End-to-end app lifecycle management",
     ],
     technologies: [
-      "React Native", "Flutter", "Swift", "Kotlin", "Firebase", "AWS Amplify", "Redux", "TypeScript"
+      "React Native",
+      "Flutter",
+      "Swift",
+      "Kotlin",
+      "Firebase",
+      "AWS Amplify",
+      "Redux",
+      "TypeScript",
     ],
     metaTitle: "Mobile App Development Services | Frontail Technology",
     metaDescription:
@@ -464,7 +506,14 @@ export const detailedServices = [
       "Scalable solutions for institutions and businesses",
     ],
     technologies: [
-      "React", "Node.js", "MongoDB", "WebRTC", "Socket.io", "AWS", "Video.js", "Moodle API"
+      "React",
+      "Node.js",
+      "MongoDB",
+      "WebRTC",
+      "Socket.io",
+      "AWS",
+      "Video.js",
+      "Moodle API",
     ],
     metaTitle: "E-learning Application Development | Frontail Technology",
     metaDescription:
@@ -509,7 +558,14 @@ export const detailedServices = [
       "Experience with multiple blockchain platforms",
     ],
     technologies: [
-      "Solidity", "Web3.js", "Ethereum", "Polygon", "React", "Node.js", "IPFS", "MetaMask"
+      "Solidity",
+      "Web3.js",
+      "Ethereum",
+      "Polygon",
+      "React",
+      "Node.js",
+      "IPFS",
+      "MetaMask",
     ],
     metaTitle: "Web3 & Blockchain Development Services | Frontail Technology",
     metaDescription:

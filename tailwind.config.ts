@@ -32,7 +32,7 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "#18DC60",
+        primary: "#18DC70",
         secondary: "#1a1a37", // ✅ Fixed spelling
       },
     },
