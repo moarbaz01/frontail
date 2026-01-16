@@ -5,7 +5,7 @@ import { IoIosTrendingUp } from "react-icons/io";
 import { Chip } from "@/components/ui/Chip";
 import { logoImages } from "@/utils/imageOptimization";
 import { useRouter } from "next/navigation";
-import AnimatedTooltip from "@/components/ui/AnimatedTooltip";
+// import AnimatedTooltip from "@/components/ui/AnimatedTooltip";
 
 const features = [
   { icon: <IoIosTrendingUp />, text: "Scalable Solutions" },
