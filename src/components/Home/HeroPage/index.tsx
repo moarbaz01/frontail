@@ -87,7 +87,7 @@ const HeroPage = () => {
         </motion.div> */}
 
         {/* Logos */}
-        <motion.div
+        {/* <motion.div
           custom={3}
           variants={heroVariants}
           initial="closed"
@@ -95,7 +95,7 @@ const HeroPage = () => {
           className="flex items-center w-full justify-center gap-4 mt-6"
         >
           <AnimatedTooltip items={people} />
-        </motion.div>
+        </motion.div> */}
 
         {/* CTA */}
         <div className="flex items-center mt-4 gap-4">
