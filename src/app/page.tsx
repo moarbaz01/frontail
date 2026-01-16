@@ -1,3 +1,4 @@
+import BigText from "@/components/Home/BigText";
 import ComparisonSection from "@/components/Home/ComparisonSection";
 import ContactSection from "@/components/Home/ContactSection";
 import FAQSection from "@/components/Home/FaqsSection";
@@ -17,6 +18,7 @@ export default function Home() {
       <Services />
       <ProcessTimeline />
       {/* <ProjectsSection /> */}
+      <BigText />
       <ComparisonSection />
       <Testimonials />
       <ContactSection />

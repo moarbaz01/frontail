@@ -9,9 +9,9 @@ const BigText = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className=" max-w-screen-2xl w-full mx-auto md:block hidden"
+      className=" max-w-screen-2xl w-full mx-auto"
     >
-      <TextHoverEffect text="Frontail" />
+      <TextHoverEffect automatic duration={1000} text="Frontail" />
     </motion.div>
   );
 };

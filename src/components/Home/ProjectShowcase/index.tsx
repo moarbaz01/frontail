@@ -5,15 +5,9 @@ import { motion } from "framer-motion";
 
 import { projectImages } from "@/utils/imageOptimization";
 
-const projects = [
-  { image: projectImages.ohshakes },
-  { image: projectImages.digir },
-  { image: projectImages.zoland },
-  { image: projectImages.inspired },
-  { image: projectImages.kirastore },
-  { image: projectImages.getotopup },
-  { image: projectImages.winwintopup }
-];
+const projects = Array.from(Object.entries(projectImages)).map(([key, value]) => ({
+  image: value,
+}));
 
 // Variants for each project card
 const cardVariants = {

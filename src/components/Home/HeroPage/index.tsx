@@ -3,12 +3,9 @@ import { motion } from "framer-motion";
 import { CiLock, CiMobile1, CiSearch } from "react-icons/ci";
 import { IoIosTrendingUp } from "react-icons/io";
 import { Chip } from "@/components/ui/Chip";
-import AnimatedTooltip from "@/components/ui/AnimatedTooltip";
-import GradientButton from "@/components/ui/GradientButton";
-import { ArrowRight } from "lucide-react";
 import { logoImages } from "@/utils/imageOptimization";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
+import AnimatedTooltip from "@/components/ui/AnimatedTooltip";
 
 const features = [
   { icon: <IoIosTrendingUp />, text: "Scalable Solutions" },
@@ -90,7 +87,7 @@ const HeroPage = () => {
         </motion.div> */}
 
         {/* Logos */}
-        {/* <motion.div
+        <motion.div
           custom={3}
           variants={heroVariants}
           initial="closed"
@@ -98,7 +95,7 @@ const HeroPage = () => {
           className="flex items-center w-full justify-center gap-4 mt-6"
         >
           <AnimatedTooltip items={people} />
-        </motion.div> */}
+        </motion.div>
 
         {/* CTA */}
         <div className="flex items-center mt-4 gap-4">
