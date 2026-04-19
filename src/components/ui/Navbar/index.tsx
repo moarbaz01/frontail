@@ -92,16 +92,16 @@ const Navbar: React.FC = () => {
   return (
     <>
       <motion.header
-        className="sticky top-0 left-0 w-full md:p-4 z-50"
+        className="fixed md:top-4 md:px-0 px-2  top-2 left-0 w-full  z-50"
         variants={navbarVariants}
         initial="hidden"
         animate="visible"
-        style={{
-          backdropFilter: `blur(${Math.min(scrollY / 100, 10)}px)`,
-        }}
+      // style={{
+      //   backdropFilter: `blur(${Math.min(scrollY / 100, 10)}px)`,
+      // }}
       >
         <motion.div
-          className="flex items-center py-2 px-4 md:px-8 max-w-screen-2xl mx-auto md:rounded-full justify-between bg-white backdrop-blur-md border border-gray-300"
+          className="flex items-center py-2 px-4 max-w-screen-lg mx-auto rounded-full justify-between bg-white/50 backdrop-blur-md border border-gray-300"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{
             opacity: 1,
@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
               src={"/logo.svg"}
               height={200}
               width={1000}
-              className="w-full h-14"
+              className="w-full h-10"
               alt="Frontail Logo"
             />
           </motion.div>
@@ -145,9 +145,8 @@ const Navbar: React.FC = () => {
                 >
                   <motion.div className="px-2 py-1 rounded-md flex items-center gap-1 relative z-10">
                     <span
-                      className={`text-md font-semibold transition-colors duration-300 ${
-                        isActive ? "text-emerald-500" : "text-gray-800"
-                      }`}
+                      className={`text-sm font-semibold transition-colors duration-300 ${isActive ? "text-emerald-500" : "text-gray-800"
+                        }`}
                     >
                       {item.label}
                     </span>
@@ -196,11 +195,11 @@ const Navbar: React.FC = () => {
                 duration: 0.3,
                 delay: 1.1,
               }}
-              className="md:flex hidden  items-center gap-4 w-[200px]  "
+              className="md:flex hidden  items-center gap-4 w-fit  "
             >
               <GradientButton
                 onClick={() => router.push("/contact")}
-                className="flex items-center h-[50px] text-sm justify-center gap-2  relative  group"
+                className="flex items-center h-[40px] text-sm justify-center gap-2  relative  group"
               >
                 Let&apos;s Start
                 <ArrowRight className=" group-hover:ml-2 transition-all " />
@@ -225,7 +224,7 @@ const Navbar: React.FC = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full left-4 right-4 mt-2 bg-white rounded-xl border border-gray-300 md:hidden z-40"
+              className="absolute top-full left-4 right-4 mt-2 bg-white  border border-gray-300 md:hidden z-40"
             >
               <div className="p-4 space-y-2">
                 {navItems.map((item, index) => (
@@ -235,11 +234,10 @@ const Navbar: React.FC = () => {
                       router.push(item.path);
                       setMobileMenuOpen(false);
                     }}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${
-                      pathname === item.path
-                        ? "bg-primary/10 text-primary"
-                        : "text-gray-800 hover:bg-gray-100"
-                    }`}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${pathname === item.path
+                      ? "bg-primary/10 text-primary"
+                      : "text-gray-800 hover:bg-gray-100"
+                      }`}
                   >
                     {item.label}
                   </motion.button>

@@ -13,7 +13,7 @@ const Services = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -96,7 +96,7 @@ const Services = () => {
         </div>
 
         {/* View More Button */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -105,7 +105,7 @@ const Services = () => {
           >
             View All Services
           </motion.button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

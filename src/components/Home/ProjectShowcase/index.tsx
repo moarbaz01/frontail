@@ -22,10 +22,6 @@ const cardVariants = {
 const ProjectShowcase = () => {
   return (
     <div className="relative">
-      {/* Gradient overlays */}
-      {/* <div className="pointer-events-none absolute z-[50] inset-y-0 left-0 w-1/4 bg-gradient-to-r from-black/70"></div> */}
-      {/* <div className="pointer-events-none absolute inset-y-0 z-[50] right-0 w-1/4 bg-gradient-to-l from-black/70"></div> */}
-
       <Marquee
         reverse
         pauseOnHover

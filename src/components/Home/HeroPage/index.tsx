@@ -1,27 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { CiLock, CiMobile1, CiSearch } from "react-icons/ci";
-import { IoIosTrendingUp } from "react-icons/io";
 import { Chip } from "@/components/ui/Chip";
-import { logoImages } from "@/utils/imageOptimization";
 import { useRouter } from "next/navigation";
-// import AnimatedTooltip from "@/components/ui/AnimatedTooltip";
-
-const features = [
-  { icon: <IoIosTrendingUp />, text: "Scalable Solutions" },
-  { icon: <CiSearch />, text: "Modern Tech Stack" },
-  { icon: <CiMobile1 />, text: "Full-Stack Development" },
-  { icon: <CiLock />, text: "Secure & Reliable" },
-];
-
-const people = [
-  { id: 1, name: "Digir Innovations", image: logoImages.digir },
-  { id: 2, name: "KiraGame Store", image: logoImages.kira },
-  { id: 3, name: "Inspired Events And Tours", image: logoImages.travel },
-  { id: 4, name: "Oh Shakes", image: logoImages.ohshakes },
-  { id: 5, name: "Geto Topup", image: logoImages.geto },
-  { id: 6, name: "Zoland", image: logoImages.zoland },
-];
 
 // Variants for hero section animations
 const heroVariants = {
@@ -36,15 +16,35 @@ const heroVariants = {
 const HeroPage = () => {
   const router = useRouter();
   return (
-    <section className=" md:min-h-[60vh]  md:py-6 py-10  flex items-center justify-center px-4 relative">
-      <div className="md:mt-0 mt-4 mb-8 flex items-center relative text-center flex-col">
+    <section className="w-full md:min-h-[90vh] md:py-10 py-10 flex items-center justify-center px-4 relative overflow-hidden">
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          WebkitMaskImage:
+            "linear-gradient(to bottom, black 60%, transparent 100%)",
+          maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
+        }}
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full opacity-80 object-cover"
+        >
+          <source src="/hero-background.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className="md:mt-0 mt-16 mb-8 flex items-center relative text-center flex-col z-10">
         {/* Tagline */}
         <motion.div
           custom={0}
           variants={heroVariants}
           initial="closed"
           animate="open"
-          className="w-fit"
+
+
+          className="w-fit rounded-full bg-white "
         >
           <Chip text="✨ For Startups & SMEs. Fast, Scalable, AI-Ready." />
         </motion.div>
@@ -72,30 +72,6 @@ const HeroPage = () => {
             />
           </div> */}
         </motion.div>
-
-        {/* Features */}
-        {/* <motion.div
-          custom={2}
-          variants={heroVariants}
-          initial="closed"
-          animate="open"
-          className="flex items-center flex-wrap md:justify-start justify-center gap-4 mt-6"
-        >
-          {features.map((feature, index) => (
-            <Chip key={index} {...feature} />
-          ))}
-        </motion.div> */}
-
-        {/* Logos */}
-        {/* <motion.div
-          custom={3}
-          variants={heroVariants}
-          initial="closed"
-          animate="open"
-          className="flex items-center w-full justify-center gap-4 mt-6"
-        >
-          <AnimatedTooltip items={people} />
-        </motion.div> */}
 
         {/* CTA */}
         <div className="flex items-center mt-4 gap-4">

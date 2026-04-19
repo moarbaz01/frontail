@@ -9,6 +9,7 @@ import {
   Rocket,
   Sparkles,
 } from "lucide-react";
+import Image from "next/image";
 
 const processSteps = [
   {
@@ -91,19 +92,17 @@ const ProcessTimeline: React.FC = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="bg-white rounded-xl p-6 border border-gray-300 mb-4 h-full flex flex-col">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <div className="text-primary">{step.icon}</div>
-                  </div>
-                  <div className="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
-                    Step {step.id}
-                  </div>
+              <div className="bg-white rounded-xl border border-gray-300  h-[280px]  flex flex-col">
+                <div className="w-full h-40">
+                  <Image src={`/process/${step.title.toLowerCase()}.png`} alt={step.title} width={400} height={400} className="w-full h-full object-cover rounded-t-xl" />
+
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{step.description}</p>
+                <div className="flex-2 p-4">
+                  <h3 className="text-md font-bold text-gray-800 mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{step.description}</p>
+                </div>
               </div>
             </motion.div>
           ))}

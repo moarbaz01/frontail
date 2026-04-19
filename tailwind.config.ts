@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        baskerville: ["var(--font-libre-baskerville)", "serif"],
+      },
       keyframes: {
         gradient: {
           "0%": { backgroundPosition: "0% 50%" },

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
@@ -11,6 +11,12 @@ import Script from "next/script";
 const plusJakarta = Plus_Jakarta_Sans({
   preload: true,
   subsets: ["latin"],
+});
+
+const libreBaskerville = Libre_Baskerville({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-libre-baskerville",
 });
 
 export const metadata: Metadata = {
@@ -199,7 +205,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Script>
       </head>
       <body
-        className={` ${plusJakarta.className} antialiased bg-dot-black/20  `}
+        className={` ${plusJakarta.className} ${libreBaskerville.variable} antialiased   `}
       >
         <noscript>
           <iframe
