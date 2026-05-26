@@ -9,7 +9,7 @@ const NotFoundPage = () => {
       <p className="text-lg text-center mb-4">
         Sorry, the page you&apos;re looking for doesn&apos;t exist.
       </p>
-      <Link href="/" className="text-lg text-white bg-primary px-4 py-2 rounded hover:bg-primary-dark transition-colors">
+      <Link href="/" className="btn-3d text-lg text-white bg-primary px-4 py-2 rounded-md hover:bg-primary-dark">
         Go back to Home
       </Link>
     </div>

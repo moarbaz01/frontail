@@ -1,52 +1,103 @@
 "use client";
+
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ArrowRight, Sparkles } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { useRouter } from "next/navigation";
 
+const faqSections = [
+  {
+    title: "Projects",
+    faqs: [
+      {
+        question: "What kind of products do you build?",
+        answer:
+          "We build MVPs, SaaS platforms, web apps, landing pages, ecommerce experiences, and mobile-ready products for startups and growing businesses.",
+      },
+      {
+        question: "Can you help if I only have an idea?",
+        answer:
+          "Yes. We can help define the first version, prioritize features, and turn the idea into a clear build plan.",
+      },
+      {
+        question: "Do you work with existing products?",
+        answer:
+          "Yes. We can improve UI, rebuild old flows, add new features, fix performance issues, or help with a full redesign.",
+      },
+    ],
+  },
+  {
+    title: "Timeline & Cost",
+    faqs: [
+      {
+        question: "How long does an MVP take?",
+        answer:
+          "Most MVPs take 2 to 6 weeks depending on scope, integrations, and design complexity.",
+      },
+      {
+        question: "How do you estimate pricing?",
+        answer:
+          "We estimate based on features, screens, integrations, and launch requirements. After a short discussion, we share a clear scope and quote.",
+      },
+      {
+        question: "Can we start small?",
+        answer:
+          "Yes. We prefer starting with the most useful version first, then improving it after launch based on real feedback.",
+      },
+    ],
+  },
+  {
+    title: "Process",
+    faqs: [
+      {
+        question: "What happens after I contact you?",
+        answer:
+          "We review your idea, ask a few key questions, suggest the best direction, and share the next steps.",
+      },
+      {
+        question: "Will I get updates during development?",
+        answer:
+          "Yes. We share regular progress updates so you always know what is done, what is next, and where feedback is needed.",
+      },
+      {
+        question: "Do you handle design and development?",
+        answer:
+          "Yes. We can handle both product design and development, from wireframes to launch.",
+      },
+    ],
+  },
+  {
+    title: "Support",
+    faqs: [
+      {
+        question: "Do you provide support after launch?",
+        answer:
+          "Yes. We can help with fixes, improvements, updates, monitoring, and new feature development after launch.",
+      },
+      {
+        question: "Can you manage hosting and deployment?",
+        answer:
+          "Yes. We can deploy your product, configure hosting, and guide you on the best setup for your project.",
+      },
+      {
+        question: "Do you work with international clients?",
+        answer:
+          "Yes. We work remotely with clients across different countries and time zones.",
+      },
+    ],
+  },
+];
+
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openKey, setOpenKey] = useState("Projects-0");
   const router = useRouter();
 
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toggleFAQ = (key: string) => {
+    setOpenKey(openKey === key ? "" : key);
   };
 
-  const faqs = [
-    {
-      question: "What makes your agency different from others?",
-      answer:
-        "We combine strategic thinking with technical excellence and creative innovation. Unlike traditional agencies that focus on either design or development, we offer a holistic approach with dedicated experts in both fields working collaboratively.",
-    },
-    {
-      question: "How long does a typical project take?",
-      answer:
-        "Project timelines vary based on scope and complexity. A standard website redesign typically takes 3 days to 4 weeks, while more complex platforms might require 4-8 weeks. During our initial consultation, we'll provide a detailed timeline specific to your project needs.",
-    },
-    {
-      question: "What services do you offer?",
-      answer:
-        "We provide end-to-end digital solutions including UI/UX design, web development, mobile app development, e-commerce solutions, digital strategy, brand identity design, and ongoing maintenance and support.",
-    },
-    {
-      question: "Do you offer ongoing support after launch?",
-      answer:
-        "Yes, we offer various support and maintenance packages to ensure your digital products continue to perform optimally. These include technical support, content updates, security monitoring, performance optimization, and strategic consultations.",
-    },
-    {
-      question: "Do you work with clients internationally?",
-      answer:
-        "Absolutely! We have clients across 4+ countries and have built our processes to accommodate different time zones and cultural considerations. Our team is experienced in international collaboration.",
-    },
-    {
-      question: "How do you ensure website security?",
-      answer:
-        "Security is built into every aspect of our development process. We implement industry best practices including secure coding standards, regular security audits, SSL implementation, data encryption, and protection against common vulnerabilities.",
-    },
-  ];
-
   return (
-    <section id="faqs" className="w-full py-6 overflow-hidden">
+    <section id="faqs" className="w-full py-12 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <motion.div
@@ -72,87 +123,94 @@ const FAQSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-6xl font-bold mb-4 text-gray-800"
+            className="text-3xl md:text-5xl font-bold mb-4 text-gray-800"
           >
             Frequently Asked Questions
           </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto font-light"
-          >
-            Everything you need to know about working with our agency.
-            Can&apos;t find the answer you&apos;re looking for? Reach out to our team.
-          </motion.p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Quick answers before we start building.
+          </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="space-y-2">
-            {faqs.map((faq, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 max-w-6xl mx-auto">
+          <div className="rounded-md border border-gray-300 bg-white p-6 h-fit">
+            <h3 className="font-anton text-3xl font-bold text-gray-900 mb-4">
+              Still curious?
+            </h3>
+            <p className="text-sm text-gray-600 mb-6">
+              Send us your idea and we&apos;ll point you in the right direction.
+            </p>
+            <button
+              onClick={() => router.push("/contact")}
+              className="btn-3d inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-white"
+            >
+              Contact Us
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </div>
+
+          <div className="space-y-5">
+            {faqSections.map((section, sectionIndex) => (
               <motion.div
-                key={index}
+                key={section.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: sectionIndex * 0.08 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl border border-gray-300 overflow-hidden"
+                className="rounded-md border border-gray-300 bg-white p-4"
               >
-                <motion.button
-                  onClick={() => toggleFAQ(index)}
-                  className="flex justify-between items-center w-full p-4 text-left"
-                  whileHover={{ backgroundColor: "#f9fafb" }}
-                >
-                  <h3 className="text-sm text-gray-800 pr-8 font-medium">
-                    {faq.question}
-                  </h3>
-                  <motion.div
-                    animate={{ rotate: openIndex === index ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className={`flex-shrink-0 ml-2 ${
-                      openIndex === index ? "text-primary" : "text-gray-600"
-                    }`}
-                  >
-                    <ChevronDown size={24} />
-                  </motion.div>
-                </motion.button>
+                <h3 className="mb-3 px-2 text-sm font-bold uppercase tracking-widest text-primary">
+                  {section.title}
+                </h3>
+                <div className="divide-y divide-gray-200">
+                  {section.faqs.map((faq, faqIndex) => {
+                    const key = `${section.title}-${faqIndex}`;
+                    const isOpen = openKey === key;
 
-                <AnimatePresence>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="p-4 text-xs pt-0 text-gray-600">
-                        <p>{faq.answer}</p>
+                    return (
+                      <div key={key}>
+                        <button
+                          onClick={() => toggleFAQ(key)}
+                          className="flex w-full items-center justify-between gap-4 px-2 py-4 text-left"
+                        >
+                          <span className="text-sm font-semibold text-gray-900">
+                            {faq.question}
+                          </span>
+                          <motion.span
+                            animate={{ rotate: isOpen ? 180 : 0 }}
+                            transition={{ duration: 0.2 }}
+                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-md border ${
+                              isOpen
+                                ? "border-primary/30 bg-primary/10 text-primary"
+                                : "border-gray-300 text-gray-600"
+                            }`}
+                          >
+                            <ChevronDown className="h-4 w-4" />
+                          </motion.span>
+                        </button>
+
+                        <AnimatePresence>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.22 }}
+                              className="overflow-hidden"
+                            >
+                              <p className="px-2 pb-4 text-sm leading-relaxed text-gray-600">
+                                {faq.answer}
+                              </p>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    );
+                  })}
+                </div>
               </motion.div>
             ))}
           </div>
-
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
-            <motion.button
-              onClick={() => router.push("/contact")}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-primary/90 transition-colors border border-gray-300"
-            >
-              Still have questions? Contact us
-              <ArrowRight className="ml-2" size={18} />
-            </motion.button>
-          </motion.div> */}
         </div>
       </div>
     </section>

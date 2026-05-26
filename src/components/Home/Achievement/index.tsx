@@ -70,7 +70,7 @@ const AchievementsSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-6xl font-bold mb-4 text-gray-800"
+            className="text-3xl md:text-5xl font-bold mb-4 text-gray-800"
           >
             Our Achievements
           </motion.h2>
@@ -94,7 +94,7 @@ const AchievementsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 border border-gray-300 text-center"
+              className="bg-white rounded-md p-6 border border-gray-300 text-center"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="text-primary">{achievement.icon}</div>

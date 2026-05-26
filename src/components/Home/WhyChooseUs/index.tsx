@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => window.open('https://cal.com/frontail/30min', '_blank', 'width=800,height=600')}
-            className="px-8 py-3 bg-primary text-white rounded-full hover:bg-primary/80 transition-colors font-medium"
+            className="btn-3d px-8 py-3 bg-primary text-white rounded-md hover:bg-primary/80 font-medium"
           >
             Start Your Project
           </motion.button>

@@ -19,7 +19,7 @@ const ServiceCard = ({
       className="backdrop-blur-lg  "
     >
       <SpotlightCard
-        className="flex flex-col gap-2 bg-dot-white/20 p-6 rounded-lg border border-primary/10  min-h-[180px] "
+        className="flex flex-col gap-2 bg-dot-white/20 p-6 rounded-md border border-primary/10  min-h-[180px] "
         spotlightColor="rgba(0, 229, 255, 0.2)"
       >
         <p className="text-lg font-bold leading-relaxed">{title}</p>

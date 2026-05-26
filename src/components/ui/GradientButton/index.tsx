@@ -13,7 +13,7 @@ const GradientButton = ({
     <button
       onClick={onClick}
       className={clsx(
-        " bg-primary w-full hover:bg-primary/80 text-nowrap transition-colors duration-300 font-bold text-white px-4 md:text-lg py-4 rounded-full",
+        "btn-3d bg-primary w-full hover:bg-primary/80 text-nowrap font-bold text-white px-4 md:text-lg py-4 rounded-md",
         className
       )}
     >

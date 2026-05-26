@@ -15,7 +15,7 @@ const FeatureComponent = ({
   return (
     <div className="backdrop-blur-lg flex items-center justify-center">
       <SpotlightCard
-        className="flex flex-col p-4 md:p-6 rounded-lg border border-primary/10 md:h-[250px]   "
+        className="flex flex-col p-4 md:p-6 rounded-md border border-primary/10 md:h-[250px]   "
         spotlightColor="rgba(0, 229, 255, 0.2)"
       >
         <div className="text-xl text-primary bg-white/10 border md:p-4 p-2 rounded-full backdrop-blur-md border-primary/10 w-fit">

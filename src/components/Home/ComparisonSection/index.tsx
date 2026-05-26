@@ -78,12 +78,12 @@ const ComparisonSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Frontail Side */}
             <motion.div
-              className="bg-white rounded-2xl p-8 border border-gray-300"
+              className="bg-white rounded-md p-8 border border-gray-300"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
               <div className="flex items-center mb-6">
-                <div className="mr-4 p-3 bg-primary/10 rounded-xl">
+                <div className="mr-4 p-3 bg-primary/10 rounded-md">
                   <CheckCircle className="text-primary" size={28} />
                 </div>
                 <div>
@@ -107,7 +107,7 @@ const ComparisonSection = () => {
                     className="flex items-start"
                   >
                     <CheckCircle
-                      className="text-green-500 mr-3 mt-1 flex-shrink-0"
+                      className="text-primary mr-3 mt-1 flex-shrink-0"
                       size={20}
                     />
                     <div>
@@ -123,12 +123,12 @@ const ComparisonSection = () => {
 
             {/* Other Agencies Side */}
             <motion.div
-              className="bg-gray-50 rounded-2xl p-8 border border-gray-300"
+              className="bg-gray-50 rounded-md p-8 border border-gray-300"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
               <div className="flex items-center mb-6">
-                <div className="mr-4 p-3 bg-gray-200 rounded-xl">
+                <div className="mr-4 p-3 bg-gray-200 rounded-md">
                   <XCircle className="text-gray-600" size={28} />
                 </div>
                 <div>

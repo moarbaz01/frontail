@@ -23,7 +23,7 @@ const ProjectCard = ({
     >
       <SpotlightCard
         spotlightColor="rgba(0, 229, 255, 0.2)"
-        className=" backdrop-blur-sm bg-white transition group rounded-lg border border-gray-300"
+        className=" backdrop-blur-sm bg-white transition group rounded-md border border-gray-300"
       >
         <motion.div className=" md:h-[300px] h-[250px]  w-full cursor-pointer relative overflow-hidden rounded-t">
           <Image
@@ -55,9 +55,10 @@ const ProjectCard = ({
                 href={project.link}
                 target="_blank"
                 className={`
+                btn-3d
                 text-white
                 font-semibold
-                rounded-full
+                rounded-md
                 p-4
                 w-fit
                 border

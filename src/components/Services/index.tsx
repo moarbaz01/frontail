@@ -30,7 +30,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       viewport={{ once: true }}
     >
       <SpotlightCard
-        className="flex flex-col gap-2 p-4 md:p-6 backdrop-blur-lg  rounded-lg border border-primary/10  h-[240px] "
+        className="flex flex-col gap-2 p-4 md:p-6 backdrop-blur-lg  rounded-md border border-primary/10  h-[240px] "
         spotlightColor="rgba(0, 229, 255, 0.2)"
       >
         <div className="text-xl text-primary bg-white/10 border p-2 rounded-full backdrop-blur-md border-primary/10 w-fit">
@@ -40,7 +40,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <p className="text-gray-400 mb-4">{description}</p>
         <Link
           href={actionLink}
-          className="text-white bg-primary px-4 py-2 w-fit rounded-full hover:bg-primary-dark transition-colors"
+          className="btn-3d text-white bg-primary px-4 py-2 w-fit rounded-md hover:bg-primary-dark"
         >
           {actionText}
         </Link>

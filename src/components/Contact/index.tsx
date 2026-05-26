@@ -1,72 +1,50 @@
 "use client";
-import { FaWhatsapp } from "react-icons/fa";
-import ContactForm from "./ContactForm";
-import { Mail, Phone, Sparkles } from "lucide-react";
-import { motion, Variants } from "framer-motion";
-import SpotlightCard from "../ui/SpotLightCard";
-import { IoLogoWhatsapp } from "react-icons/io";
 
-interface ContactCartProps {
-  icon: React.ReactNode;
-  title: string;
-  contactInfo: string;
-  actionText: string;
-  actionLink: string;
-}
+import { motion } from "framer-motion";
+import { Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const contactMethods = [
   {
-    id: 1,
-    icon: <Mail className=" text-primary " />,
-    title: "Email",
-    contactInfo: "frontailtechnology@gmail.com",
-    actionText: "Send Email",
-    actionLink: "mailto:frontailtechnology@gmail.com",
+    label: "WhatsApp",
+    value: "+91 8696136907",
+    href: "https://wa.me/918696136907",
+    icon: IoLogoWhatsapp,
   },
   {
-    id: 2,
-    icon: <Phone className=" text-primary" />,
-    title: "Phone",
-    contactInfo: "+91 8824097435",
-    actionText: "Call Us",
-    actionLink: "tel:+91 8824097435",
+    label: "Phone",
+    value: "+91 8824097435",
+    href: "tel:+918824097435",
+    icon: Phone,
   },
   {
-    id: 2,
-    icon: <IoLogoWhatsapp className=" text-primary" />,
-    title: "Whatsapp",
-    contactInfo: "+91 8696136907",
-    actionText: "Chat",
-    actionLink: "https://wa.me/918696136907",
+    label: "Email",
+    value: "frontailtechnology@gmail.com",
+    href: "mailto:frontailtechnology@gmail.com",
+    icon: Mail,
+  },
+  {
+    label: "Address",
+    value: "Jaipur, Rajasthan, India",
+    href: "https://maps.google.com/?q=Jaipur,Rajasthan,India",
+    icon: MapPin,
   },
 ];
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.3,
-    },
-  },
-};
+const steps = [
+  "Share your idea",
+  "Get a free estimate",
+  "Start the build",
+];
 
 const Contact = () => {
   return (
-    <section className="px-4 py-12 ">
+    <section className="px-4 pt-28 pb-16 bg-grid-black/5 overflow-hidden">
       <div className="max-w-screen-xl mx-auto">
-        {/* Title */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-14">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
             className="inline-block relative mb-2"
           >
             <Sparkles
@@ -82,91 +60,100 @@ const Contact = () => {
             />
           </motion.div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold mb-4 text-gray-800 tracking-tight"
+            transition={{ duration: 0.35 }}
+            className="font-anton text-4xl md:text-5xl font-extrabold text-gray-900 tracking-normal"
           >
-            {/* Contact */}
-            Let&apos;
-            <span className="text-primary">s Talk</span>
-          </motion.h2>
-
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "120px" }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-1 bg-primary mx-auto mb-6"
-          ></motion.div>
-
+            Contact <span className="text-primary">Us</span>
+          </motion.h1>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto font-light"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, delay: 0.08 }}
+            className="text-base md:text-lg text-gray-600 mt-4 max-w-2xl mx-auto"
           >
-            We&apos;
-            <span className="text-primary">d love</span> to hear from you!
-            Whether you have a question, a project idea, or just want to say
-            hello, feel free to reach out. We&apos;
-            <span className="text-primary">re here</span> to assist you.
+            Have an idea or project in mind? Send it over.
           </motion.p>
-        </motion.div>
-
-        {/* Contact Methods */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {contactMethods.map(
-            ({ id, icon, title, contactInfo, actionText, actionLink }) => (
-              <ContactCard
-                key={id}
-                icon={icon}
-                title={title}
-                contactInfo={contactInfo}
-                actionText={actionText}
-                actionLink={actionLink}
-              />
-            )
-          )}
         </div>
 
-        {/* Contact Form */}
-        <ContactForm />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.35, delay: 0.12 }}
+            className="space-y-8"
+          >
+            <div>
+              <h2 className="font-anton text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-5">
+                Let&apos;s build
+                <br />
+                something amazing.
+              </h2>
+              <p className="text-lg text-gray-600">
+                Book a free consultation and we&apos;ll get back to you soon.
+              </p>
+            </div>
+
+            <div className="space-y-5">
+              {steps.map((step, index) => (
+                <motion.div
+                  key={step}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.18 + index * 0.08 }}
+                  className="flex items-center gap-4"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-white font-bold text-gray-900 shadow-sm">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-base md:text-lg text-gray-800">
+                    {step}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.35, delay: 0.18 }}
+            className="bg-white border border-gray-300 rounded-md p-6 md:p-8 shadow-sm"
+          >
+            <h3 className="font-anton text-3xl font-extrabold text-gray-900 mb-6">
+              Get In Touch
+            </h3>
+            <div className="border-t border-dashed border-gray-300 pt-6 space-y-6">
+              {contactMethods.map(({ label, value, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    href.startsWith("http") ? "noopener noreferrer" : undefined
+                  }
+                  className="group flex items-center gap-4 rounded-md transition-colors hover:text-primary"
+                >
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-50 text-gray-700 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <span>
+                    <span className="block font-bold text-gray-900">
+                      {label}
+                    </span>
+                    <span className="block text-gray-600 break-all">
+                      {value}
+                    </span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 };
-
-// Contact Card Component
-const ContactCard: React.FC<ContactCartProps> = ({
-  icon,
-  title,
-  contactInfo,
-  actionText,
-  actionLink,
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.3, delay: 0.6 }}
-    viewport={{ once: true }}
-  >
-    <SpotlightCard className="flex flex-col items-center p-6 bg-white backdrop-blur-sm border border-gray-300 rounded-lg">
-      <div className="text-xl text-primary bg-primary/10 border p-2 rounded-full mb-2 border-primary/20 w-fit">
-        {icon}
-      </div>
-      <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-      <p className="text-gray-600 mb-4">{contactInfo}</p>
-      <a
-        href={actionLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-white bg-primary px-4 py-2 rounded-full hover:bg-primary-dark transition-colors"
-      >
-        {actionText}
-      </a>
-    </SpotlightCard>
-  </motion.div>
-);
 
 export default Contact;

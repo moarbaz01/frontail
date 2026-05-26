@@ -8,7 +8,7 @@ const WhatsAppFloat = () => {
         href="https://wa.me/918696136907"
         target="_blank"
         rel="noopener noreferrer"
-        className="block bg-green-500 text-white p-4 rounded-full hover:bg-green-600 transition-colors shadow-lg"
+        className="btn-3d block bg-primary text-white p-4 rounded-md hover:bg-primary/80 shadow-lg"
       >
         <FaWhatsapp className="text-2xl" />
       </a>

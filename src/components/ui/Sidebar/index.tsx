@@ -107,7 +107,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
               >
                 <button
                   onClick={() => handleNavigation("/contact")}
-                  className="bg-primary text-white font-medium py-3 px-6 sm:px-8 rounded-full flex items-center gap-2 hover:bg-primary/80 transition-colors w-full sm:w-auto justify-center"
+                  className="btn-3d bg-primary text-white font-medium py-3 px-6 sm:px-8 rounded-md flex items-center gap-2 hover:bg-primary/80 w-full sm:w-auto justify-center"
                 >
                   Let&apos;s Talk
                   <ArrowRight size={18} />

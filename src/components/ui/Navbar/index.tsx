@@ -96,12 +96,12 @@ const Navbar: React.FC = () => {
         variants={navbarVariants}
         initial="hidden"
         animate="visible"
-      // style={{
-      //   backdropFilter: `blur(${Math.min(scrollY / 100, 10)}px)`,
-      // }}
+        // style={{
+        //   backdropFilter: `blur(${Math.min(scrollY / 100, 10)}px)`,
+        // }}
       >
         <motion.div
-          className="flex items-center py-2 px-4 max-w-screen-lg mx-auto rounded-full justify-between bg-white/50 backdrop-blur-md border border-gray-300"
+          className="flex items-center py-2 px-4 max-w-screen-lg mx-auto rounded-md justify-between bg-white shadow-sm "
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{
             opacity: 1,
@@ -120,8 +120,9 @@ const Navbar: React.FC = () => {
             whileTap="tap"
           >
             <Image
-              src={"/logo.svg"}
+              src={"/logo.png"}
               height={200}
+              unoptimized
               width={1000}
               className="w-full h-10"
               alt="Frontail Logo"
@@ -145,8 +146,9 @@ const Navbar: React.FC = () => {
                 >
                   <motion.div className="px-2 py-1 rounded-md flex items-center gap-1 relative z-10">
                     <span
-                      className={`text-sm font-semibold transition-colors duration-300 ${isActive ? "text-emerald-500" : "text-gray-800"
-                        }`}
+                      className={`text-sm font-semibold transition-colors duration-300 ${
+                        isActive ? "text-primary" : "text-gray-800"
+                      }`}
                     >
                       {item.label}
                     </span>
@@ -168,7 +170,7 @@ const Navbar: React.FC = () => {
 
                   {/* Underline effect on hover/active */}
                   <motion.div
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-emerald-500 rounded-full origin-center"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full origin-center"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: isActive ? 1 : 0 }}
                     whileHover={{
@@ -199,10 +201,10 @@ const Navbar: React.FC = () => {
             >
               <GradientButton
                 onClick={() => router.push("/contact")}
-                className="flex items-center h-[40px] text-sm justify-center gap-2  relative  group"
+                className="flex items-center h-[34px] text-xs justify-center gap-1.5 relative group px-3 py-2 md:text-xs"
               >
                 Let&apos;s Start
-                <ArrowRight className=" group-hover:ml-2 transition-all " />
+                <ArrowRight className="h-4 w-4 group-hover:ml-1 transition-all" />
               </GradientButton>
             </motion.div>
 
@@ -234,10 +236,11 @@ const Navbar: React.FC = () => {
                       router.push(item.path);
                       setMobileMenuOpen(false);
                     }}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${pathname === item.path
-                      ? "bg-primary/10 text-primary"
-                      : "text-gray-800 hover:bg-gray-100"
-                      }`}
+                    className={`w-full text-left px-4 py-3 rounded-md transition-colors ${
+                      pathname === item.path
+                        ? "bg-primary/10 text-primary"
+                        : "text-gray-800 hover:bg-gray-100"
+                    }`}
                   >
                     {item.label}
                   </motion.button>
@@ -248,7 +251,7 @@ const Navbar: React.FC = () => {
                       router.push("/contact");
                       setMobileMenuOpen(false);
                     }}
-                    className="w-full bg-primary text-white px-4 py-3 rounded-lg font-medium"
+                    className="btn-3d w-full bg-primary text-white px-4 py-3 rounded-md font-medium"
                   >
                     Let&apos;s Start
                   </button>

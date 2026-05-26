@@ -3,23 +3,24 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className=" backdrop-blur-md bg-gray-100 text-gray-700 py-12 px-4 md:px-6">
+    <footer className="bg-[#f7f3eb] bg-dot-black/[0.06] text-gray-700 py-12 px-4 md:px-6">
       <div className="container mx-auto">
         <div className="flex justify-between lg:flex-row md:flex-wrap lg:flex-nowrap flex-col gap-8">
           {/* Logo and Description */}
           <div className="flex-[1]">
             <div className="cursor-pointer w-fit">
               <Image
-                src={"/logo.svg"}
+                src={"/logo.png"}
                 height={200}
+                unoptimized
                 width={1000}
                 className="w-full h-14"
                 alt="Frontail Logo"
               />
             </div>
-            <p className="text-sm text-gray-600 mb-6">
-              We offer the services you need to succeed online. Get in touch
-              with us and let us help you transform your online presence.
+            <p className="text-sm text-gray-600 mb-6 max-w-sm">
+              We build fast, clean digital products for startups and growing
+              businesses.
             </p>
             {/* <div className="flex gap-3 mb-6">
               <a
@@ -48,10 +49,7 @@ export default function Footer() {
             <h3 className="text-gray-800 font-semibold mb-4">Pages</h3>
             <ul className="space-y-2">
               <li>
-                <Link
-                  href="/"
-                  className="hover:text-gray-900 transition-colors"
-                >
+                <Link href="/" className="hover:text-primary transition-colors">
                   Home
                 </Link>
               </li>
@@ -59,7 +57,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="hover:text-gray-900 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Services
                 </Link>
@@ -68,7 +66,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="hover:text-gray-900 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Contact Us
                 </Link>
@@ -83,7 +81,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#faqs"
-                  className="hover:text-gray-900 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   FAQ
                 </Link>
@@ -91,7 +89,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="hover:text-gray-900 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Support
                 </Link>
@@ -103,7 +101,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-300 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-600">
-            © 2023 Frontail. All Rights Reserved.
+            © 2026 Frontail. All Rights Reserved.
           </p>
           <p className="text-xs text-gray-500 mt-4 md:mt-0">
             Powered by Nuvex LLC

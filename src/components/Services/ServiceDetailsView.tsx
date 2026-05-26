@@ -50,7 +50,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                         <div className="flex flex-wrap items-center justify-center gap-4">
                             <button
                                 onClick={() => router.push("/contact")}
-                                className="px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:shadow-lg hover:shadow-primary/30 transition-all active:scale-95 flex items-center gap-2"
+                                className="btn-3d px-8 py-4 bg-primary text-white rounded-md font-bold text-lg flex items-center gap-2"
                             >
                                 Start Project <ArrowRight className="w-5 h-5" />
                             </button>
@@ -83,9 +83,9 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-all border border-transparent hover:border-gray-100 hover:scale-[1.02]"
+                                        className="flex items-start gap-4 p-4 rounded-md hover:bg-gray-50 transition-all border border-transparent hover:border-gray-100 hover:scale-[1.02]"
                                     >
-                                        <div className="mt-1 bg-primary/10 p-2 rounded-lg text-primary">
+                                        <div className="mt-1 bg-primary/10 p-2 rounded-md text-primary">
                                             <Zap className="w-5 h-5" />
                                         </div>
                                         <div>
@@ -104,7 +104,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5 }}
-                                className="bg-gray-900 text-white p-8 rounded-3xl relative overflow-hidden shadow-xl"
+                                className="bg-gray-900 text-white p-8 rounded-md relative overflow-hidden shadow-xl"
                             >
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
 
@@ -136,7 +136,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                                     {service.technologies.map((tech, index) => (
                                         <span
                                             key={index}
-                                            className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-600 font-medium text-sm shadow-sm hover:border-primary/50 hover:text-primary transition-colors cursor-default"
+                                            className="px-4 py-2 bg-white border border-gray-200 rounded-md text-gray-600 font-medium text-sm shadow-sm hover:border-primary/50 hover:text-primary transition-colors cursor-default"
                                         >
                                             {tech}
                                         </span>
@@ -195,7 +195,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="bg-primary rounded-3xl p-12 md:p-16 text-white relative overflow-hidden shadow-2xl"
+                        className="bg-primary rounded-md p-12 md:p-16 text-white relative overflow-hidden shadow-2xl"
                     >
                         <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
@@ -206,7 +206,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                             </p>
                             <button
                                 onClick={() => router.push("/contact")}
-                                className="px-8 py-4 bg-white text-primary rounded-full font-bold text-lg hover:shadow-xl transition-transform hover:-translate-y-1 active:translate-y-0"
+                                className="btn-3d-light px-8 py-4 bg-white text-primary rounded-md font-bold text-lg"
                             >
                                 {service.cta.buttonText}
                             </button>

@@ -11,9 +11,9 @@ import AchievementsSection from "@/components/Home/Achievement";
 
 export default function Home() {
   return (
-    <>
+    <main className="md:space-y-16 lg:space-y-20">
       <HeroPage />
-      <ProjectShowcase />
+      {/* <ProjectShowcase /> */}
       {/* <Partners /> */}
       <Services />
       <ProcessTimeline />
@@ -23,6 +23,6 @@ export default function Home() {
       <Testimonials />
       <ContactSection />
       <FAQSection />
-    </>
+    </main>
   );
 }

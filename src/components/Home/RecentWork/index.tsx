@@ -58,7 +58,7 @@ const ProjectsSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-6xl font-bold mb-4 text-gray-800"
+            className="text-3xl md:text-5xl font-bold mb-4 text-gray-800"
           >
             Our Recent Work
           </motion.h2>
@@ -81,7 +81,7 @@ const ProjectsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl overflow-hidden border border-gray-300 hover:border-gray-400 transition-colors"
+              className="bg-white rounded-md overflow-hidden border border-gray-300 hover:border-gray-400 transition-colors"
             >
               <div className="relative h-48">
                 <Image
@@ -120,7 +120,7 @@ const ProjectsSection = () => {
         >
           <a
             href="/work"
-            className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-primary/90 transition-colors"
+            className="btn-3d inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary/90"
           >
             View All Projects
             <ExternalLink size={16} className="ml-2" />

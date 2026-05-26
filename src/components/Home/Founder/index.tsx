@@ -98,12 +98,12 @@ const FounderSection = () => {
         >
           {/* Image and decorative elements */}
           <motion.div variants={itemVariants} className="relative">
-            <div className="relative z-10 overflow-hidden rounded-lg">
+            <div className="relative z-10 overflow-hidden rounded-md">
               <motion.div
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                // className="aspect-w-4 aspect-h-5 bg-gradient-to-br from-indigo-600 to-primary rounded-lg overflow-hidden"
+                // className="aspect-w-4 aspect-h-5 bg-gradient-to-br from-indigo-600 to-primary rounded-md overflow-hidden"
               >
                 <Image
                   src="/founder/pic1.jpeg"
@@ -158,7 +158,7 @@ const FounderSection = () => {
               <span className="text-lg text-white/80 font-light">
                 Founder & Creative Director
               </span>
-              <span className="flex items-center text-emerald-400 text-sm">
+              <span className="flex items-center text-primary text-sm">
                 <Zap size={16} className="mr-1" />
                 Available for projects
               </span>

@@ -101,6 +101,7 @@ export const services = [
     description:
       "Build a fast, production-ready MVP to validate your startup idea with real users.",
     icon: <Rocket className="w-8 h-8" />,
+    image: "/services/mvp.jpeg",
   },
   {
     id: 2,
@@ -108,6 +109,7 @@ export const services = [
     description:
       "Scalable web and SaaS applications with authentication, dashboards, and APIs.",
     icon: <Globe className="w-8 h-8" />,
+    image: "/services/web.jpeg",
   },
   {
     id: 3,
@@ -115,16 +117,16 @@ export const services = [
     description:
       "Cross-platform mobile apps for Android & iOS designed for startups and MVP launches.",
     icon: <Smartphone className="w-8 h-8" />,
+    image: "/services/app.jpeg",
   },
-  {
-    id: 4,
-    title: "UI/UX for Startups",
-    description:
-      "Startup-focused UI/UX that improves usability, engagement, and conversions.",
-    icon: <Palette className="w-8 h-8" />,
-  },
+  // {
+  //   id: 4,
+  //   title: "UI/UX for Startups",
+  //   description:
+  //     "Startup-focused UI/UX that improves usability, engagement, and conversions.",
+  //   icon: <Palette className="w-8 h-8" />,
+  // },
 ];
-
 
 export const detailedServices = [
   {
@@ -306,12 +308,7 @@ export const detailedServices = [
       "Conversion-driven layouts",
       "Simple, clean, and scalable UI",
     ],
-    technologies: [
-      "Figma",
-      "Framer",
-      "Webflow",
-      "Adobe XD",
-    ],
+    technologies: ["Figma", "Framer", "Webflow", "Adobe XD"],
     metaTitle: "Startup UI/UX Design Services | Frontail Technology",
     metaDescription:
       "UI/UX design services for startups focused on usability, growth, and conversions.",
@@ -328,4 +325,3 @@ export const detailedServices = [
     },
   },
 ];
-

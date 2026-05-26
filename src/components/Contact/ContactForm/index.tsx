@@ -14,7 +14,11 @@ interface FormData {
   message: string;
 }
 
-const ContactForm = () => {
+interface ContactFormProps {
+  showInfo?: boolean;
+}
+
+const ContactForm = ({ showInfo = true }: ContactFormProps) => {
   const {
     register,
     handleSubmit,
@@ -61,16 +65,15 @@ const ContactForm = () => {
       transition={{ duration: 0.3, delay: 0.9 }}
       viewport={{ once: true }}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className={`grid grid-cols-1 gap-8 ${showInfo ? "lg:grid-cols-3" : ""}`}>
         {/* Contact Form */}
-        <div className="lg:col-span-2">
-          <SpotlightCard className="backdrop-blur-lg p-8 border-gray-300 border bg-white rounded-lg">
+        <div className={showInfo ? "lg:col-span-2" : ""}>
+          <SpotlightCard className="backdrop-blur-lg p-8 border-gray-300 border bg-white rounded-md">
             <h2 className="text-2xl font-bold mb-2 text-gray-800">
-              Contact Form
+              Get In Touch
             </h2>
             <p className="text-gray-600 mb-6">
-              Please fill out the form below and we will get back to you as soon
-              as possible.
+              Fill out the form and we&apos;ll reply soon.
             </p>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="mb-4">
@@ -196,7 +199,7 @@ const ContactForm = () => {
 
               <button
                 type="submit"
-                className={`text-white bg-primary px-6 py-3 rounded-full hover:bg-primary-dark transition-colors ${
+                className={`btn-3d text-white bg-primary px-6 py-3 rounded-md hover:bg-primary-dark ${
                   isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 disabled={isSubmitting}
@@ -206,7 +209,7 @@ const ContactForm = () => {
             </form>
 
             {successMessage && (
-              <p className="mt-4 text-green-600 text-center">
+              <p className="mt-4 text-primary text-center">
                 {successMessage}
               </p>
             )}
@@ -217,8 +220,9 @@ const ContactForm = () => {
         </div>
 
         {/* Contact Information */}
+        {showInfo && (
         <div className="lg:col-span-1">
-          <SpotlightCard className="backdrop-blur-lg p-8 border-gray-300 border bg-white rounded-lg h-fit">
+          <SpotlightCard className="backdrop-blur-lg p-8 border-gray-300 border bg-white rounded-md h-fit">
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="bg-primary/10 p-3 rounded-full">
@@ -254,6 +258,7 @@ const ContactForm = () => {
             </div>
           </SpotlightCard>
         </div>
+        )}
       </div>
     </motion.div>
   );
