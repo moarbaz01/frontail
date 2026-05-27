@@ -98,7 +98,7 @@ const FAQSection = () => {
 
   return (
     <section id="faqs" className="w-full py-12 overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="max-w-screen-lg mx-auto px-4">
         <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -132,7 +132,7 @@ const FAQSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 max-w-screen-lg mx-auto">
           <div className="rounded-md border border-gray-300 bg-white p-6 h-fit">
             <h3 className="font-anton text-3xl font-bold text-gray-900 mb-4">
               Still curious?

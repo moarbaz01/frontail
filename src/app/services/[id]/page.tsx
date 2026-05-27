@@ -24,7 +24,7 @@ export default function ServiceDetails({ params }: ServiceDetailsProps) {
 
   if (!service) {
     return (
-      <div className="container mx-auto px-4 py-32 text-center">
+      <div className="max-w-screen-lg mx-auto px-4 py-32 text-center">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">
           Service Not Found
         </h1>

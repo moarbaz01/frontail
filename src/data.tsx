@@ -10,88 +10,49 @@ import {
 
 export const projectsData = [
   {
-    title: "Kiragame Store",
-    description:
-      "A gaming top-up Web Application, where you can purchase diamonds and coins of your favourite online games in discount",
-    image: "/kirastore.png",
-    techs: ["Next JS", "Motion", "MongoDB", "Auth"],
-    link: "https://kiragamestore.com", // Replace with the actual project link
+    title: "CDR912",
+    description: "A comprehensive sports betting platform featuring a multi-level agent and master system.",
+    image: "/projects/cdr.svg",
+    techs: ["Next.js", "Elysia.js", "Bun"],
+    link: "https://cdr912.com",
+    client: "CDR912",
+    industry: "Sports Betting / Gaming",
+    deliverables: "Web Platform, Agent System, Backend Architecture",
+    themeColor: "#2563eb", // Blue
+  },
+  {
+    title: "Vriya PMS",
+    description: "A robust 3-in-1 platform integrating accountant workflows, apartment management, and HRM systems.",
+    image: "/projects/vriya-pms.svg",
+    techs: ["Next.js", "Elysia.js", "Bun"],
+    link: "https://vriya.online",
+    client: "Vriya PMS",
+    industry: "PropTech / HR / FinTech",
+    deliverables: "SaaS Platform, Multi-tenant System",
+    themeColor: "#1d4ed8", // Royal blue
+  },
+  {
+    title: "Master Topik",
+    description: "An advanced e-learning platform for the Korea TOPIK exam, enabling users to attend quizzes, watch courses, and learn vocabulary.",
+    image: "/projects/mastertopik.svg",
+    techs: ["Next.js", "React", "Node.js"],
+    link: "https://apps.apple.com/kh/app/master-topik/id6753724785",
+    client: "Master Topik",
+    industry: "EdTech / E-Learning",
+    deliverables: "Learning Management System, Quiz Engine",
+    themeColor: "#ea580c", // Orange
   },
   {
     title: "WinWin Topup",
-    description:
-      "A gaming top-up Web Application, where you can purchase diamonds and coins of your favourite online games in discount",
-    image: "/winwintopup.png",
-    techs: ["Next JS", "Motion", "MongoDB", "Auth"],
-    link: "https://winwintopup.com", // Replace with the actual project link
+    description: "A high-performance top-up website where gamers can securely recharge their favorite online games.",
+    image: "/projects/winwintopup.svg",
+    techs: ["Next.js", "MongoDB", "Auth"],
+    link: "https://winwintopup.com",
+    client: "WinWin Topup",
+    industry: "Gaming / E-Commerce",
+    deliverables: "E-Commerce Storefront, Payment Gateway",
+    themeColor: "#ea580c", // Orange
   },
-  // {
-  //   title: "Getotopup",
-  //   description:
-  //     "A gaming top-up Web Application, where you can purchase diamonds and coins of your favourite online games in discount",
-  //   image: "/getotopup.png",
-  //   techs: ["Next JS", "Motion", "MongoDB", "Auth"],
-  //   link: "https://getotopup.com", // Replace with the actual project link
-  // },
-  {
-    title: "Oh Shakes : Cafe",
-    description:
-      "Oh shakes is a cafe website where customers can explore the features of Oh Shakes",
-    image: "/oh-shakes.png",
-    techs: ["Next JS", "Motion"],
-    link: "https://oh-shakes.vercel.app",
-  },
-  {
-    title: "Digir Innovations",
-    description:
-      "Digir Innovations is a digital marketing agency that provides business solutions",
-    image: "/digir.png",
-    techs: ["Next JS", "Motion"],
-    link: "https://digiraj.vercel.app/", // Replace with the actual project link
-  },
-  {
-    title: "Zoland Store",
-    description:
-      "A gaming top-up Web Application, where you can purchase diamonds and coins of your favourite online games in discount",
-    image: "/zoland_store_project.png",
-    techs: ["Next JS", "Motion", "MongoDB", "Auth"],
-    link: "https://zoland.in", // Replace with the actual project link
-  },
-  {
-    title: "Inspired Events And Tours",
-    description: "A travel agency web application ",
-    image: "/inspired_events_and_tours_project.png",
-    techs: ["Next JS"],
-    link: "https://inspired-events-and-tours.vercel.app", // Replace with the actual project link
-  },
-  // {
-  //   title: "Fitness Club",
-  //   description: "A social networking website for an collage student.",
-  //   image: "/fitness_club_project.png",
-  //   techs: ["HTML", "CSS", "JS", "MongoDB", "Node JS"],
-  //   link: "", // Replace with the actual project link
-  // },
-  // {
-  //   title: "Stylevow - Ecommerce Platform",
-  //   description: "A robust featured ecommerce platform",
-  //   image: "/stylevow_project.png",
-  //   techs: ["React JS", "Node JS", "MongoDB", "Express"],
-  //   link: "https://stylevow-client.vercel.app/",
-  // },
-  // {
-  //   title: "Likeflames",
-  //   description: "A social media platform with chat and video call features",
-  //   image: "/likeflames_project.png",
-  //   techs: [
-  //     "React JS",
-  //     "Node JS",
-  //     "MongoDB",
-  //     "Express",
-  //     "WebRTC",
-  //     "WebSockets",
-  //   ],
-  //   link: "https://likeflames.vercel.app/",
-  // },
 ];
 
 export const services = [

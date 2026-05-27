@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Menu } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import GradientButton from "../GradientButton";
 import Image from "next/image";
@@ -9,9 +9,9 @@ import Image from "next/image";
 // Navigation items
 const navItems = [
   { label: "Home", path: "/" },
-  // { label: "Our Work", path: "/work" },
-  { label: "Contact", path: "/contact" },
+  { label: "Projects", path: "/projects" },
   { label: "Services", path: "/services" },
+  { label: "Contact", path: "/contact" },
 ];
 
 // Animation variants
@@ -76,32 +76,42 @@ const itemVariants = {
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
   const pathname = usePathname();
   const router = useRouter();
 
   // Track scroll position for scroll-based animations
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      const currentScrollY = window.scrollY;
+      
+      // Hide on scroll down past 50px, show on scroll up
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      }
+      
+      lastScrollY = currentScrollY;
+      setScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       <motion.header
-        className="fixed md:top-4 md:px-0 px-2  top-2 left-0 w-full  z-50"
+        className="fixed md:top-4 md:px-0 px-2 top-2 left-0 w-full z-50"
         variants={navbarVariants}
         initial="hidden"
-        animate="visible"
-        // style={{
-        //   backdropFilter: `blur(${Math.min(scrollY / 100, 10)}px)`,
-        // }}
+        animate={isVisible ? "visible" : "hidden"}
       >
         <motion.div
-          className="flex items-center py-2 px-4 max-w-screen-lg mx-auto rounded-md justify-between bg-white shadow-sm "
+          className="flex items-center py-2 px-3 md:px-4 max-w-screen-lg mx-auto rounded-md justify-between bg-white/95 backdrop-blur-md border border-gray-200 shadow-sm"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{
             opacity: 1,
@@ -120,11 +130,10 @@ const Navbar: React.FC = () => {
             whileTap="tap"
           >
             <Image
-              src={"/logo.png"}
+              src={"/logo.svg"}
               height={200}
-              unoptimized
               width={1000}
-              className="w-full h-10"
+              className="w-auto h-10 md:h-12"
               alt="Frontail Logo"
             />
           </motion.div>
@@ -210,11 +219,16 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="md:hidden cursor-pointer relative z-20"
+              className="md:hidden cursor-pointer relative z-20 flex h-10 w-10 items-center justify-center rounded-md border border-gray-300 bg-white text-gray-800 shadow-sm"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               whileTap={{ scale: 0.9 }}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              <Menu size={32} className="text-gray-800" />
+              {mobileMenuOpen ? (
+                <X size={20} className="text-gray-800" />
+              ) : (
+                <Menu size={20} className="text-gray-800" />
+              )}
             </motion.button>
           </div>
         </motion.div>
@@ -223,12 +237,14 @@ const Navbar: React.FC = () => {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full left-4 right-4 mt-2 bg-white  border border-gray-300 md:hidden z-40"
+              initial={{ opacity: 0, y: -8, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.98 }}
+              transition={{ duration: 0.18 }}
+              className="absolute top-full right-2 mt-2 w-[220px] overflow-hidden rounded-md border border-gray-300 bg-white/95 shadow-xl shadow-black/10 backdrop-blur-md md:hidden z-40"
             >
-              <div className="p-4 space-y-2">
+              <div className="p-2">
+                <div className="space-y-1">
                 {navItems.map((item, index) => (
                   <motion.button
                     key={index}
@@ -236,24 +252,29 @@ const Navbar: React.FC = () => {
                       router.push(item.path);
                       setMobileMenuOpen(false);
                     }}
-                    className={`w-full text-left px-4 py-3 rounded-md transition-colors ${
+                    className={`flex w-full items-center justify-between px-3 py-2.5 rounded-md text-sm font-semibold transition-colors ${
                       pathname === item.path
                         ? "bg-primary/10 text-primary"
                         : "text-gray-800 hover:bg-gray-100"
                     }`}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    {pathname === item.path && (
+                      <span className="h-2 w-2 rounded-full bg-primary" />
+                    )}
                   </motion.button>
                 ))}
-                <div className="pt-2 border-t border-gray-200">
+                </div>
+                <div className="mt-2 pt-2 border-t border-gray-200">
                   <button
                     onClick={() => {
                       router.push("/contact");
                       setMobileMenuOpen(false);
                     }}
-                    className="btn-3d w-full bg-primary text-white px-4 py-3 rounded-md font-medium"
+                    className="btn-3d flex w-full items-center justify-center gap-2 bg-primary text-white px-3 py-2.5 rounded-md text-sm font-bold"
                   >
                     Let&apos;s Start
+                    <ArrowRight className="h-4 w-4" />
                   </button>
                 </div>
               </div>

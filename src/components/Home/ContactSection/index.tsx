@@ -1,15 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Sparkles } from "lucide-react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { IoLogoWhatsapp } from "react-icons/io";
 
 const contactMethods = [
   {
     label: "WhatsApp",
-    value: "+91 8696136907",
-    href: "https://wa.me/918696136907",
+    value: "+91 8741035190",
+    href: "https://wa.me/918741035190",
     icon: IoLogoWhatsapp,
   },
   {
@@ -23,6 +24,12 @@ const contactMethods = [
     value: "frontailtechnology@gmail.com",
     href: "mailto:frontailtechnology@gmail.com",
     icon: Mail,
+  },
+  {
+    label: "Telegram",
+    value: "@arbazmr123",
+    href: "https://t.me/arbazmr123",
+    icon: Send,
   },
   {
     label: "Address",
@@ -43,7 +50,7 @@ const ContactSection = () => {
 
   return (
     <section className="py-14 px-4 bg-grid-black/5 overflow-hidden">
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-screen-lg mx-auto">
         <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -137,29 +144,46 @@ const ContactSection = () => {
               Get In Touch
             </h3>
             <div className="border-t border-dashed border-gray-300 pt-8 space-y-7">
-              {contactMethods.map(({ label, value, href, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    href.startsWith("http") ? "noopener noreferrer" : undefined
-                  }
-                  className="group flex items-center gap-4 rounded-md transition-colors hover:text-primary"
-                >
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-50 text-gray-700 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <span>
-                    <span className="block font-bold text-gray-900">
-                      {label}
+              {contactMethods.map(({ label, value, href, icon: Icon }) => {
+                const content = (
+                  <>
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-50 text-gray-700 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary">
+                      <Icon className="h-5 w-5" />
                     </span>
-                    <span className="block text-gray-600 break-all">
-                      {value}
+                    <span>
+                      <span className="block font-bold text-gray-900">
+                        {label}
+                      </span>
+                      <span className="block text-gray-600 break-all">
+                        {value}
+                      </span>
                     </span>
-                  </span>
-                </a>
-              ))}
+                  </>
+                );
+
+                return href ? (
+                  <a
+                    key={label}
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="group flex items-center gap-4 rounded-md transition-colors hover:text-primary"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div
+                    key={label}
+                    className="group flex items-center gap-4 rounded-md"
+                  >
+                    {content}
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
         </div>

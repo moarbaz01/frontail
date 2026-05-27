@@ -93,7 +93,7 @@ const services = [
 const Services = () => {
   return (
     <section className="px-4 py-12 ">
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-screen-lg mx-auto">
         {/* Title */}
         <motion.div
           initial="hidden"

@@ -1,15 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import {
-  CheckCircle,
-  Database,
-  Lock,
-  Rocket,
-  Server,
-  Smartphone,
-  Sparkles,
-} from "lucide-react";
+import { CheckCircle, Database, Lock, Rocket, Server, Sparkles } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { services } from "@/data";
 
@@ -94,42 +86,40 @@ export const ServiceVisual = ({
 
   return (
     <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+      <div className="absolute left-8 right-8 top-1/2 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <motion.div
         animate={{ y: [0, -7, 0] }}
         transition={floatTransition}
-        className="absolute left-1/2 top-3 h-36 w-24 -translate-x-1/2 rounded-[30px] bg-gray-900 p-1.5 shadow-lg"
+        className="absolute left-1/2 top-9 h-28 w-40 -translate-x-1/2 rounded-md border border-gray-300 bg-white p-3 shadow-sm"
       >
-        <span className="absolute -left-1 top-10 h-8 w-1 rounded-l bg-gray-800" />
-        <span className="absolute -right-1 top-14 h-10 w-1 rounded-r bg-gray-800" />
-        <div className="relative h-full rounded-[24px] bg-white p-2">
-          <div className="absolute left-1/2 top-1 h-3 w-10 -translate-x-1/2 rounded-b-xl bg-gray-900" />
-          <div className="mt-5 rounded-[18px] bg-gray-50 p-2">
-            <div className="mb-2 flex items-center justify-between">
-              <span className="h-2 w-8 rounded-full bg-primary" />
-              <span className="h-5 w-5 rounded-full bg-primary/10" />
-            </div>
-            <div className="mb-2 h-14 rounded-md bg-primary/10" />
-            <div className="grid grid-cols-2 gap-1.5">
-              <div className="h-6 rounded-md border border-gray-200 bg-white" />
-              <div className="h-6 rounded-md border border-gray-200 bg-white" />
-            </div>
-          </div>
-          <div className="absolute bottom-2 left-1/2 h-1 w-9 -translate-x-1/2 rounded-full bg-gray-300" />
+        <div className="mb-3 flex items-center justify-between">
+          <span className="h-2 w-12 rounded-full bg-primary" />
+          <span className="h-6 w-6 rounded-md bg-primary/10" />
         </div>
+        <div className="grid grid-cols-2 gap-2">
+          <div className="h-12 rounded-md bg-primary/10" />
+          <div className="space-y-2">
+            <div className="h-2 rounded-full bg-gray-200" />
+            <div className="h-2 w-10 rounded-full bg-gray-200" />
+            <div className="h-6 rounded-md bg-gray-100" />
+          </div>
+        </div>
+      </motion.div>
+      <motion.div
+        animate={{ y: [6, -6, 6] }}
+        transition={{ ...floatTransition, delay: 0.15 }}
+        className="absolute left-12 bottom-9 h-16 w-24 rounded-md border border-gray-300 bg-white p-2 shadow-sm"
+      >
+        <div className="mb-2 h-2 w-10 rounded-full bg-primary/70" />
+        <div className="h-8 rounded-md bg-gray-100" />
       </motion.div>
       <motion.div
         animate={{ x: [-8, 8, -8] }}
         transition={floatTransition}
-        className="absolute left-8 top-14 flex h-10 w-10 items-center justify-center rounded-md border border-gray-300 bg-white text-primary shadow-sm"
+        className="absolute right-12 bottom-10 flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-700 shadow-sm"
       >
-        <Smartphone className="h-5 w-5" />
-      </motion.div>
-      <motion.div
-        animate={{ x: [8, -8, 8] }}
-        transition={{ ...floatTransition, delay: 0.2 }}
-        className="absolute right-8 bottom-12 flex h-10 w-10 items-center justify-center rounded-md border border-gray-300 bg-white text-primary shadow-sm"
-      >
-        <Lock className="h-5 w-5" />
+        <Lock className="h-4 w-4" />
+        Store Ready
       </motion.div>
     </div>
   );
@@ -152,7 +142,7 @@ const Services = () => {
   const displayedServices = isMobile ? services.slice(0, 4) : services.slice(0, 8);
   return (
     <section className="py-12 px-4">
-      <div className="container mx-auto">
+      <div className="max-w-screen-lg mx-auto">
         <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -193,7 +183,7 @@ const Services = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5 max-w-screen-lg mx-auto">
           {displayedServices?.map((service, index) => (
             <motion.div
               key={service.id}

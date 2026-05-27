@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import ProjectCard from "../ui/ProjectCard";
+import ProjectRow from "../ui/ProjectRow";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { projectsData } from "@/data";
@@ -9,13 +9,13 @@ import { containerVariants } from "@/varients";
 
 const Work = () => {
   return (
-    <section className="min-h-screen py-12 md:px-6 px-4">
-      <div className="max-w-screen-2xl mx-auto">
+    <section className="min-h-screen pt-28 pb-16 md:px-6 px-4 bg-grid-black/5 relative overflow-hidden">
+      <div className="max-w-screen-lg mx-auto">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <motion.div
             initial={{ opacity: 0 }}
@@ -40,39 +40,27 @@ const Work = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold mb-4 text-gray-800 tracking-tight"
+            className="text-4xl md:text-5xl font-anton font-bold mb-4 text-gray-900 tracking-normal"
           >
-            How We Work
+            Our <span className="text-primary">Projects</span>
           </motion.h2>
-
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "120px" }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-1 bg-primary mx-auto mb-6"
-          ></motion.div>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto font-light"
+            className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mt-4"
           >
-            We follow a structured approach to ensure your project&apos;s
-            success. From discovery to launch, we provide end-to-end solutions.
+            Explore some of our recent work. We build scalable, beautiful, and
+            high-performance digital products for startups and enterprises.
           </motion.p>
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.3, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
+
+        <div className="flex flex-col gap-6 pb-10">
           {projectsData.map((project, index) => (
-            <ProjectCard project={{ ...project, index }} key={index} />
+            <ProjectRow project={project} index={index} key={index} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

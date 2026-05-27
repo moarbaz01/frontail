@@ -38,7 +38,7 @@ const services = [
 const CustomWebsitePage = () => {
   return (
     <section className="py-12  lg:min-h-screen">
-      <div className="max-w-screen-xl mx-auto px-4">
+      <div className="max-w-screen-lg mx-auto px-4">
         <h1 className="md:text-4xl text-2xl font-bold text-center text-primary mb-2">
           Custom Website Services
         </h1>

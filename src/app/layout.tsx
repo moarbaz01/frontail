@@ -110,7 +110,7 @@ export default function RootLayout({
         {/* Basic Meta Tags */}
         <meta name="author" content="Frontail Team" />
         <meta name="email" content="arbazmr123@gmail.com" />
-        <meta name="contact" content="+918696136907" />
+        <meta name="contact" content="+918741035190" />
         <meta name="brand" content="Frontail" />
         <meta name="company" content="frontail" />
         <meta name="domain" content="frontail.com" />
@@ -150,7 +150,7 @@ export default function RootLayout({
               },
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+918696136907",
+                telephone: "+918741035190",
                 email: "arbazmr123@gmail.com",
                 contactType: "customer service",
                 areaServed: "Worldwide",

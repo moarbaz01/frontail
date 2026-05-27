@@ -80,6 +80,45 @@ const testimonials: Testimonial[] = [
     ),
     image: "/partners/zolandlogo.png",
   },
+  {
+    id: 6,
+    name: "CDR912 Team",
+    role: "Product Team",
+    company: "CDR912",
+    message: (
+      <>
+        Frontail helped us build a structured platform with agent workflows and
+        a smooth user experience. The system feels fast and reliable.
+      </>
+    ),
+    image: "/avatar.png",
+  },
+  {
+    id: 7,
+    name: "Master Topik Team",
+    role: "Education Platform",
+    company: "Master Topik",
+    message: (
+      <>
+        The app experience became cleaner and easier for learners. Frontail
+        understood our course, quiz, and vocabulary flows well.
+      </>
+    ),
+    image: "/avatar.png",
+  },
+  {
+    id: 8,
+    name: "Vriya PMS Team",
+    role: "SaaS Product",
+    company: "Vriya PMS",
+    message: (
+      <>
+        Frontail delivered a clear SaaS experience across accounting, apartment
+        management, and HR workflows without making the product feel complex.
+      </>
+    ),
+    image: "/avatar.png",
+  },
 ];
 
 const rotations = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2"];
@@ -161,7 +200,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="relative w-full px-4 py-12 overflow-hidden">
-      <div className="container mx-auto">
+      <div className="max-w-screen-lg mx-auto">
         <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -192,7 +231,7 @@ const Testimonials: React.FC = () => {
           </motion.h2>
         </div>
 
-        <div className="max-w-6xl mx-auto overflow-hidden px-2 pb-3">
+        <div className="max-w-screen-lg mx-auto overflow-hidden px-2 pb-3">
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0, x: 24 }}

@@ -1,14 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Sparkles } from "lucide-react";
 import { IoLogoWhatsapp } from "react-icons/io";
+import Image from "next/image";
 
 const contactMethods = [
   {
     label: "WhatsApp",
-    value: "+91 8696136907",
-    href: "https://wa.me/918696136907",
+    value: "+91 8741035190",
+    href: "https://wa.me/918741035190",
     icon: IoLogoWhatsapp,
   },
   {
@@ -24,23 +25,23 @@ const contactMethods = [
     icon: Mail,
   },
   {
+    label: "Telegram",
+    value: "@arbazmr123",
+    href: "https://t.me/arbazmr123",
+    icon: Send,
+  },
+  {
     label: "Address",
-    value: "Jaipur, Rajasthan, India",
-    href: "https://maps.google.com/?q=Jaipur,Rajasthan,India",
+    value: "Working remotely worldwide",
+    href: "",
     icon: MapPin,
   },
-];
-
-const steps = [
-  "Share your idea",
-  "Get a free estimate",
-  "Start the build",
 ];
 
 const Contact = () => {
   return (
     <section className="px-4 pt-28 pb-16 bg-grid-black/5 overflow-hidden">
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-screen-lg mx-auto">
         <div className="text-center mb-14">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -78,42 +79,39 @@ const Contact = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center max-w-screen-lg mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.35, delay: 0.12 }}
             className="space-y-8"
           >
-            <div>
+            {/* <div>
               <h2 className="font-anton text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-5">
                 Let&apos;s build
                 <br />
                 something amazing.
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-600 mb-8">
                 Book a free consultation and we&apos;ll get back to you soon.
               </p>
-            </div>
+            </div> */}
 
-            <div className="space-y-5">
-              {steps.map((step, index) => (
-                <motion.div
-                  key={step}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.18 + index * 0.08 }}
-                  className="flex items-center gap-4"
-                >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-white font-bold text-gray-900 shadow-sm">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-base md:text-lg text-gray-800">
-                    {step}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+              className="flex justify-start pt-4"
+            >
+              <Image
+                src="/mockup/chat.svg"
+                alt="Chat Mockup"
+                width={450}
+                unoptimized
+                height={700}
+                className="w-full h-auto max-w-[600px]"
+                priority
+              />
+            </motion.div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 24 }}
@@ -125,16 +123,9 @@ const Contact = () => {
               Get In Touch
             </h3>
             <div className="border-t border-dashed border-gray-300 pt-6 space-y-6">
-              {contactMethods.map(({ label, value, href, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    href.startsWith("http") ? "noopener noreferrer" : undefined
-                  }
-                  className="group flex items-center gap-4 rounded-md transition-colors hover:text-primary"
-                >
+              {contactMethods.map(({ label, value, href, icon: Icon }) => {
+                const content = (
+                  <>
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-50 text-gray-700 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary">
                     <Icon className="h-5 w-5" />
                   </span>
@@ -146,8 +137,32 @@ const Contact = () => {
                       {value}
                     </span>
                   </span>
-                </a>
-              ))}
+                  </>
+                );
+
+                return href ? (
+                  <a
+                    key={label}
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="group flex items-center gap-4 rounded-md transition-colors hover:text-primary"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div
+                    key={label}
+                    className="group flex items-center gap-4 rounded-md"
+                  >
+                    {content}
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
         </div>

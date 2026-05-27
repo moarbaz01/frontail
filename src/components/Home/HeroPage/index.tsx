@@ -54,9 +54,9 @@ const HeroPage = () => {
           variants={heroVariants}
           initial="closed"
           animate="open"
-          className="max-w-7xl mx-4 md:mx-0"
+          className="max-w-screen-lg mx-4 md:mx-0"
         >
-          <h1 className="lg:text-8xl font-anton   text-center text-gray-800 text-4xl mt-4 md:text-5xl font-extrabold leading-snug tracking-normal lg:leading-tight">
+          <h1 className="lg:text-7xl font-anton   text-center text-gray-800 text-4xl mt-4 md:text-5xl font-extrabold leading-snug tracking-normal lg:leading-tight">
             Launch Your App <span className="text-primary">Faster</span>
             <br />
             Than You <span className="text-primary">Think</span>.
