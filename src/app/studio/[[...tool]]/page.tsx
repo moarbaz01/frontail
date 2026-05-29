@@ -1,4 +1,6 @@
 import Studio from "./Studio";
+import { headers } from "next/headers";
+import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -12,6 +14,14 @@ export const metadata = {
 
 export { viewport } from "next-sanity/studio";
 
-export default function StudioPage() {
+export default async function StudioPage() {
+  const studioHost = process.env.STUDIO_HOST;
+  const requestHeaders = await headers();
+  const host = requestHeaders.get("host")?.split(":")[0];
+
+  if (!studioHost || host !== studioHost) {
+    notFound();
+  }
+
   return <Studio />;
 }

@@ -2,6 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 
 const realm = "Frontail Studio";
 
+function notFound() {
+  return new NextResponse("Not Found", {
+    status: 404,
+    headers: {
+      "X-Robots-Tag": "noindex, nofollow",
+    },
+  });
+}
+
 function unauthorized() {
   return new NextResponse("Authentication required", {
     status: 401,
@@ -18,7 +27,7 @@ export function middleware(request: NextRequest) {
   const isStudioPath = request.nextUrl.pathname.startsWith("/studio");
 
   if (isStudioPath && !isStudioHost) {
-    return NextResponse.rewrite(new URL("/not-found", request.url));
+    return notFound();
   }
 
   if (!isStudioHost && !isStudioPath) {
@@ -57,6 +66,10 @@ export function middleware(request: NextRequest) {
 
 function rewriteStudioHost(request: NextRequest, isStudioHost: boolean) {
   if (!isStudioHost) {
+    return NextResponse.next();
+  }
+
+  if (request.nextUrl.pathname.startsWith("/studio")) {
     return NextResponse.next();
   }
 

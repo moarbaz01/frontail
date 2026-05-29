@@ -31,6 +31,9 @@ on your root domain and add the subdomain in your hosting provider.
 Direct `/studio` access on the main domain is blocked and returns the not-found
 page. Studio should only be opened through the configured subdomain.
 
+The Studio page also checks the request host directly. If you need to access
+Studio locally, set `STUDIO_HOST=localhost` and open `http://localhost:3000/studio`.
+
 Create a `blogPost` document type in Sanity with these fields:
 
 - `title` string

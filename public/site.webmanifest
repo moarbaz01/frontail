@@ -1,0 +1,16 @@
+{
+  "name": "Frontail Technology",
+  "short_name": "Frontail",
+  "description": "MVP, SaaS, AI and mobile app development agency.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f3eb",
+  "theme_color": "#fe7d02",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
