@@ -14,6 +14,7 @@ NEXT_PUBLIC_SANITY_DATASET=production
 NEXT_PUBLIC_SANITY_API_VERSION=2026-05-29
 STUDIO_USERNAME=frontail
 STUDIO_PASSWORD=choose_a_strong_password
+STUDIO_HOST=studio.frontail.com
 ```
 
 After adding the env values, open `/studio`, sign in with Sanity, and create
@@ -22,6 +23,10 @@ After adding the env values, open `/studio`, sign in with Sanity, and create
 `/studio` is protected with Basic Auth before the Sanity login screen. In local
 development it opens without `STUDIO_PASSWORD`; in production it requires the
 password.
+
+If `STUDIO_HOST` is set, that host rewrites to `/studio`, so you can point a
+subdomain like `studio.frontail.com` at the same deployment. Keep the main site
+on your root domain and add the subdomain in your hosting provider.
 
 Create a `blogPost` document type in Sanity with these fields:
 

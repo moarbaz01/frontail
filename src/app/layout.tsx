@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
-import SecondFooter from "@/components/ui/SecondFooter";
-import { ScrollProgress } from "@/components/ui/ScrollProgress";
-import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
+import AppShell from "@/components/AppShell";
 import Script from "next/script";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -191,14 +187,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }}
           ></iframe>
         </noscript>
-        <main className=" ">
-          <ScrollProgress />
-          <Navbar />
-          {children}
-          <SecondFooter />
-          <Footer />
-        </main>
-        <WhatsAppFloat />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

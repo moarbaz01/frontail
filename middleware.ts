@@ -12,12 +12,21 @@ function unauthorized() {
 }
 
 export function middleware(request: NextRequest) {
+  const studioHost = process.env.STUDIO_HOST;
+  const hostname = request.nextUrl.hostname;
+  const isStudioHost = Boolean(studioHost && hostname === studioHost);
+  const isStudioPath = request.nextUrl.pathname.startsWith("/studio");
+
+  if (!isStudioHost && !isStudioPath) {
+    return NextResponse.next();
+  }
+
   const username = process.env.STUDIO_USERNAME || "frontail";
   const password = process.env.STUDIO_PASSWORD;
 
   if (!password) {
     if (process.env.NODE_ENV === "development") {
-      return NextResponse.next();
+      return rewriteStudioHost(request, isStudioHost);
     }
 
     return unauthorized();
@@ -39,9 +48,21 @@ export function middleware(request: NextRequest) {
     return unauthorized();
   }
 
-  return NextResponse.next();
+  return rewriteStudioHost(request, isStudioHost);
+}
+
+function rewriteStudioHost(request: NextRequest, isStudioHost: boolean) {
+  if (!isStudioHost) {
+    return NextResponse.next();
+  }
+
+  const url = request.nextUrl.clone();
+  const pathname = url.pathname === "/" ? "" : url.pathname;
+  url.pathname = `/studio${pathname}`;
+
+  return NextResponse.rewrite(url);
 }
 
 export const config = {
-  matcher: ["/studio/:path*"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)"],
 };
