@@ -17,6 +17,10 @@ export function middleware(request: NextRequest) {
   const isStudioHost = Boolean(studioHost && hostname === studioHost);
   const isStudioPath = request.nextUrl.pathname.startsWith("/studio");
 
+  if (isStudioPath && !isStudioHost) {
+    return NextResponse.rewrite(new URL("/not-found", request.url));
+  }
+
   if (!isStudioHost && !isStudioPath) {
     return NextResponse.next();
   }
