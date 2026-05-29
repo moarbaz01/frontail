@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     title: "Frontail Technology | MVP, SaaS, AI & Mobile App Development",
     description:
       "Product development for founders: MVPs, SaaS, AI tools, mobile apps, Web3, and custom software.",
-    images: ["https://frontail.com/twitter-card.png"],
+    images: ["https://frontail.com/seo/twitter-card.png"],
   },
   robots: {
     index: true,

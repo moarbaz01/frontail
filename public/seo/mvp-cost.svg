@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#fff7ed"/>
+  <path d="M0 0h1200v675H0z" fill="url(#grid)"/>
+  <rect x="170" y="130" width="860" height="415" rx="18" fill="white" stroke="#d1d5db" stroke-width="3"/>
+  <rect x="220" y="185" width="310" height="58" rx="10" fill="#fe7d02" fill-opacity=".14"/>
+  <rect x="565" y="185" width="415" height="58" rx="10" fill="#f3f4f6"/>
+  <rect x="220" y="278" width="220" height="180" rx="14" fill="#111827"/>
+  <path d="M266 408c26-72 74-110 144-114" stroke="#fe7d02" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="284" cy="352" r="20" fill="#fe7d02"/>
+  <rect x="490" y="286" width="210" height="34" rx="8" fill="#fe7d02"/>
+  <rect x="490" y="345" width="430" height="24" rx="8" fill="#e5e7eb"/>
+  <rect x="490" y="395" width="350" height="24" rx="8" fill="#e5e7eb"/>
+  <rect x="755" y="286" width="165" height="34" rx="8" fill="#fed7aa"/>
+  <text x="220" y="108" fill="#111827" font-family="Arial, sans-serif" font-size="44" font-weight="800">MVP Cost Planning</text>
+  <text x="490" y="462" fill="#6b7280" font-family="Arial, sans-serif" font-size="26" font-weight="700">Scope • Timeline • Launch</text>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" stroke="#111827" stroke-opacity=".05"/>
+    </pattern>
+  </defs>
+</svg>

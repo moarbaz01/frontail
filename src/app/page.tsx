@@ -7,6 +7,8 @@ import Services from "@/components/Home/Services";
 import Testimonials from "@/components/Home/Testimonials";
 import ProcessTimeline from "@/components/Home/ProcessTimeline";
 import ProjectsSection from "@/components/Home/RecentWork";
+import JsonLd from "@/components/JsonLd";
+import { faqSections } from "@/data";
 
 export const metadata: Metadata = {
   title: "MVP, SaaS, AI & Mobile App Development Agency",
@@ -24,8 +26,24 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqSections.flatMap((section) =>
+      section.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    ),
+  };
+
   return (
     <main className="md:space-y-16 lg:space-y-20">
+      <JsonLd data={faqSchema} />
       <HeroPage />
       {/* <ProjectShowcase /> */}
       {/* <Partners /> */}

@@ -53,7 +53,7 @@ const ServicesPageView = () => {
                 </p>
 
                 <button
-                  onClick={() => router.push(`/services/${service.id}`)}
+                  onClick={() => router.push(`/services/${service.slug}`)}
                   className="mt-6 inline-flex items-center gap-2 text-primary font-medium hover:underline text-sm"
                 >
                   Learn More

@@ -5,13 +5,33 @@ module.exports = {
   sitemapSize: 7000,
   generateIndexSitemap: false,
   additionalPaths: async () => {
-    const serviceIds = ['1', '2', '3', '4', '5', '6', '7'];
+    const serviceSlugs = [
+      'mvp-development',
+      'web-saas-development',
+      'mobile-app-development',
+      'ui-ux-for-startups',
+      'web3-development',
+      'ai-development',
+      'custom-tools-development',
+    ];
+    const blogSlugs = [
+      'how-much-does-mvp-development-cost',
+      'ai-automation-tools-for-startups',
+    ];
 
-    return serviceIds.map((id) => ({
-      loc: `/services/${id}`,
-      changefreq: 'monthly',
-      priority: 0.8,
-      lastmod: new Date().toISOString(),
-    }));
+    return [
+      ...serviceSlugs.map((slug) => ({
+        loc: `/services/${slug}`,
+        changefreq: 'monthly',
+        priority: 0.8,
+        lastmod: new Date().toISOString(),
+      })),
+      ...blogSlugs.map((slug) => ({
+        loc: `/blog/${slug}`,
+        changefreq: 'monthly',
+        priority: 0.75,
+        lastmod: new Date().toISOString(),
+      })),
+    ];
   },
 };
