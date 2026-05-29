@@ -20,6 +20,9 @@ STUDIO_HOST=studio.frontail.com
 After adding the env values, open the `STUDIO_HOST` subdomain, sign in with
 Sanity, and create `Blog Post` documents.
 
+The API version can be set with or without the `v` prefix. The app normalizes
+`2026-05-29` to `v2026-05-29` for Sanity API requests.
+
 `/studio` is protected with Basic Auth before the Sanity login screen. In local
 development it opens without `STUDIO_PASSWORD`; in production it requires the
 password.
