@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, Users, Globe, Briefcase, Sparkles } from "lucide-react";
+import { Award, Users, Globe, Briefcase } from "lucide-react";
 
 interface Achievement {
   id: number;
@@ -47,32 +47,13 @@ const AchievementsSection: React.FC = () => {
     <section id="achievements" className="py-12">
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block relative mb-2"
-          >
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -left-6"
-              size={24}
-            />
-            <span className="text-sm uppercase tracking-widest text-gray-800 font-mono">
-              Our Impact
-            </span>
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -right-6"
-              size={24}
-            />
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold mb-4 text-gray-800"
+            className="font-anton text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-normal"
           >
-            Our Achievements
+            Our <span className="text-primary">Achievements</span>
           </motion.h2>
 
           <motion.p

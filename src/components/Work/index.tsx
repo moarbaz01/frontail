@@ -3,7 +3,6 @@
 import React from "react";
 import ProjectRow from "../ui/ProjectRow";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 import { projectsData } from "@/data";
 import { containerVariants } from "@/varients";
 
@@ -17,30 +16,11 @@ const Work = () => {
           variants={containerVariants}
           className="text-center mb-12"
         >
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="inline-block relative mb-2"
-          >
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -left-6"
-              size={24}
-            />
-            <span className="text-sm uppercase tracking-widest text-gray-800 font-mono">
-              Our Work
-            </span>
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -right-6"
-              size={24}
-            />
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-anton font-bold mb-4 text-gray-900 tracking-normal"
+            className="font-anton text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-normal"
           >
             Our <span className="text-primary">Projects</span>
           </motion.h2>

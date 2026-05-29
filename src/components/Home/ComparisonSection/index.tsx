@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle, XCircle, Sparkles } from "lucide-react";
+import { CheckCircle, XCircle } from "lucide-react";
 
 const ComparisonSection = () => {
   const comparisonPoints = [
@@ -31,38 +31,19 @@ const ComparisonSection = () => {
     <section className="py-12 text-gray-800 overflow-hidden">
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block relative mb-2"
-          >
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -left-6"
-              size={24}
-            />
-            <span className="text-sm uppercase tracking-widest text-gray-800 font-mono">
-              Why Choose Us
-            </span>
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -right-6"
-              size={24}
-            />
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold mb-6 text-gray-800"
+            className="font-anton text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-normal"
           >
-            Frontail vs. Other Agencies
+            Frontail vs. <span className="text-primary">Other Agencies</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto"
           >
             We don&apos;t just build websites—we craft digital experiences that
             transform businesses.

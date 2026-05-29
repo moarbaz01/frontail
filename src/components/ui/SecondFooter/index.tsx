@@ -39,7 +39,7 @@ const SecondFooter = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true, amount: 0.1 }}
-          className="mx-auto mt-5 max-w-xl text-sm text-gray-600 md:mx-0 md:text-lg"
+          className="mx-auto mt-5 max-w-xl text-center text-sm text-gray-600 md:text-lg"
         >
           Share your idea and we&apos;ll help you map the fastest path to
           launch.

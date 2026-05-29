@@ -1,11 +1,10 @@
 import {
+  BrainCircuit,
   Bitcoin,
-  Book,
-  Code,
   Globe,
-  Palette,
   Rocket,
   Smartphone,
+  Wrench,
 } from "lucide-react";
 
 export const projectsData = [
@@ -79,6 +78,30 @@ export const services = [
       "Cross-platform mobile apps for Android & iOS designed for startups and MVP launches.",
     icon: <Smartphone className="w-8 h-8" />,
     image: "/services/app.jpeg",
+  },
+  {
+    id: 5,
+    title: "Web3 Development",
+    description:
+      "Wallet-ready dApps, smart contract integrations, and blockchain products built for real users.",
+    icon: <Bitcoin className="w-8 h-8" />,
+    image: "/services/web.jpeg",
+  },
+  {
+    id: 6,
+    title: "AI Development",
+    description:
+      "AI-powered apps, automations, and intelligent workflows using modern LLM and data tools.",
+    icon: <BrainCircuit className="w-8 h-8" />,
+    image: "/services/mvp.jpeg",
+  },
+  {
+    id: 7,
+    title: "Custom Tools Development",
+    description:
+      "Internal dashboards, admin systems, and workflow tools tailored to how your team works.",
+    icon: <Wrench className="w-8 h-8" />,
+    image: "/services/web.jpeg",
   },
   // {
   //   id: 4,
@@ -283,6 +306,158 @@ export const detailedServices = [
       title: "Want better user adoption?",
       subtitle: "Let’s design experiences users love.",
       buttonText: "Design My Product",
+    },
+  },
+  {
+    id: 5,
+    title: "Web3 Development",
+    slug: "web3-development",
+    image: "/images/services/web3-development.jpg",
+    overview:
+      "We build practical Web3 products with clean user flows, secure wallet interactions, and blockchain integrations that feel simple for everyday users.",
+    whatWeOffer: [
+      "dApp frontend development",
+      "Wallet connection and user flows",
+      "Smart contract integration",
+      "NFT, token, and marketplace features",
+      "Web3 dashboards and admin panels",
+    ],
+    process: [
+      "Use Case Planning â€“ Defining the blockchain need",
+      "Architecture â€“ Choosing wallet and contract flows",
+      "Interface Design â€“ Making Web3 simple for users",
+      "Development â€“ Building secure integrations",
+      "Launch â€“ Testing and production rollout",
+    ],
+    whyChooseUs: [
+      "User-friendly Web3 experiences",
+      "Secure integration mindset",
+      "Frontend, backend, and wallet flow expertise",
+    ],
+    technologies: [
+      "Next.js",
+      "React",
+      "Ethers.js",
+      "Wagmi",
+      "Solidity",
+      "Node.js",
+      "TypeScript",
+    ],
+    metaTitle: "Web3 Development Services | Frontail Technology",
+    metaDescription:
+      "Build wallet-ready Web3 apps, dApps, and blockchain product interfaces with Frontail Technology.",
+    keywords: [
+      "web3 development",
+      "dapp development",
+      "blockchain app",
+      "wallet integration",
+    ],
+    cta: {
+      title: "Building a Web3 product?",
+      subtitle: "Letâ€™s make it secure, clean, and easy to use.",
+      buttonText: "Start Web3 Project",
+    },
+  },
+
+  {
+    id: 6,
+    title: "AI Development",
+    slug: "ai-development",
+    image: "/images/services/ai-development.jpg",
+    overview:
+      "We build AI-powered products and automations that help teams move faster, reduce manual work, and create smarter customer experiences.",
+    whatWeOffer: [
+      "AI chatbots and assistants",
+      "LLM-powered app features",
+      "Workflow automation",
+      "Document and data processing tools",
+      "AI integration into existing products",
+    ],
+    process: [
+      "Problem Mapping â€“ Finding useful AI opportunities",
+      "Flow Design â€“ Planning prompts, data, and actions",
+      "Prototype â€“ Testing the AI workflow quickly",
+      "Development â€“ Building reliable app features",
+      "Iteration â€“ Improving quality with feedback",
+    ],
+    whyChooseUs: [
+      "Practical AI, not gimmicks",
+      "Product-focused implementation",
+      "Clean UI around complex AI workflows",
+    ],
+    technologies: [
+      "OpenAI",
+      "LangChain",
+      "Next.js",
+      "Node.js",
+      "Vector Databases",
+      "PostgreSQL",
+      "TypeScript",
+    ],
+    metaTitle: "AI Development Services | Frontail Technology",
+    metaDescription:
+      "AI app development, chatbot development, and workflow automation for startups and businesses.",
+    keywords: [
+      "ai development",
+      "ai app development",
+      "chatbot development",
+      "workflow automation",
+    ],
+    cta: {
+      title: "Want to add AI?",
+      subtitle: "Letâ€™s build useful AI features around your real workflow.",
+      buttonText: "Build AI Feature",
+    },
+  },
+
+  {
+    id: 7,
+    title: "Custom Tools Development",
+    slug: "custom-tools-development",
+    image: "/images/services/custom-tools.jpg",
+    overview:
+      "We create custom internal tools that replace messy spreadsheets, manual tracking, and disconnected workflows with clean systems built for your team.",
+    whatWeOffer: [
+      "Admin dashboards and panels",
+      "CRM and operations tools",
+      "Inventory and workflow systems",
+      "Reporting and analytics dashboards",
+      "Role-based access and team management",
+    ],
+    process: [
+      "Workflow Audit â€“ Understanding how your team works",
+      "Scope Planning â€“ Prioritizing the highest-impact tools",
+      "UX Design â€“ Creating fast internal workflows",
+      "Development â€“ Building secure, reliable tools",
+      "Training â€“ Helping your team use it smoothly",
+    ],
+    whyChooseUs: [
+      "Built around your actual process",
+      "Fast dashboards and clean data flows",
+      "Easy-to-use tools for non-technical teams",
+    ],
+    technologies: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "MongoDB",
+      "Prisma",
+      "Tailwind CSS",
+    ],
+    metaTitle: "Custom Tools Development | Frontail Technology",
+    metaDescription:
+      "Custom admin panels, dashboards, internal tools, and workflow systems for growing teams.",
+    keywords: [
+      "custom tools development",
+      "internal tools",
+      "admin dashboard",
+      "workflow software",
+    ],
+    cta: {
+      title: "Need a custom tool?",
+      subtitle: "Letâ€™s turn your daily workflow into a simple system.",
+      buttonText: "Build Custom Tool",
     },
   },
 ];

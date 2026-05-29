@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const faqSections = [
@@ -100,32 +100,13 @@ const FAQSection = () => {
     <section id="faqs" className="w-full py-12 overflow-hidden">
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block relative mb-2"
-          >
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -left-6"
-              size={24}
-            />
-            <span className="text-sm uppercase tracking-widest text-gray-800 font-mono">
-              FAQs
-            </span>
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -right-6"
-              size={24}
-            />
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold mb-4 text-gray-800"
+            className="font-anton text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-normal"
           >
-            Frequently Asked Questions
+            Frequently Asked <span className="text-primary">Questions</span>
           </motion.h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Quick answers before we start building.

@@ -1,7 +1,18 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle, Database, Lock, Rocket, Server, Sparkles } from "lucide-react";
+import {
+  Bitcoin,
+  BrainCircuit,
+  CheckCircle,
+  Database,
+  Lock,
+  Rocket,
+  Server,
+  Settings2,
+  Smartphone,
+  Wrench,
+} from "lucide-react";
 import { useRouter } from "next/navigation";
 import { services } from "@/data";
 
@@ -84,6 +95,151 @@ export const ServiceVisual = ({
     );
   }
 
+  if (id === 3) {
+    return (
+      <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+        <motion.div
+          animate={{ y: [0, -7, 0] }}
+          transition={floatTransition}
+          className="absolute left-1/2 top-5 h-48 w-28 -translate-x-1/2 rounded-[1.75rem] border-[4px] border-primary/70 bg-white p-2 shadow-md"
+        >
+          <div className="mx-auto mb-3 h-1.5 w-9 rounded-full bg-gray-900" />
+          <div className="space-y-2">
+            <div className="h-12 rounded-md bg-primary/10" />
+            <div className="grid grid-cols-2 gap-2">
+              <div className="h-9 rounded-md bg-gray-100" />
+              <div className="h-9 rounded-md bg-gray-100" />
+            </div>
+            <div className="h-6 rounded-md bg-primary/15" />
+          </div>
+        </motion.div>
+        <motion.div
+          animate={{ y: [6, -5, 6] }}
+          transition={{ ...floatTransition, delay: 0.15 }}
+          className="absolute left-9 top-20 flex h-12 w-12 items-center justify-center rounded-md border border-gray-300 bg-white text-primary shadow-sm"
+        >
+          <Smartphone className="h-5 w-5" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [-4, 5, -4] }}
+          transition={{ ...floatTransition, delay: 0.28 }}
+          className="absolute right-9 top-24 rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-700 shadow-sm"
+        >
+          iOS + Android
+        </motion.div>
+      </div>
+    );
+  }
+
+  if (id === 5) {
+    const nodes = [
+      "left-10 top-16",
+      "left-1/2 top-8 -translate-x-1/2",
+      "right-10 top-16",
+      "left-1/2 bottom-8 -translate-x-1/2",
+    ];
+
+    return (
+      <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+        <div className="absolute left-14 right-14 top-24 h-px bg-primary/25" />
+        <div className="absolute left-1/2 top-14 h-20 w-px -translate-x-1/2 bg-primary/25" />
+        {nodes.map((position, index) => (
+          <motion.div
+            key={position}
+            animate={{ scale: [1, 1.08, 1], y: [0, index % 2 ? 5 : -5, 0] }}
+            transition={{ ...floatTransition, delay: index * 0.16 }}
+            className={`absolute ${position} flex h-12 w-12 items-center justify-center rounded-md border border-primary/25 bg-white text-primary shadow-sm`}
+          >
+            <Bitcoin className="h-5 w-5" />
+          </motion.div>
+        ))}
+        <motion.div
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={floatTransition}
+          className="absolute left-1/2 top-[72px] rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-bold text-gray-700 shadow-sm -translate-x-1/2"
+        >
+          Wallet
+        </motion.div>
+      </div>
+    );
+  }
+
+  if (id === 6) {
+    return (
+      <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+        <motion.div
+          animate={{ y: [0, -8, 0], rotate: [0, 2, 0] }}
+          transition={floatTransition}
+          className="absolute left-1/2 top-9 flex h-20 w-20 -translate-x-1/2 items-center justify-center rounded-md border border-primary/30 bg-white text-primary shadow-sm"
+        >
+          <BrainCircuit className="h-10 w-10 stroke-[1.5]" />
+        </motion.div>
+        {["Prompt", "Data", "Action"].map((item, index) => (
+          <motion.div
+            key={item}
+            animate={{
+              opacity: [0.45, 1, 0.45],
+              y: [0, index === 1 ? -5 : 5, 0],
+            }}
+            transition={{ ...floatTransition, delay: index * 0.16 }}
+            className={`absolute rounded-md border border-gray-300 bg-white px-3 py-1.5 text-xs font-semibold text-gray-700 shadow-sm ${
+              index === 0
+                ? "left-8 top-24"
+                : index === 1
+                  ? "left-1/2 bottom-8 -translate-x-1/2"
+                  : "right-8 top-24"
+            }`}
+          >
+            {item}
+          </motion.div>
+        ))}
+      </div>
+    );
+  }
+
+  if (id === 7) {
+    return (
+      <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+        <motion.div
+          animate={{ y: [0, -6, 0] }}
+          transition={floatTransition}
+          className="absolute left-1/2 top-7 w-52 -translate-x-1/2 rounded-md border border-gray-300 bg-white p-4 shadow-sm"
+        >
+          <div className="mb-3 flex items-center justify-between">
+            <div className="flex items-center gap-1">
+              <span className="h-2 w-2 rounded-full bg-primary" />
+              <span className="h-2 w-12 rounded-full bg-gray-200" />
+            </div>
+            <Settings2 className="h-4 w-4 text-primary" />
+          </div>
+          <div className="grid grid-cols-3 gap-2">
+            <div className="h-14 rounded-md bg-primary/10" />
+            <div className="col-span-2 space-y-2">
+              <div className="h-3 rounded-full bg-gray-100" />
+              <div className="h-3 w-16 rounded-full bg-gray-100" />
+              <div className="h-6 rounded-md bg-gray-100" />
+            </div>
+          </div>
+        </motion.div>
+        <motion.div
+          animate={{ x: [-6, 6, -6] }}
+          transition={{ ...floatTransition, delay: 0.2 }}
+          className="absolute bottom-8 left-10 flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-700 shadow-sm"
+        >
+          <Wrench className="h-4 w-4 text-primary" />
+          Tools
+        </motion.div>
+        <motion.div
+          animate={{ x: [6, -6, 6] }}
+          transition={{ ...floatTransition, delay: 0.35 }}
+          className="absolute bottom-8 right-10 rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-700 shadow-sm"
+        >
+          Reports
+        </motion.div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
       <div className="absolute left-8 right-8 top-1/2 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
@@ -127,49 +283,19 @@ export const ServiceVisual = ({
 
 const Services = () => {
   const router = useRouter();
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const displayedServices = isMobile ? services.slice(0, 4) : services.slice(0, 8);
+  const displayedServices = services.slice(0, 3);
   return (
     <section className="py-12 px-4">
       <div className="max-w-screen-lg mx-auto">
         <div className="text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block relative mb-2"
-          >
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -left-6"
-              size={24}
-            />
-            <span className="text-sm uppercase tracking-widest text-gray-800 font-mono">
-              Our Services
-            </span>
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -right-6"
-              size={24}
-            />
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold mb-4 text-gray-800"
+            className="font-anton text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-normal"
           >
-            What We Offer
+            What We <span className="text-primary">Offer</span>
           </motion.h2>
 
           <motion.p

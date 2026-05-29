@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Terms & Conditions | Frontail",
   description: "Read the terms and conditions for working with Frontail.",
+  alternates: {
+    canonical: "https://frontail.com/terms",
+  },
 };
 
 const sections = [

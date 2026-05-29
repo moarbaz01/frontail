@@ -8,7 +8,6 @@ import {
   Code2,
   Layers,
   Rocket,
-  Sparkles,
   Zap,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -54,11 +53,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
             transition={{ duration: 0.4 }}
             className="rounded-md border border-gray-300 bg-white p-6 text-center shadow-sm md:p-10"
           >
-            <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-primary/20 bg-primary/10 px-3 py-2 text-xs font-bold uppercase tracking-widest text-primary">
-              <Sparkles className="h-4 w-4" />
-              {service.title}
-            </div>
-            <h1 className="mx-auto max-w-3xl text-4xl font-bold leading-tight text-gray-900 md:text-5xl">
+            <h1 className="font-anton mx-auto max-w-3xl text-4xl font-extrabold leading-tight text-gray-900 md:text-5xl tracking-normal">
               {service.title} that <span className="text-primary">scales</span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-gray-600 md:text-lg">
@@ -160,8 +155,8 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
       <section className="px-4 py-12">
         <div className="mx-auto max-w-screen-lg">
           <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
-              How We Work
+            <h2 className="font-anton text-4xl font-extrabold text-gray-900 md:text-5xl tracking-normal">
+              How We <span className="text-primary">Work</span>
             </h2>
             <p className="mt-3 text-gray-600">
               A clear path from idea to launch.
@@ -205,7 +200,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
             viewport={{ once: true }}
             className="rounded-md border border-gray-300 bg-white bg-dot-black/[0.06] p-8 text-center shadow-sm md:p-10"
           >
-            <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
+            <h2 className="font-anton text-4xl font-extrabold text-gray-900 md:text-5xl tracking-normal">
               {service.cta.title}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-600">

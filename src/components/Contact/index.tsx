@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Send, Sparkles } from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { IoLogoWhatsapp } from "react-icons/io";
 import Image from "next/image";
 
@@ -43,24 +43,6 @@ const Contact = () => {
     <section className="px-4 pt-28 pb-16 bg-grid-black/5 overflow-hidden">
       <div className="max-w-screen-lg mx-auto">
         <div className="text-center mb-14">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-block relative mb-2"
-          >
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -left-6"
-              size={24}
-            />
-            <span className="text-sm uppercase tracking-widest text-gray-800 font-mono">
-              Contact Us
-            </span>
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -right-6"
-              size={24}
-            />
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

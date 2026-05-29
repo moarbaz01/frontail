@@ -17,7 +17,7 @@ const heroVariants = {
 const HeroPage = () => {
   const router = useRouter();
   return (
-    <section className="w-full md:min-h-[86vh] bg-grid-black/5 md:pt-28 md:pb-16 pt-24 pb-12 flex items-center justify-center px-4 relative overflow-hidden">
+    <section className="w-full md:h-screen bg-grid-black/5 md:pt-28 md:pb-16 pt-24 pb-12 flex items-center justify-center px-4 relative overflow-hidden">
       {/* <div
         className="absolute inset-0 -z-10"
         style={{
@@ -62,8 +62,8 @@ const HeroPage = () => {
             Than You <span className="text-primary">Think</span>.
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base text-gray-600 md:text-lg">
-            We help founders and small teams turn ideas into polished MVPs,
-            web apps, and mobile-ready products.
+            We help founders and small teams turn ideas into polished MVPs, web
+            apps, and mobile-ready products.
           </p>
         </motion.div>
 

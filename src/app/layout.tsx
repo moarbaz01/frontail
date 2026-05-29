@@ -20,38 +20,27 @@ const libreBaskerville = Libre_Baskerville({
 });
 
 export const metadata: Metadata = {
-  title: "Frontail | Web Development for Local Businesses & Startups",
+  title: {
+    default: "Frontail Technology | MVP, SaaS, AI & Mobile App Development",
+    template: "%s | Frontail Technology",
+  },
   description:
-    "Frontail helps local businesses and startups grow online with affordable, high-converting websites. Custom web development that drives real results for small businesses.",
+    "Frontail Technology helps founders and businesses build MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom internal software.",
   keywords: [
-    "Frontail",
-    "frontail",
-    "Frontail web development",
-    "frontail agency",
-    "local business websites",
-    "startup web development",
-    "small business web design",
-    "affordable websites",
-    "web development agency",
-    "Next.js experts",
-    "UI/UX design",
-    "custom website development",
-    "responsive web design",
-    "e-commerce development",
-    "modern websites",
-    "responsive design",
-    "web development company",
-    "software development",
-    "Website",
-    "custom animations",
-    "SEO optimization",
-    "website development",
-    "web design",
-    "digital solutions",
+    "MVP development agency",
+    "startup MVP development",
+    "SaaS development agency",
+    "AI development services",
+    "mobile app development for startups",
+    "custom software development",
+    "custom tools development",
+    "Web3 development agency",
+    "Next.js development agency",
+    "Frontail Technology",
   ],
   authors: [{ name: "Mohammed Arbaz", url: "https://frontail.com" }],
-  creator: "Frontail Team",
-  publisher: "Frontail",
+  creator: "Frontail Technology",
+  publisher: "Frontail Technology",
   formatDetection: {
     email: false,
     address: false,
@@ -63,16 +52,17 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Frontail | Web Development & Design Experts",
-    description: "We craft blazing-fast, beautiful websites that drive results",
+    title: "Frontail Technology | MVP, SaaS, AI & Mobile App Development",
+    description:
+      "Build production-ready MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom software with Frontail Technology.",
     url: "https://frontail.com",
-    siteName: "Frontail",
+    siteName: "Frontail Technology",
     images: [
       {
-        url: "https://frontail.com/twitter-card.png",
+        url: "https://frontail.com/seo/twitter-card.png",
         width: 1200,
         height: 630,
-        alt: "Frontail - Web Development Agency",
+        alt: "Frontail Technology - Product Development Agency",
       },
     ],
     locale: "en_US",
@@ -80,8 +70,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Frontail | Web Development & Design Experts",
-    description: "Your partner for high-performance websites",
+    title: "Frontail Technology | MVP, SaaS, AI & Mobile App Development",
+    description:
+      "Product development for founders: MVPs, SaaS, AI tools, mobile apps, Web3, and custom software.",
     images: ["https://frontail.com/twitter-card.png"],
   },
   robots: {
@@ -107,51 +98,34 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Basic Meta Tags */}
         <meta name="author" content="Frontail Team" />
         <meta name="email" content="arbazmr123@gmail.com" />
         <meta name="contact" content="+918741035190" />
-        <meta name="brand" content="Frontail" />
-        <meta name="company" content="frontail" />
+        <meta name="brand" content="Frontail Technology" />
+        <meta name="company" content="Frontail Technology" />
         <meta name="domain" content="frontail.com" />
-        <meta
-          property="og:title"
-          content="Frontail | Web Development & Design Experts"
-        />
-        <meta
-          property="og:description"
-          content="We craft blazing-fast, beautiful websites that drive results"
-        />
-        <meta property="og:url" content="https://frontail.com" />
-        <meta
-          property="og:image"
-          content="https://frontail.com/twitter-card.png"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Frontail" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="canonical" href="https://frontail.com" />
-        {/* Enhanced Schema.org JSON-LD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              name: "Frontail",
-              alternateName: ["frontail"],
+              "@type": "Organization",
+              name: "Frontail Technology",
+              alternateName: ["Frontail"],
               url: "https://frontail.com",
-              logo: "https://frontail.com/frontail-logo.png",
+              logo: "https://frontail.com/logo.png",
               description:
-                "Frontail helps local businesses and startups succeed online with affordable, conversion-focused websites that drive real growth and customer engagement.",
+                "Frontail Technology builds MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom internal software for founders and businesses.",
+              areaServed: "Worldwide",
               address: {
                 "@type": "PostalAddress",
-                addressCountry: "IN", // e.g., "US", "IN"
+                addressCountry: "IN",
               },
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+918741035190",
-                email: "arbazmr123@gmail.com",
+                email: "frontailtechnology@gmail.com",
                 contactType: "customer service",
                 areaServed: "Worldwide",
                 availableLanguage: "English",
@@ -161,34 +135,33 @@ export default function RootLayout({
                 name: "Mohammed Arbaz", // Optional
                 jobTitle: "Founder", // Optional
               },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5.0", // Update with actual ratings
-                reviewCount: "20", // Update with actual count
-              },
+              sameAs: ["https://t.me/arbazmr123"],
+              knowsAbout: [
+                "MVP Development",
+                "SaaS Development",
+                "AI Development",
+                "Mobile App Development",
+                "Web3 Development",
+                "Custom Software Development",
+              ],
               subjectOf: [
                 {
                   "@type": "WebPage",
                   name: "Our Process",
-                  description: "How we build award-winning websites",
+                  description: "How Frontail Technology builds products.",
                   url: "https://frontail.com/#process",
-                  lastReviewed: new Date().toISOString().split("T")[0],
                 },
-
                 {
                   "@type": "ContactPage",
-                  name: "Get a Quote",
-                  description: "Start your web project with Frontail",
+                  name: "Contact Frontail Technology",
+                  description: "Start your product development project.",
                   url: "https://frontail.com/contact",
-                  lastReviewed: new Date().toISOString().split("T")[0],
                 },
                 {
                   "@type": "WorkPage",
-                  name: "Our Work",
-                  description:
-                    "See the success stories of our clients and projects.",
-                  url: "https://frontail.com/work",
-                  lastReviewed: new Date().toISOString().split("T")[0],
+                  name: "Projects",
+                  description: "See product development case studies.",
+                  url: "https://frontail.com/projects",
                 },
               ],
             }),

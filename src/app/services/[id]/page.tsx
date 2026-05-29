@@ -16,7 +16,21 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     title: service.metaTitle,
     description: service.metaDescription,
     keywords: service.keywords.join(", "),
+    alternates: {
+      canonical: `https://frontail.com/services/${service.id}`,
+    },
+    openGraph: {
+      title: service.metaTitle,
+      description: service.metaDescription,
+      url: `https://frontail.com/services/${service.id}`,
+    },
   };
+}
+
+export function generateStaticParams() {
+  return detailedServices.map((service) => ({
+    id: String(service.id),
+  }));
 }
 
 export default function ServiceDetails({ params }: ServiceDetailsProps) {

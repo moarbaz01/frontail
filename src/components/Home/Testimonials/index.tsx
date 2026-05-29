@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -202,33 +201,22 @@ const Testimonials: React.FC = () => {
     <section className="relative w-full px-4 py-12 overflow-hidden">
       <div className="max-w-screen-lg mx-auto">
         <div className="text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block relative mb-2"
-          >
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -left-6"
-              size={24}
-            />
-            <span className="text-sm uppercase tracking-widest text-gray-800 font-mono">
-              Testimonials
-            </span>
-            <Sparkles
-              className="text-gray-600 absolute -top-6 -right-6"
-              size={24}
-            />
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold mb-4 text-gray-800"
+            className="font-anton text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-normal"
           >
-            What Our Clients Say
+            What Our Clients <span className="text-primary">Say</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto"
+          >
+            Feedback from teams who trusted us with real product launches.
+          </motion.p>
         </div>
 
         <div className="max-w-screen-lg mx-auto overflow-hidden px-2 pb-3">

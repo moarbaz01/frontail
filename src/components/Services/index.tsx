@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import SpotlightCard from "../ui/SpotLightCard";
-import { Brush, Code, Code2, ShoppingBag, Sparkles } from "lucide-react";
+import { Brush, Code, Code2, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
 import { containerVariants } from "@/varients";
 
@@ -101,25 +101,6 @@ const Services = () => {
           variants={containerVariants}
           className="text-center mb-16"
         >
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="inline-block relative mb-2"
-          >
-            <Sparkles
-              className="text-white absolute -top-6 -left-6"
-              size={24}
-            />
-            <span className="text-sm uppercase tracking-widest text-white font-mono">
-              Our Services
-            </span>
-            <Sparkles
-              className="text-white absolute -top-6 -right-6"
-              size={24}
-            />
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
