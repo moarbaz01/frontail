@@ -96,6 +96,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <h3 className="mb-3 mt-6 font-bold text-gray-900">Blog</h3>
           </div>
 
           <div>

@@ -58,6 +58,7 @@ Create a `blogPost` document type in Sanity with these fields:
   - `{ type: "heading", text: "..." }`
   - `{ type: "list", items: ["..."] }`
   - `{ type: "image", image: Sanity image, alt: "...", caption: "..." }`
+  - `{ type: "table", caption: "...", headers: ["..."], rows: [{ cells: ["..."] }] }`
 
 Keywords are pulled directly from Sanity and used for page metadata, article
 schema, and visible topic tags on the blog card/article page.

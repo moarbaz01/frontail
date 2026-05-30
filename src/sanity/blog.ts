@@ -16,6 +16,12 @@ export type BlogBlock =
       url: string;
       alt: string;
       caption?: string;
+    }
+  | {
+      type: "table";
+      caption?: string;
+      headers: string[];
+      rows: string[][];
     };
 
 export type BlogImage = {
@@ -195,6 +201,10 @@ const fallbackPosts: BlogPost[] = [
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2026-05-29";
+const readToken =
+  process.env.SANITY_API_READ_TOKEN ||
+  process.env.SANITY_API_WRITE_TOKEN ||
+  process.env.SANITY_WRITE_TOKEN;
 const normalizedApiVersion = apiVersion.startsWith("v")
   ? apiVersion
   : `v${apiVersion}`;
@@ -224,13 +234,15 @@ const blogFields = `{
     type,
     text,
     items,
+    caption,
+    headers,
+    "rows": rows[].cells,
     "url": select(
       defined(image.asset) => image.asset->url,
       defined(url) => url,
       null
     ),
     "alt": coalesce(alt, image.alt, ""),
-    caption
   }
 }`;
 
@@ -243,7 +255,12 @@ async function sanityQuery<T>(query: string): Promise<T | null> {
   url.searchParams.set("query", query);
 
   const response = await fetch(url, {
-    next: { revalidate: 3600 },
+    headers: readToken
+      ? {
+          Authorization: `Bearer ${readToken}`,
+        }
+      : undefined,
+    next: { revalidate: 60 },
   });
 
   if (!response.ok) return null;

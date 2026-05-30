@@ -1,5 +1,5 @@
 import React from "react";
-import { detailedServices } from "@/data";
+import { detailedServices } from "@/detailedServices";
 import ServiceDetailsView from "@/components/Services/ServiceDetailsView";
 import JsonLd from "@/components/JsonLd";
 
@@ -104,7 +104,8 @@ export default async function ServiceDetails({ params }: ServiceDetailsProps) {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: offer,
+              name: typeof offer === "string" ? offer : offer.title,
+              description: typeof offer === "string" ? undefined : offer.description,
             },
           })),
         },

@@ -9,7 +9,7 @@ const PostBody = ({ body }: { body: BlogBlock[] }) => {
           return (
             <h2
               key={`${block.text}-${index}`}
-              className="font-anton pt-4 text-3xl font-extrabold tracking-normal text-gray-900"
+              className="font-anton pt-4 text-2xl font-extrabold tracking-normal text-gray-900 md:text-3xl"
             >
               {block.text}
             </h2>
@@ -40,6 +40,50 @@ const PostBody = ({ body }: { body: BlogBlock[] }) => {
                   sizes="(min-width: 1024px) 960px, 100vw"
                   className="object-cover"
                 />
+              </div>
+              {block.caption && (
+                <figcaption className="mt-2 text-center text-xs text-gray-500">
+                  {block.caption}
+                </figcaption>
+              )}
+            </figure>
+          );
+        }
+
+        if (block.type === "table") {
+          return (
+            <figure key={`${block.caption || "table"}-${index}`} className="py-2">
+              <div className="overflow-x-auto rounded-md border border-gray-200">
+                <table className="min-w-[640px] w-full border-collapse bg-white text-sm">
+                  {block.headers.length > 0 && (
+                    <thead className="bg-gray-50 text-left text-gray-900">
+                      <tr>
+                        {block.headers.map((header) => (
+                          <th
+                            key={header}
+                            className="border-b border-gray-200 px-4 py-3 font-bold"
+                          >
+                            {header}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                  )}
+                  <tbody>
+                    {block.rows.map((row, rowIndex) => (
+                      <tr key={rowIndex} className="odd:bg-white even:bg-gray-50">
+                        {row.map((cell, cellIndex) => (
+                          <td
+                            key={`${rowIndex}-${cellIndex}`}
+                            className="border-b border-gray-100 px-4 py-3 text-gray-700"
+                          >
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
               {block.caption && (
                 <figcaption className="mt-2 text-center text-xs text-gray-500">

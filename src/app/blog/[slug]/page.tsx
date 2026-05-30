@@ -5,7 +5,9 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import JsonLd from "@/components/JsonLd";
 import PostBody from "@/components/Blog/PostBody";
-import { getBlogPost, getBlogSlugs } from "@/sanity/blog";
+import { getBlogPost, getBlogPosts, getBlogSlugs } from "@/sanity/blog";
+
+export const revalidate = 60;
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -18,6 +20,9 @@ export async function generateMetadata({
 }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = await getBlogPost(slug);
+  const relatedPosts = (await getBlogPosts())
+    .filter((item) => item.slug !== slug)
+    .slice(0, 2);
 
   if (!post) return {};
 
@@ -61,6 +66,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = await getBlogPost(slug);
 
   if (!post) notFound();
+
+  const relatedPosts = (await getBlogPosts())
+    .filter((item) => item.slug !== slug)
+    .slice(0, 2);
 
   const postUrl = `https://frontail.com/blog/${post.slug}`;
   const articleSchema = {
@@ -136,7 +145,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <p className="text-xs font-bold uppercase tracking-widest text-primary">
               {post.category}
             </p>
-            <h1 className="font-anton mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-normal text-gray-900 md:text-5xl">
+            <h1 className="font-anton mt-4 max-w-3xl text-3xl font-extrabold leading-tight tracking-normal text-gray-900 sm:text-4xl md:text-5xl">
               {post.title}
             </h1>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600 md:text-lg">
@@ -187,6 +196,55 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <PostBody body={post.body} />
           </div>
         </div>
+
+        {relatedPosts.length > 0 && (
+          <section className="mt-8">
+            <div className="mb-4 flex items-center justify-between gap-4">
+              <h2 className="font-anton text-2xl font-extrabold tracking-normal text-gray-900">
+                Related Posts
+              </h2>
+              <Link href="/blog" className="text-sm font-bold text-primary">
+                View all
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {relatedPosts.map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/blog/${related.slug}`}
+                  className="group overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+                >
+                  {related.thumbnail && (
+                    <div className="relative aspect-[16/9] border-b border-gray-200 bg-primary/5">
+                      <Image
+                        src={related.thumbnail.url}
+                        alt={related.thumbnail.alt}
+                        fill
+                        sizes="(min-width: 640px) 480px, 100vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className="p-4">
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-primary">
+                      {related.category}
+                    </p>
+                    <h3 className="mt-2 line-clamp-2 text-base font-bold leading-snug text-gray-900">
+                      {related.title}
+                    </h3>
+                    <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-gray-600">
+                      {related.excerpt}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-primary">
+                      Read
+                      <ArrowLeft className="h-3.5 w-3.5 rotate-180 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </article>
   );

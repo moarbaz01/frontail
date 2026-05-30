@@ -5,6 +5,8 @@ import { ArrowRight } from "lucide-react";
 import JsonLd from "@/components/JsonLd";
 import { getBlogPosts } from "@/sanity/blog";
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: "Startup Product Development Blog",
   description:
@@ -73,7 +75,7 @@ export default async function BlogPage() {
       <JsonLd data={blogSchema} />
       <div className="mx-auto max-w-screen-lg">
         <div className="mb-12 text-center">
-          <h1 className="font-anton text-4xl font-extrabold tracking-normal text-gray-900 md:text-5xl">
+          <h1 className="font-anton text-3xl font-extrabold tracking-normal text-gray-900 sm:text-4xl md:text-5xl">
             Startup Growth <span className="text-primary">Guides</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 md:text-lg">
@@ -86,7 +88,7 @@ export default async function BlogPage() {
           {posts.map((post) => (
             <article
               key={post.slug}
-              className="overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+              className="group overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
             >
               {post.thumbnail && (
                 <div className="relative aspect-[16/9] border-b border-gray-200 bg-primary/5">
@@ -103,7 +105,7 @@ export default async function BlogPage() {
                 <p className="text-xs font-bold uppercase tracking-widest text-primary">
                   {post.category}
                 </p>
-                <h2 className="mt-4 text-2xl font-bold leading-tight text-gray-900">
+                <h2 className="mt-4 text-xl font-bold leading-tight text-gray-900 md:text-2xl">
                   {post.title}
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-gray-600">

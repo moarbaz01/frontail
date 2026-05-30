@@ -9,6 +9,7 @@ import ProcessTimeline from "@/components/Home/ProcessTimeline";
 import ProjectsSection from "@/components/Home/RecentWork";
 import JsonLd from "@/components/JsonLd";
 import { faqSections } from "@/data";
+import BlogSection from "@/components/Home/BlogSection";
 
 export const metadata: Metadata = {
   title: "MVP, SaaS, AI & Mobile App Development Agency",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -55,6 +56,7 @@ export default function Home() {
       <Testimonials />
       <ContactSection />
       <FAQSection />
+      <BlogSection />
     </main>
   );
 }

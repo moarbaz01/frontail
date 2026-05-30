@@ -250,6 +250,72 @@ export const blogPost = defineType({
             }),
           },
         }),
+        defineArrayMember({
+          name: "table",
+          title: "Table",
+          type: "object",
+          fields: [
+            defineField({
+              name: "type",
+              type: "string",
+              initialValue: "table",
+              readOnly: true,
+              hidden: true,
+            }),
+            defineField({
+              name: "caption",
+              title: "Caption",
+              type: "string",
+            }),
+            defineField({
+              name: "headers",
+              title: "Headers",
+              type: "array",
+              of: [defineArrayMember({ type: "string" })],
+              validation: (rule) => rule.required().min(1),
+            }),
+            defineField({
+              name: "rows",
+              title: "Rows",
+              type: "array",
+              of: [
+                defineArrayMember({
+                  name: "row",
+                  title: "Row",
+                  type: "object",
+                  fields: [
+                    defineField({
+                      name: "cells",
+                      title: "Cells",
+                      type: "array",
+                      of: [defineArrayMember({ type: "string" })],
+                      validation: (rule) => rule.required().min(1),
+                    }),
+                  ],
+                  preview: {
+                    select: {
+                      cells: "cells",
+                    },
+                    prepare: ({ cells }) => ({
+                      title: cells?.join(" | ") || "Table row",
+                    }),
+                  },
+                }),
+              ],
+              validation: (rule) => rule.required().min(1),
+            }),
+          ],
+          preview: {
+            select: {
+              caption: "caption",
+              rows: "rows",
+            },
+            prepare: ({ caption, rows }) => ({
+              title: caption || "Table",
+              subtitle: `${rows?.length || 0} rows`,
+            }),
+          },
+        }),
       ],
       validation: (rule) => rule.required().min(1),
     }),
