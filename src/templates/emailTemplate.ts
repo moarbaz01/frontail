@@ -103,3 +103,86 @@ export function generateContactEmailTemplate({
       </html>
     `;
 }
+
+type OnboardingEmailData = {
+  fullName: string;
+  companyName?: string;
+  email: string;
+  phone?: string;
+  projectName: string;
+  description?: string;
+  projectType: string;
+  problem: string;
+  mustHave?: string;
+  hasDesigns?: string;
+  timeline?: string;
+  plan?: string;
+  heardFrom?: string;
+  notes?: string;
+};
+
+const escapeHtml = (value?: string) =>
+  (value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+const detailRow = (label: string, value?: string) =>
+  value?.trim()
+    ? `<tr>
+        <td style="padding: 12px 14px; border-bottom: 1px solid #eeeeee; color: #6b7280; font-size: 13px; width: 34%;">${label}</td>
+        <td style="padding: 12px 14px; border-bottom: 1px solid #eeeeee; color: #111827; font-size: 14px; line-height: 1.55;">${escapeHtml(value).replace(/\n/g, "<br />")}</td>
+      </tr>`
+    : "";
+
+export function generateOnboardingEmailTemplate(data: OnboardingEmailData) {
+  return `
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>New MVP Project Brief</title>
+      </head>
+      <body style="margin: 0; padding: 0; background: #f7f3eb; font-family: Arial, sans-serif;">
+        <div style="max-width: 680px; margin: 24px auto; padding: 0 16px;">
+          <div style="overflow: hidden; border: 1px solid #e5e7eb; border-radius: 8px; background: #ffffff;">
+            <div style="background: #fe7d02; color: #ffffff; padding: 22px 24px;">
+              <p style="margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">New MVP Brief</p>
+              <h1 style="margin: 0; font-size: 24px; line-height: 1.25;">${escapeHtml(data.projectName)}</h1>
+            </div>
+
+            <div style="padding: 22px 24px;">
+              <p style="margin: 0 0 18px; color: #374151; font-size: 15px; line-height: 1.6;">
+                A new client completed the start project onboarding form.
+              </p>
+
+              <table style="width: 100%; border-collapse: collapse; border: 1px solid #eeeeee; border-radius: 8px; overflow: hidden;">
+                ${detailRow("Full name", data.fullName)}
+                ${detailRow("Email", data.email)}
+                ${detailRow("Phone", data.phone)}
+                ${detailRow("Company", data.companyName)}
+                ${detailRow("Project type", data.projectType)}
+                ${detailRow("Project name", data.projectName)}
+                ${detailRow("Description", data.description)}
+                ${detailRow("Problem", data.problem)}
+                ${detailRow("Must-have features", data.mustHave)}
+                ${detailRow("Existing designs", data.hasDesigns)}
+                ${detailRow("Timeline", data.timeline)}
+                ${detailRow("Preferred plan", data.plan)}
+                ${detailRow("Heard from", data.heardFrom)}
+                ${detailRow("Notes", data.notes)}
+              </table>
+            </div>
+
+            <div style="border-top: 1px solid #eeeeee; padding: 16px 24px; color: #6b7280; font-size: 12px;">
+              Sent from Frontail Technology start project onboarding form.
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  `;
+}

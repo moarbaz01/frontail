@@ -10,6 +10,7 @@ import ProjectsSection from "@/components/Home/RecentWork";
 import JsonLd from "@/components/JsonLd";
 import { faqSections } from "@/data";
 import BlogSection from "@/components/Home/BlogSection";
+import PricingSection from "@/components/Home/PricingSection";
 
 export const metadata: Metadata = {
   title: "MVP, SaaS, AI & Mobile App Development Agency",
@@ -53,6 +54,7 @@ export default async function Home() {
       <ProjectsSection />
       {/* <BigText /> */}
       <ComparisonSection />
+      <PricingSection />
       <Testimonials />
       <ContactSection />
       <FAQSection />

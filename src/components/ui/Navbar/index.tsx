@@ -210,7 +210,7 @@ const Navbar: React.FC = () => {
               className="md:flex hidden  items-center gap-4 w-fit  "
             >
               <GradientButton
-                onClick={() => router.push("/contact")}
+                onClick={() => router.push("/start-project")}
                 className="flex items-center h-[34px] text-xs justify-center gap-1.5 relative group px-3 py-2 md:text-xs"
               >
                 Let&apos;s Start
@@ -269,7 +269,7 @@ const Navbar: React.FC = () => {
                 <div className="mt-2 pt-2 border-t border-gray-200">
                   <button
                     onClick={() => {
-                      router.push("/contact");
+                      router.push("/start-project");
                       setMobileMenuOpen(false);
                     }}
                     className="btn-3d flex w-full items-center justify-center gap-2 bg-primary text-white px-3 py-2.5 rounded-md text-sm font-bold"

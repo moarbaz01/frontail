@@ -9,7 +9,7 @@ const contactMethods = [
   {
     label: "WhatsApp",
     value: "+91 8741035190",
-    href: "https://wa.me/918741035190",
+    href: "https://wa.me/918741035190?text=Hi%2C%20I%20have%20a%20project%20I%27d%20like%20to%20discuss.%20Are%20you%20available%3F",
     icon: IoLogoWhatsapp,
   },
   {
@@ -21,7 +21,7 @@ const contactMethods = [
   {
     label: "Email",
     value: "frontailtechnology@gmail.com",
-    href: "mailto:frontailtechnology@gmail.com",
+    href: "mailto:frontailtechnology@gmail.com?subject=Project%20Inquiry&body=Hi%2C%20I%20have%20a%20project%20I%27d%20like%20to%20discuss.%20Here%27s%20a%20brief%20overview%3A%0A%0A",
     icon: Mail,
   },
   {
@@ -81,7 +81,11 @@ const Contact = () => {
 
             <motion.div
               animate={{ y: [0, -12, 0] }}
-              transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+              transition={{
+                repeat: Infinity,
+                duration: 4.5,
+                ease: "easeInOut",
+              }}
               className="flex justify-start pt-4"
             >
               <Image
@@ -108,17 +112,17 @@ const Contact = () => {
               {contactMethods.map(({ label, value, href, icon: Icon }) => {
                 const content = (
                   <>
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-50 text-gray-700 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <span>
-                    <span className="block font-bold text-gray-900">
-                      {label}
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-50 text-gray-700 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary">
+                      <Icon className="h-5 w-5" />
                     </span>
-                    <span className="block text-gray-600 break-all">
-                      {value}
+                    <span>
+                      <span className="block font-bold text-gray-900">
+                        {label}
+                      </span>
+                      <span className="block text-gray-600 break-all">
+                        {value}
+                      </span>
                     </span>
-                  </span>
                   </>
                 );
 

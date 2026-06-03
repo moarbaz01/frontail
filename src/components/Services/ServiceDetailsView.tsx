@@ -70,7 +70,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
               {service.subheadline}
             </p>
             <button
-              onClick={() => router.push("/contact")}
+              onClick={() => router.push("/start-project")}
               className="btn-3d mt-7 inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3 text-sm font-bold text-white"
             >
               Start Project
@@ -345,7 +345,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
               {getCtaSubtitle(service)}
             </p>
             <button
-              onClick={() => router.push("/contact")}
+              onClick={() => router.push("/start-project")}
               className="btn-3d mt-7 rounded-md bg-primary px-7 py-3 text-sm font-bold text-white"
             >
               {getCtaButton(service)}

@@ -2,9 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Code2, Sparkles } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { NoiseTexture } from "../noise-texture";
 
 const SecondFooter = () => {
+  const router = useRouter();
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 30 }}
@@ -57,13 +60,7 @@ const SecondFooter = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.3 }}
           viewport={{ once: true, amount: 0.1 }}
-          onClick={() =>
-            window.open(
-              "https://wa.me/918741035190",
-              "_blank",
-              "width=800,height=600",
-            )
-          }
+          onClick={() => router.push("/start-project")}
           className="btn-3d mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-primary/80 md:mt-8 md:px-8 md:text-base"
         >
           <Code2 className="h-5 w-5" />

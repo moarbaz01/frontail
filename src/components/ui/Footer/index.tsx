@@ -59,7 +59,7 @@ export default function Footer() {
               businesses.
             </p>
             <Link
-              href="/contact"
+              href="/start-project"
               className="btn-3d mt-5 inline-flex rounded-md bg-primary px-5 py-3 text-sm font-bold text-white"
             >
               Start a Project

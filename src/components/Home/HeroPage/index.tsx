@@ -78,7 +78,7 @@ const HeroPage = () => {
           className="flex flex-col sm:flex-row items-center mt-6 gap-4"
         >
           <button
-            onClick={() => router.push("/contact")}
+            onClick={() => router.push("/start-project")}
             className="btn-3d py-3 font-bold px-6 bg-primary text-white rounded-md inline-flex items-center gap-2"
           >
             Get a Quote

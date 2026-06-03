@@ -117,7 +117,7 @@ const ComparisonSection = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                    Other Agencies
+                    Typical Agencies
                   </h3>
                 </div>
               </div>
