@@ -119,7 +119,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           name: "Frontail Technology",
           logo: {
             "@type": "ImageObject",
-            url: "https://frontail.com/logo.png",
+            url: "https://frontail.com/favicon.png",
           },
         },
         mainEntityOfPage: postUrl,

@@ -15,7 +15,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faqs" className="w-full py-12 overflow-hidden">
+    <section id="faqs" className="w-full overflow-hidden py-12 md:py-16 lg:py-20">
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="text-center mb-12">
           <motion.h2

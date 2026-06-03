@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Code2, Sparkles } from "lucide-react";
+import { NoiseTexture } from "../noise-texture";
 
 const SecondFooter = () => {
   return (
@@ -13,7 +14,13 @@ const SecondFooter = () => {
       className="relative mx-4 mb-4 overflow-hidden rounded-md border border-gray-300 bg-[#f7f3eb] bg-dot-black/[0.12] py-10 md:py-16 md:max-w-screen-lg md:mx-auto"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-[#f7f3eb] via-[#f7f3eb]/90 to-primary/15" />
-      <div className="absolute -left-20 top-8 h-56 w-56 rounded-full border border-primary/20" />
+      <NoiseTexture
+        frequency={0.7}
+        octaves={4}
+        slope={0.12}
+        noiseOpacity={0.45}
+        className="opacity-[0.16] mix-blend-multiply"
+      />
       <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-screen-lg px-5 text-center md:px-10">

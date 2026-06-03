@@ -95,7 +95,7 @@ export default async function ServiceDetails({ params }: ServiceDetailsProps) {
           "@type": "Organization",
           name: "Frontail Technology",
           url: "https://frontail.com",
-          logo: "https://frontail.com/logo.png",
+          logo: "https://frontail.com/favicon.png",
         },
         hasOfferCatalog: {
           "@type": "OfferCatalog",

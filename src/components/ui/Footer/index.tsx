@@ -51,7 +51,7 @@ export default function Footer() {
                 height={200}
                 width={1000}
                 className="h-14 w-auto"
-                alt="Frontail Logo"
+                alt="Frontail Technology"
               />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-600">

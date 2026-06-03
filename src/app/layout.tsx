@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Libre_Baskerville } from "next/font/google";
+import {
+  Plus_Jakarta_Sans,
+  Libre_Baskerville,
+  Inter,
+  Sora,
+  Space_Grotesk,
+} from "next/font/google";
 import "./globals.css";
 import AppShell from "@/components/AppShell";
 import Script from "next/script";
+import { cn } from "@/lib/utils";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+
+const plusJakarta = Space_Grotesk({
   preload: true,
   subsets: ["latin"],
 });
@@ -43,9 +52,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
   openGraph: {
     title: "Frontail Technology | MVP, SaaS, AI & Mobile App Development",
@@ -92,7 +101,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", inter.variable)}>
       <head>
         <meta name="author" content="Frontail Team" />
         <meta name="email" content="arbazmr123@gmail.com" />
@@ -110,7 +119,7 @@ export default function RootLayout({
               name: "Frontail Technology",
               alternateName: ["Frontail"],
               url: "https://frontail.com",
-              logo: "https://frontail.com/logo.png",
+              logo: "https://frontail.com/favicon.png",
               description:
                 "Frontail Technology builds MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom internal software for founders and businesses.",
               areaServed: "Worldwide",
@@ -121,7 +130,7 @@ export default function RootLayout({
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+918741035190",
-                email: "frontailtechnology@gmail.com",
+                email: "contact@frontail.com",
                 contactType: "customer service",
                 areaServed: "Worldwide",
                 availableLanguage: "English",

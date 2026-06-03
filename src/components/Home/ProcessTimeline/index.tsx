@@ -225,7 +225,7 @@ const ProcessVisual = ({ type }: { type: string }) => {
 
 const ProcessTimeline: React.FC = () => {
   return (
-    <section id="process" className="py-12 px-4">
+    <section id="process" className="px-4 py-12 md:py-16 lg:py-20">
       <div className="max-w-screen-lg mx-auto">
         <div className="text-center mb-12">
           <motion.h2

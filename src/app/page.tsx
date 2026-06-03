@@ -43,7 +43,7 @@ export default async function Home() {
   };
 
   return (
-    <main className="md:space-y-16 lg:space-y-20">
+    <main>
       <JsonLd data={faqSchema} />
       <HeroPage />
       {/* <ProjectShowcase /> */}

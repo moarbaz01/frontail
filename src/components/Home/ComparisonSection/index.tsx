@@ -6,29 +6,33 @@ import { CheckCircle, XCircle } from "lucide-react";
 const ComparisonSection = () => {
   const comparisonPoints = [
     {
-      feature: "Design Process",
-      us: "Collaborative design with client involvement at every stage",
-      others: "Template-based designs with minimal customization",
+      feature: "Product Approach",
+      us: "We help shape features, flows, and priorities around your business goal.",
+      others:
+        "They mostly build what is requested without deeply questioning the product direction.",
     },
     {
-      feature: "Development Timeline",
-      us: "Transparent milestones with regular updates",
-      others: "Vague timelines with limited progress visibility",
+      feature: "Build Roadmap",
+      us: "You know what is being built, why it matters, and what stage your project is in.",
+      others:
+        "Progress often depends on vague milestones and unclear communication.",
     },
     {
-      feature: "Technology Stack",
-      us: "Modern, future-proof technologies tailored to your needs",
-      others: "One-size-fits-all approach with outdated tech",
+      feature: "Technology Foundation",
+      us: "Clean structure, reliable backend, and scalable architecture built for future growth.",
+      others:
+        "Projects may look good at launch but become hard to update, scale, or maintain later.",
     },
     {
-      feature: "Post-Launch Support",
-      us: "Dedicated support team with 24/7 availability",
-      others: "Limited support with additional costs",
+      feature: "Post-Launch Improvement",
+      us: "We help fix issues, improve flows, and refine the product based on real feedback.",
+      others:
+        "Support usually slows down after delivery or becomes an extra cost.",
     },
   ];
 
   return (
-    <section className="py-12 text-gray-800 overflow-hidden">
+    <section className="overflow-hidden py-12 text-gray-800 md:py-16 lg:py-20">
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="text-center mb-12">
           <motion.h2
@@ -45,8 +49,7 @@ const ComparisonSection = () => {
             viewport={{ once: true }}
             className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto"
           >
-            We don&apos;t just build websites—we craft digital experiences that
-            transform businesses.
+            We build like product partners, not order-takers.
           </motion.p>
         </div>
 

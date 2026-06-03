@@ -8,7 +8,7 @@ import { projectsData } from "@/data";
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-12 w-full">
+    <section id="projects" className="w-full py-12 md:py-16 lg:py-20">
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="text-center mb-12">
           <motion.h2

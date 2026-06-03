@@ -286,7 +286,7 @@ const Services = () => {
 
   const displayedServices = services.slice(0, 3);
   return (
-    <section className="py-12 px-4">
+    <section className="px-4 py-12 md:py-16 lg:py-20">
       <div className="max-w-screen-lg mx-auto">
         <div className="text-center mb-12">
           <motion.h2

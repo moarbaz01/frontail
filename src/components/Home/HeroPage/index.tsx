@@ -17,7 +17,9 @@ const heroVariants = {
 const HeroPage = () => {
   const router = useRouter();
   return (
-    <section className="w-full md:h-screen bg-grid-black/5 md:pt-28 md:pb-16 pt-20 pb-12 flex items-center justify-center px-4 relative overflow-hidden">
+    <section className="w-full min-h-screen lg:pt-44  md:pb-16 pt-32 pb-12 flex items-start justify-center px-4 relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-grid-black/5 [mask-image:radial-gradient(ellipse_at_center,black_0%,black_50%,transparent_82%)]" />
+      <div className="pointer-events-none absolute left-1/2 top-24 -z-10 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-primary/12 blur-[120px]" />
       {/* <div
         className="absolute inset-0 -z-10"
         style={{

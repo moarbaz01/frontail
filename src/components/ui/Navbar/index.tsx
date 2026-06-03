@@ -135,7 +135,7 @@ const Navbar: React.FC = () => {
               height={200}
               width={1000}
               className="w-auto h-10 md:h-12"
-              alt="Frontail Logo"
+              alt="Frontail Technology"
             />
           </motion.div>
 
