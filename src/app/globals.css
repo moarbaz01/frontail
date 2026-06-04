@@ -25,6 +25,33 @@
   scroll-behavior: smooth;
 }
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #c7c7c7 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
 img {
   user-select: none;
   -webkit-user-select: none;

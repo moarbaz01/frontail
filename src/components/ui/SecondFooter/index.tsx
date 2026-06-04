@@ -2,11 +2,21 @@
 
 import { motion } from "framer-motion";
 import { Code2, Sparkles } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { NoiseTexture } from "../noise-texture";
+import { useEffect } from "react";
 
 const SecondFooter = () => {
   const router = useRouter();
+  const pathname = usePathname();
+
+  if (
+    [
+      "/small-business-website-global",
+      "/small-business-website-india",
+    ].includes(pathname)
+  )
+    return null;
 
   return (
     <motion.section

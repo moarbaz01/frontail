@@ -121,6 +121,17 @@ type OnboardingEmailData = {
   notes?: string;
 };
 
+type WebsitePackageEmailData = {
+  name: string;
+  businessName?: string;
+  phone: string;
+  email?: string;
+  city?: string;
+  businessType?: string;
+  packageInterest?: string;
+  message?: string;
+};
+
 const escapeHtml = (value?: string) =>
   (value || "")
     .replace(/&/g, "&amp;")
@@ -179,6 +190,52 @@ export function generateOnboardingEmailTemplate(data: OnboardingEmailData) {
 
             <div style="border-top: 1px solid #eeeeee; padding: 16px 24px; color: #6b7280; font-size: 12px;">
               Sent from Frontail Technology start project onboarding form.
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  `;
+}
+
+export function generateWebsitePackageEmailTemplate(
+  data: WebsitePackageEmailData
+) {
+  return `
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>New Small Business Website Enquiry</title>
+      </head>
+      <body style="margin: 0; padding: 0; background: #f7f3eb; font-family: Arial, sans-serif;">
+        <div style="max-width: 680px; margin: 24px auto; padding: 0 16px;">
+          <div style="overflow: hidden; border: 1px solid #e5e7eb; border-radius: 8px; background: #ffffff;">
+            <div style="background: #fe7d02; color: #ffffff; padding: 22px 24px;">
+              <p style="margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">Website Package Enquiry</p>
+              <h1 style="margin: 0; font-size: 24px; line-height: 1.25;">${escapeHtml(data.businessName || data.name)}</h1>
+            </div>
+
+            <div style="padding: 22px 24px;">
+              <p style="margin: 0 0 18px; color: #374151; font-size: 15px; line-height: 1.6;">
+                A new enquiry came from the Indian small business website landing page.
+              </p>
+
+              <table style="width: 100%; border-collapse: collapse; border: 1px solid #eeeeee; border-radius: 8px; overflow: hidden;">
+                ${detailRow("Name", data.name)}
+                ${detailRow("Business", data.businessName)}
+                ${detailRow("Phone / WhatsApp", data.phone)}
+                ${detailRow("Email", data.email)}
+                ${detailRow("City", data.city)}
+                ${detailRow("Business type", data.businessType)}
+                ${detailRow("Package interest", data.packageInterest)}
+                ${detailRow("Message", data.message)}
+              </table>
+            </div>
+
+            <div style="border-top: 1px solid #eeeeee; padding: 16px 24px; color: #6b7280; font-size: 12px;">
+              Sent from Frontail Technology small business website page.
             </div>
           </div>
         </div>

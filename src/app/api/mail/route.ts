@@ -1,6 +1,7 @@
 import {
   generateContactEmailTemplate,
   generateOnboardingEmailTemplate,
+  generateWebsitePackageEmailTemplate,
 } from "@/templates/emailTemplate";
 import { sendEmail } from "@/utils/nodemailer";
 import { NextResponse } from "next/server";
@@ -28,6 +29,28 @@ export async function POST(req: Request) {
 
       return NextResponse.json(
         { message: "Project brief sent successfully" },
+        { status: 200 }
+      );
+    }
+
+    if (body.type === "website-package") {
+      const { name, phone, businessName } = body;
+
+      if (!name || !phone) {
+        return NextResponse.json(
+          { message: "Name and phone are required" },
+          { status: 400 }
+        );
+      }
+
+      await sendEmail(
+        body.email || "website-enquiry@frontail.com",
+        `New Website Package Enquiry: ${businessName || name}`,
+        generateWebsitePackageEmailTemplate(body)
+      );
+
+      return NextResponse.json(
+        { message: "Website enquiry sent successfully" },
         { status: 200 }
       );
     }
