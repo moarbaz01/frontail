@@ -39,6 +39,21 @@ const contact = [
   },
 ];
 
+const blogs = [
+  {
+    label: "MVP kill switch before launch",
+    href: "/blog/mvp-kill-switch-before-launch",
+  },
+  {
+    label: "No Code MVP stack ",
+    href: "/blog/no-code-mvp-stack-saas-8k-mrr-60-days",
+  },
+  {
+    label: "Wrong MVP how to know 48 hours",
+    href: "/blog/wrong-mvp-how-to-know-48-hours",
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-[#f7f3eb] bg-dot-black/[0.06] px-4 py-12 text-gray-700 md:px-6">
@@ -97,6 +112,16 @@ export default function Footer() {
               ))}
             </ul>
             <h3 className="mb-3 mt-6 font-bold text-gray-900">Blog</h3>
+            {blogs.map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  className="transition-colors hover:text-primary"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </div>
 
           <div>
