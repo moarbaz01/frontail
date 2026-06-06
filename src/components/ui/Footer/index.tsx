@@ -112,16 +112,18 @@ export default function Footer() {
               ))}
             </ul>
             <h3 className="mb-3 mt-6 font-bold text-gray-900">Blog</h3>
-            {blogs.map((item) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className="transition-colors hover:text-primary"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            <ul className="space-y-2 text-sm">
+              {blogs.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="transition-colors hover:text-primary"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div>
