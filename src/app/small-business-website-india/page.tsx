@@ -57,6 +57,7 @@ const packages = [
       "WhatsApp click-to-chat button",
       "Google Maps and contact section",
       "Basic SEO setup for your city",
+      "Gallery, offers, and testimonials",
       "1-year hosting included",
     ],
   },
@@ -67,7 +68,7 @@ const packages = [
     timeline: "7-12 days",
     featured: false,
     features: [
-      "Up to 8 pages or service sections",
+      "Up to 10 pages or service sections",
       "Gallery, offers, and testimonials",
       "Lead form connected to email",
       "Google Analytics setup",
