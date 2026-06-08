@@ -3,6 +3,40 @@ import { motion } from "framer-motion";
 import { Chip } from "@/components/ui/Chip";
 import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
+import AnimatedTooltip from "@/components/ui/AnimatedTooltip";
+
+const partners = [
+  {
+    id: 1,
+    name: "CDR912",
+    designation: "Service platform",
+    image: "/partners/cdr912.webp",
+  },
+  {
+    id: 2,
+    name: "Master Topik",
+    designation: "Learning app",
+    image: "/partners/mastertopic.png",
+  },
+  {
+    id: 3,
+    name: "Vriya PMS",
+    designation: "Property software",
+    image: "/partners/vriyapms.png",
+  },
+  {
+    id: 4,
+    name: "Oh Shakes",
+    designation: "Food business",
+    image: "/partners/ohshakeslogo.png",
+  },
+  {
+    id: 5,
+    name: "Kirastore",
+    designation: "Commerce brand",
+    image: "/partners/kirastorelogo.png",
+  },
+];
 
 // Variants for hero section animations
 const heroVariants = {
@@ -17,27 +51,13 @@ const heroVariants = {
 const HeroPage = () => {
   const router = useRouter();
   return (
-    <section className="w-full min-h-screen lg:pt-44  md:pb-16 pt-32 pb-12 flex items-start justify-center px-4 relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-grid-black/5 [mask-image:radial-gradient(ellipse_at_center,black_0%,black_50%,transparent_82%)]" />
-      <div className="pointer-events-none absolute left-1/2 top-24 -z-10 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-primary/12 blur-[120px]" />
-      {/* <div
-        className="absolute inset-0 -z-10"
-        style={{
-          WebkitMaskImage:
-            "linear-gradient(to bottom, black 60%, transparent 100%)",
-          maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
-        }}
-      >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full opacity-80 object-cover"
-        >
-          <source src="/hero-background.mp4" type="video/mp4" />
-        </video>
-      </div> */}
+    <section className="w-full md:min-h-screen  lg:pt-44 bg-dot-black/20  md:pb-16 pt-32 pb-32 flex items-start justify-center px-4 relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[url('/hero-bg.png')] bg-cover bg-center opacity-45" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[#f7f3eb]/78" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#f7f3eb]/45 via-[#f7f3eb]/80 to-[#f7f3eb]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-64 bg-gradient-to-b from-transparent via-[#f7f3eb]/90 to-[#f7f3eb]" />
+      <div className="pointer-events-none absolute   left-1/2 top-24 -z-10 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
+
       <div className="mb-8 flex items-center relative text-center flex-col z-10">
         {/* Tagline */}
         <motion.div
@@ -58,7 +78,7 @@ const HeroPage = () => {
           animate="open"
           className="max-w-screen-lg mx-4 md:mx-0"
         >
-          <h1 className="lg:text-7xl font-anton   text-center text-gray-800 text-4xl mt-4 md:text-5xl font-extrabold leading-snug tracking-normal lg:leading-tight">
+          <h1 className="lg:text-7xl   text-center text-gray-800 text-4xl mt-4 md:text-5xl font-extrabold leading-snug tracking-normal lg:leading-tight">
             Launch Your App <span className="text-primary">Faster</span>
             <br />
             Than You <span className="text-primary">Think</span>.
@@ -75,7 +95,7 @@ const HeroPage = () => {
           variants={heroVariants}
           initial="closed"
           animate="open"
-          className="flex flex-col sm:flex-row items-center mt-6 gap-4"
+          className="flex  items-center mt-6 gap-4"
         >
           <button
             onClick={() => router.push("/start-project")}
@@ -97,16 +117,14 @@ const HeroPage = () => {
           variants={heroVariants}
           initial="closed"
           animate="open"
-          className="mt-8 grid grid-cols-3 gap-3 text-center"
+          className="mt-12 flex flex-col items-center gap-3"
         >
-          {["20+ Projects", "4+ Countries", "Fast MVPs"].map((item) => (
-            <div
-              key={item}
-              className="rounded-md border border-gray-300 bg-white/70 px-4 py-3 text-xs font-bold text-gray-800 backdrop-blur"
-            >
-              {item}
-            </div>
-          ))}
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-500">
+            Trusted by growing teams
+          </p>
+          <div className="flex items-center justify-center pl-4">
+            <AnimatedTooltip items={partners} />
+          </div>
         </motion.div>
       </div>
     </section>

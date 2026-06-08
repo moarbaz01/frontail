@@ -87,14 +87,14 @@ const Navbar: React.FC = () => {
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Hide on scroll down past 50px, show on scroll up
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         setIsVisible(false);
       } else if (currentScrollY < lastScrollY) {
         setIsVisible(true);
       }
-      
+
       lastScrollY = currentScrollY;
       setScrollY(currentScrollY);
     };
@@ -112,7 +112,7 @@ const Navbar: React.FC = () => {
         animate={isVisible ? "visible" : "hidden"}
       >
         <motion.div
-          className="flex items-center py-2 px-3 md:px-4 max-w-screen-lg mx-auto rounded-md justify-between bg-white/95 backdrop-blur-md border border-gray-200 shadow-sm"
+          className="flex items-center  px-3 md:px-4 max-w-screen-lg mx-auto rounded-md justify-between bg-white/95 backdrop-blur-md border border-gray-200 shadow-sm"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{
             opacity: 1,
@@ -134,7 +134,7 @@ const Navbar: React.FC = () => {
               src={"/logo.svg"}
               height={200}
               width={1000}
-              className="w-auto h-10 md:h-12"
+              className="w-auto h-14 md:h-16"
               alt="Frontail Technology"
             />
           </motion.div>
@@ -246,25 +246,25 @@ const Navbar: React.FC = () => {
             >
               <div className="p-2">
                 <div className="space-y-1">
-                {navItems.map((item, index) => (
-                  <motion.button
-                    key={index}
-                    onClick={() => {
-                      router.push(item.path);
-                      setMobileMenuOpen(false);
-                    }}
-                    className={`flex w-full items-center justify-between px-3 py-2.5 rounded-md text-sm font-semibold transition-colors ${
-                      pathname === item.path
-                        ? "bg-primary/10 text-primary"
-                        : "text-gray-800 hover:bg-gray-100"
-                    }`}
-                  >
-                    <span>{item.label}</span>
-                    {pathname === item.path && (
-                      <span className="h-2 w-2 rounded-full bg-primary" />
-                    )}
-                  </motion.button>
-                ))}
+                  {navItems.map((item, index) => (
+                    <motion.button
+                      key={index}
+                      onClick={() => {
+                        router.push(item.path);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`flex w-full items-center justify-between px-3 py-2.5 rounded-md text-sm font-semibold transition-colors ${
+                        pathname === item.path
+                          ? "bg-primary/10 text-primary"
+                          : "text-gray-800 hover:bg-gray-100"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      {pathname === item.path && (
+                        <span className="h-2 w-2 rounded-full bg-primary" />
+                      )}
+                    </motion.button>
+                  ))}
                 </div>
                 <div className="mt-2 pt-2 border-t border-gray-200">
                   <button

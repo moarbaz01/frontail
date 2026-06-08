@@ -47,8 +47,8 @@ export default async function Home() {
     <main>
       <JsonLd data={faqSchema} />
       <HeroPage />
+      {/* <AchievementsSection /> */}
       {/* <ProjectShowcase /> */}
-      {/* <Partners /> */}
       <Services />
       <ProcessTimeline />
       <ProjectsSection />

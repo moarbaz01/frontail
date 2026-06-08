@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Plus_Jakarta_Sans,
-  Libre_Baskerville,
-  Inter,
-  Sora,
-  Space_Grotesk,
-} from "next/font/google";
+import { Libre_Baskerville, Inter, Sora } from "next/font/google";
 import "./globals.css";
 import AppShell from "@/components/AppShell";
 import Script from "next/script";
@@ -13,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
-const plusJakarta = Space_Grotesk({
+const plusJakarta = Sora({
   preload: true,
   subsets: ["latin"],
 });
