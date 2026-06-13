@@ -7,6 +7,17 @@ import { getBlogPosts } from "@/sanity/blog";
 
 export const revalidate = 60;
 
+const isRecentlyAdded = (publishedAt: string) => {
+  const publishedTime = new Date(publishedAt).getTime();
+
+  if (Number.isNaN(publishedTime)) {
+    return false;
+  }
+
+  const age = Date.now() - publishedTime;
+  return age >= 0 && age <= 3 * 24 * 60 * 60 * 1000;
+};
+
 export const metadata: Metadata = {
   title: "Startup Product Development Blog",
   description:
@@ -84,10 +95,11 @@ export default async function BlogPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
-            <article
+            <Link
               key={post.slug}
+              href={`/blog/${post.slug}`}
               className="group overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
             >
               {post.thumbnail && (
@@ -101,39 +113,33 @@ export default async function BlogPage() {
                   />
                 </div>
               )}
-              <div className="p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary">
-                  {post.category}
-                </p>
-                <h2 className="mt-4 text-xl font-bold leading-tight text-gray-900 md:text-2xl">
+              <div className="p-5">
+                <div className="flex items-center gap-2">
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary">
+                    {post.category}
+                  </p>
+                  {isRecentlyAdded(post.publishedAt) && (
+                    <span className="rounded-md bg-primary/10 px-2 py-1 text-[10px] font-extrabold uppercase tracking-widest text-primary">
+                      New
+                    </span>
+                  )}
+                </div>
+                <h2 className="mt-4 text-lg font-bold leading-tight text-gray-900">
                   {post.title}
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-gray-600">
                   {post.excerpt}
                 </p>
                 <div className="mt-6 flex items-center justify-between text-xs text-gray-500">
                   <span>{post.readTime}</span>
                   <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
                 </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {post.keywords.slice(0, 3).map((keyword) => (
-                    <span
-                      key={keyword}
-                      className="rounded-md border border-gray-200 bg-gray-50 px-2 py-1 text-[11px] font-semibold text-gray-500"
-                    >
-                      {keyword}
-                    </span>
-                  ))}
-                </div>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary"
-                >
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary">
                   Read Guide
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

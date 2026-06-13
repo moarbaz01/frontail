@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
@@ -14,20 +14,6 @@ const navItems = [
   { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" },
 ];
-
-// Animation variants
-const navbarVariants = {
-  hidden: { opacity: 0, y: -100 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
-      staggerChildren: 0.1,
-    },
-  },
-};
 
 const logoVariants = {
   hidden: { opacity: 0, scale: 0.8, rotate: -10 },
@@ -76,8 +62,8 @@ const itemVariants = {
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const headerRef = useRef<HTMLElement | null>(null);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -91,25 +77,63 @@ const Navbar: React.FC = () => {
       // Hide on scroll down past 50px, show on scroll up
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         setIsVisible(false);
+        setMobileMenuOpen(false);
       } else if (currentScrollY < lastScrollY) {
         setIsVisible(true);
       }
 
       lastScrollY = currentScrollY;
-      setScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const handlePointerDown = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as Node;
+
+      if (headerRef.current && !headerRef.current.contains(target)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("touchstart", handlePointerDown, {
+      passive: true,
+    });
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("touchstart", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <>
       <motion.header
+        ref={headerRef}
         className="fixed md:top-4 md:px-0 px-2 top-2 left-0 w-full z-50"
-        variants={navbarVariants}
-        initial="hidden"
-        animate={isVisible ? "visible" : "hidden"}
+        initial={{ opacity: 0, y: -24 }}
+        animate={{
+          opacity: isVisible ? 1 : 0,
+          y: isVisible ? 0 : -96,
+          pointerEvents: isVisible ? "auto" : "none",
+        }}
+        transition={{
+          duration: 0.22,
+          ease: "easeOut",
+        }}
       >
         <motion.div
           className="flex items-center  px-3 md:px-4 max-w-screen-lg mx-auto rounded-md justify-between bg-white/95 backdrop-blur-md border border-gray-200 shadow-sm"

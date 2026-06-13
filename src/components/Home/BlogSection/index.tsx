@@ -3,8 +3,19 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { getBlogPosts } from "@/sanity/blog";
 
+const isRecentlyAdded = (publishedAt: string) => {
+  const publishedTime = new Date(publishedAt).getTime();
+
+  if (Number.isNaN(publishedTime)) {
+    return false;
+  }
+
+  const age = Date.now() - publishedTime;
+  return age >= 0 && age <= 3 * 24 * 60 * 60 * 1000;
+};
+
 const BlogSection = async () => {
-  const posts = (await getBlogPosts()).slice(0, 2);
+  const posts = (await getBlogPosts()).slice(0, 3);
 
   if (!posts.length) return null;
 
@@ -19,7 +30,7 @@ const BlogSection = async () => {
             Practical startup guides for MVPs, AI tools, and product launches.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <Link
               key={post.slug}
@@ -38,10 +49,17 @@ const BlogSection = async () => {
                 </div>
               )}
               <div className="p-5">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary">
-                  {post.category}
-                </p>
-                <h3 className="mt-3 text-xl font-bold leading-tight text-gray-900">
+                <div className="flex items-center gap-2">
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary">
+                    {post.category}
+                  </p>
+                  {isRecentlyAdded(post.publishedAt) && (
+                    <span className="rounded-md bg-primary/10 px-2 py-1 text-[10px] font-extrabold uppercase tracking-widest text-primary">
+                      New
+                    </span>
+                  )}
+                </div>
+                <h3 className="mt-3 text-lg font-bold leading-tight text-gray-900">
                   {post.title}
                 </h3>
                 <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-gray-600">

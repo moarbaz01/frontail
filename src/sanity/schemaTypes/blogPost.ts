@@ -80,6 +80,8 @@ export const blogPost = defineType({
           "Web3 Development",
           "Custom Tools",
           "Startup Guides",
+          "Local Business Growth",
+          "Local Businesses",
         ],
       },
       validation: (rule) => rule.required(),
