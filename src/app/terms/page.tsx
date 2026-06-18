@@ -39,7 +39,7 @@ const sections = [
 export default function TermsPage() {
   return (
     <section className="min-h-screen px-4 pb-16 pt-28">
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-auto max-w-screen-xl">
         <div className="mb-10 text-center">
           <p className="mb-2 text-sm font-bold uppercase tracking-widest text-primary">
             Legal

@@ -33,7 +33,7 @@ const ComparisonSection = () => {
 
   return (
     <section className="overflow-hidden py-12 text-gray-800 md:py-16 lg:py-20">
-      <div className="max-w-screen-lg mx-auto px-4">
+      <div className="max-w-screen-xl mx-auto px-4">
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ const ComparisonSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-screen-lg mx-auto"
+          className="max-w-screen-xl mx-auto"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Frontail Side */}

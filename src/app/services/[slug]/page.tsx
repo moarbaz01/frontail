@@ -45,7 +45,7 @@ export default async function ServiceDetails({ params }: ServiceDetailsProps) {
 
   if (!service) {
     return (
-      <div className="max-w-screen-lg mx-auto px-4 py-32 text-center">
+      <div className="max-w-screen-xl mx-auto px-4 py-32 text-center">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">
           Service Not Found
         </h1>
@@ -105,7 +105,8 @@ export default async function ServiceDetails({ params }: ServiceDetailsProps) {
             itemOffered: {
               "@type": "Service",
               name: typeof offer === "string" ? offer : offer.title,
-              description: typeof offer === "string" ? undefined : offer.description,
+              description:
+                typeof offer === "string" ? undefined : offer.description,
             },
           })),
         },

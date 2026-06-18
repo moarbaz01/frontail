@@ -57,7 +57,7 @@ const blogs = [
 export default function Footer() {
   return (
     <footer className="bg-[#f7f3eb] bg-dot-black/[0.06] px-4 py-12 text-gray-700 md:px-6">
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-auto max-w-screen-xl">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-[1.25fr_0.75fr_1fr_1.1fr]">
           <div>
             <Link href="/" className="block w-fit">

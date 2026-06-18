@@ -31,7 +31,7 @@ export const ServiceVisual = ({
 }) => {
   if (id === 1) {
     return (
-      <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+      <div className="relative md:h-60 h-44 overflow-hidden rounded-t-md bg-primary/5">
         <div className="absolute left-8 right-8 top-1/2 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <motion.div
           animate={{ y: [0, -10, 0] }}
@@ -58,7 +58,7 @@ export const ServiceVisual = ({
 
   if (id === 2) {
     return (
-      <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+      <div className="relative md:h-60 h-44 overflow-hidden rounded-t-md bg-primary/5">
         <motion.div
           animate={{ y: [0, -6, 0] }}
           transition={floatTransition}
@@ -97,7 +97,7 @@ export const ServiceVisual = ({
 
   if (id === 3) {
     return (
-      <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+      <div className="relative md:h-60 h-44 overflow-hidden rounded-t-md bg-primary/5">
         <motion.div
           animate={{ y: [0, -7, 0] }}
           transition={floatTransition}
@@ -140,7 +140,7 @@ export const ServiceVisual = ({
     ];
 
     return (
-      <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+      <div className="relative md:h-60 h-44 overflow-hidden rounded-t-md bg-primary/5">
         <div className="absolute left-14 right-14 top-24 h-px bg-primary/25" />
         <div className="absolute left-1/2 top-14 h-20 w-px -translate-x-1/2 bg-primary/25" />
         {nodes.map((position, index) => (
@@ -166,7 +166,7 @@ export const ServiceVisual = ({
 
   if (id === 6) {
     return (
-      <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+      <div className="relative md:h-60 h-44 overflow-hidden rounded-t-md bg-primary/5">
         <motion.div
           animate={{ y: [0, -8, 0], rotate: [0, 2, 0] }}
           transition={floatTransition}
@@ -199,7 +199,7 @@ export const ServiceVisual = ({
 
   if (id === 7) {
     return (
-      <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+      <div className="relative md:h-60 h-44 overflow-hidden rounded-t-md bg-primary/5">
         <motion.div
           animate={{ y: [0, -6, 0] }}
           transition={floatTransition}
@@ -241,7 +241,7 @@ export const ServiceVisual = ({
   }
 
   return (
-    <div className="relative h-44 overflow-hidden rounded-t-md bg-primary/5">
+    <div className="relative md:md:h-60 h-44 h-44 overflow-hidden rounded-t-md bg-primary/5">
       <div className="absolute left-8 right-8 top-1/2 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <motion.div
         animate={{ y: [0, -7, 0] }}
@@ -287,7 +287,7 @@ const Services = () => {
   const displayedServices = services.slice(0, 3);
   return (
     <section className="px-4 py-12 md:py-16 lg:py-20">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -309,7 +309,7 @@ const Services = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5 max-w-screen-lg mx-auto">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5 max-w-screen-xl mx-auto">
           {displayedServices?.map((service, index) => (
             <motion.div
               key={service.id}

@@ -136,7 +136,7 @@ const Navbar: React.FC = () => {
         }}
       >
         <motion.div
-          className="flex items-center  px-3 md:px-4 max-w-screen-lg mx-auto rounded-md justify-between bg-white/95 backdrop-blur-md border border-gray-200 shadow-sm"
+          className="flex items-center  px-3 md:px-4 max-w-screen-xl mx-auto rounded-md justify-between bg-white/95 backdrop-blur-md border border-gray-200 shadow-sm"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{
             opacity: 1,
@@ -149,7 +149,7 @@ const Navbar: React.FC = () => {
         >
           <motion.div
             onClick={() => router.push("/")}
-            className="cursor-pointer"
+            className="cursor-pointer flex gap-2 items-center"
             variants={logoVariants}
             whileHover="hover"
             whileTap="tap"

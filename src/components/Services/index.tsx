@@ -49,7 +49,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   );
 };
 
-
 // Define services array with web development niches
 const services = [
   {
@@ -93,7 +92,7 @@ const services = [
 const Services = () => {
   return (
     <section className="px-4 py-12 ">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         {/* Title */}
         <motion.div
           initial="hidden"
@@ -138,7 +137,7 @@ const Services = () => {
           {services.map(
             (
               { id, icon, title, description, actionText, actionLink },
-              index
+              index,
             ) => (
               <ServiceCard
                 key={id}
@@ -149,7 +148,7 @@ const Services = () => {
                 actionLink={actionLink}
                 index={index}
               />
-            )
+            ),
           )}
         </motion.div>
       </div>

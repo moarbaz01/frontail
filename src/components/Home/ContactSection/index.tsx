@@ -50,7 +50,7 @@ const ContactSection = () => {
 
   return (
     <section className="overflow-hidden bg-grid-black/5 px-4 py-12 md:py-16 lg:py-20">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

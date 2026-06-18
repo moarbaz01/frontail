@@ -43,7 +43,7 @@ const services = [
 const EcommercePage = () => {
   return (
     <section className="lg:min-h-screen py-10">
-      <div className="max-w-screen-lg mx-auto px-4">
+      <div className="max-w-screen-xl mx-auto px-4">
         {/* Title Section */}
         <h1 className="md:text-4xl text-2xl font-bold text-center text-primary mb-2">
           E-commerce Development

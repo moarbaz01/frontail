@@ -88,7 +88,7 @@ const FounderSection = () => {
         </svg>
       </div>
 
-      <div className="max-w-screen-lg mx-auto px-4 relative z-10">
+      <div className="max-w-screen-xl mx-auto px-4 relative z-10">
         <motion.div
           ref={ref}
           variants={containerVariants}

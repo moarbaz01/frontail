@@ -84,7 +84,7 @@ export default async function BlogPage() {
   return (
     <section className="min-h-screen px-4 pb-16 pt-28">
       <JsonLd data={blogSchema} />
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-auto max-w-screen-xl">
         <div className="mb-12 text-center">
           <h1 className="font-anton text-3xl font-extrabold tracking-normal text-gray-900 sm:text-4xl md:text-5xl">
             Startup Growth <span className="text-primary">Guides</span>

@@ -154,7 +154,9 @@ const ProcessVisual = ({ type }: { type: string }) => {
           <span
             key={index}
             className="absolute left-1/2 top-20 h-4 w-px origin-bottom bg-primary/60"
-            style={{ transform: `rotate(${-80 + index * 8}deg) translateY(-70px)` }}
+            style={{
+              transform: `rotate(${-80 + index * 8}deg) translateY(-70px)`,
+            }}
           />
         ))}
         <motion.div
@@ -226,7 +228,7 @@ const ProcessVisual = ({ type }: { type: string }) => {
 const ProcessTimeline: React.FC = () => {
   return (
     <section id="process" className="px-4 py-12 md:py-16 lg:py-20">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -246,7 +248,7 @@ const ProcessTimeline: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-screen-lg mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-screen-xl mx-auto">
           {processSteps.map((step, index) => (
             <motion.div
               key={step.id}
@@ -270,7 +272,6 @@ const ProcessTimeline: React.FC = () => {
               </div>
             </motion.div>
           ))}
-
         </div>
       </div>
     </section>

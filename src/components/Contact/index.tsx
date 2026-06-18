@@ -41,7 +41,7 @@ const contactMethods = [
 const Contact = () => {
   return (
     <section className="px-4 pt-28 pb-16 bg-grid-black/5 overflow-hidden">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-14">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ const Contact = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center max-w-screen-lg mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center max-w-screen-xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}

@@ -59,7 +59,7 @@ const disclosures = [
 export default function PrivacyPolicyPage() {
   return (
     <section className="min-h-screen px-4 pb-16 pt-28">
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-auto max-w-screen-xl">
         <article className="rounded-md   text-gray-700  ">
           <header className="mb-10 border-b border-gray-200 pb-8">
             <h1 className="font-anton text-4xl font-extrabold tracking-normal text-gray-900 md:text-5xl">

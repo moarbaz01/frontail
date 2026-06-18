@@ -9,7 +9,7 @@ const PostBody = ({ body }: { body: BlogBlock[] }) => {
           return (
             <h2
               key={`${block.text}-${index}`}
-              className="font-anton pt-4 text-2xl font-extrabold tracking-normal text-gray-900 md:text-3xl"
+              className="font-anton pt-4 text-xl font-extrabold tracking-normal text-gray-900 md:text-3xl"
             >
               {block.text}
             </h2>
@@ -52,7 +52,10 @@ const PostBody = ({ body }: { body: BlogBlock[] }) => {
 
         if (block.type === "table") {
           return (
-            <figure key={`${block.caption || "table"}-${index}`} className="py-2">
+            <figure
+              key={`${block.caption || "table"}-${index}`}
+              className="py-2"
+            >
               <div className="overflow-x-auto rounded-md border border-gray-200">
                 <table className="min-w-[640px] w-full border-collapse bg-white text-sm">
                   {block.headers.length > 0 && (
@@ -71,7 +74,10 @@ const PostBody = ({ body }: { body: BlogBlock[] }) => {
                   )}
                   <tbody>
                     {block.rows.map((row, rowIndex) => (
-                      <tr key={rowIndex} className="odd:bg-white even:bg-gray-50">
+                      <tr
+                        key={rowIndex}
+                        className="odd:bg-white even:bg-gray-50"
+                      >
                         {row.map((cell, cellIndex) => (
                           <td
                             key={`${rowIndex}-${cellIndex}`}

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function StartProjectPage() {
   return (
     <main className="min-h-screen px-4 pb-16 pt-28">
-      <div className="mx-auto grid max-w-screen-lg grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+      <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr]">
         <aside className="relative overflow-hidden rounded-md border border-gray-300 bg-dot-black/[0.06] p-6 shadow-sm lg:sticky lg:top-28 lg:h-fit">
           <NoiseTexture
             frequency={0.65}

@@ -199,7 +199,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="relative w-full overflow-hidden px-4 py-12 md:py-16 lg:py-20">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -219,7 +219,7 @@ const Testimonials: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="max-w-screen-lg mx-auto overflow-hidden px-2 pb-3">
+        <div className="max-w-screen-xl mx-auto overflow-hidden px-2 pb-3">
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0, x: 24 }}

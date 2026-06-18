@@ -54,7 +54,7 @@ export default async function Home() {
       <ProjectsSection />
       {/* <BigText /> */}
       <ComparisonSection />
-      <PricingSection />
+      {/* <PricingSection /> */}
       <Testimonials />
       <ContactSection />
       <FAQSection />

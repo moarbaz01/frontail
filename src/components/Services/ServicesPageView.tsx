@@ -12,7 +12,7 @@ const ServicesPageView = () => {
 
   return (
     <div className="min-h-screen px-4 pt-28 pb-16 sm:px-6 lg:px-8">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-12">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ const ServicesPageView = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 max-w-screen-lg mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 max-w-screen-xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.id}

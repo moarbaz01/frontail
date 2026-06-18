@@ -4,6 +4,7 @@ import { Chip } from "@/components/ui/Chip";
 import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import AnimatedTooltip from "@/components/ui/AnimatedTooltip";
+import Image from "next/image";
 
 const partners = [
   {
@@ -51,8 +52,17 @@ const heroVariants = {
 const HeroPage = () => {
   const router = useRouter();
   return (
-    <section className="w-full md:min-h-screen  lg:pt-44 bg-dot-black/20  md:pb-16 pt-32 pb-32 flex items-start justify-center px-4 relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[url('/hero-bg.png')] bg-cover bg-center opacity-45" />
+    <section className="w-full md:min-h-screen  lg:pt-44   md:pb-16 pt-32 pb-32 flex items-start justify-center px-4 relative overflow-hidden">
+      <Image
+        src="/hero-bg.png"
+        alt=""
+        fill
+        priority
+        quality={45}
+        sizes="100vw"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 object-cover object-center opacity-45"
+      />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[#f7f3eb]/78" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#f7f3eb]/45 via-[#f7f3eb]/80 to-[#f7f3eb]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-64 bg-gradient-to-b from-transparent via-[#f7f3eb]/90 to-[#f7f3eb]" />
@@ -76,7 +86,7 @@ const HeroPage = () => {
           variants={heroVariants}
           initial="closed"
           animate="open"
-          className="max-w-screen-lg mx-4 md:mx-0"
+          className="max-w-screen-xl mx-4 md:mx-0"
         >
           <h1 className="lg:text-7xl   text-center text-gray-800 text-4xl mt-4 md:text-5xl font-extrabold leading-snug tracking-normal lg:leading-tight">
             Launch Your App <span className="text-primary">Faster</span>

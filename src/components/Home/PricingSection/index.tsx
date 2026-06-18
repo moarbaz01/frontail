@@ -46,7 +46,7 @@ const PricingSection = () => {
 
   return (
     <section className="px-4 py-12 md:py-16 lg:py-20">
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-auto max-w-screen-xl">
         <div className="mb-10 text-center md:mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

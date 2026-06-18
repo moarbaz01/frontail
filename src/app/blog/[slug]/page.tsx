@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <article className="min-h-screen px-4 pb-16 pt-28">
       <JsonLd data={articleSchema} />
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-auto max-w-screen-xl">
         <Link
           href="/blog"
           className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-primary"
@@ -140,12 +140,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           Back to Blog
         </Link>
 
-        <div className="rounded-md border border-gray-300 bg-white p-6 shadow-sm md:p-10">
+        <div className="rounded-md  p-4 bg-white shadow-sm md:p-10">
           <header className="border-b border-gray-200 pb-8">
             <p className="text-xs font-bold uppercase tracking-widest text-primary">
               {post.category}
             </p>
-            <h1 className="font-anton mt-4 max-w-3xl text-3xl font-extrabold leading-tight tracking-normal text-gray-900 sm:text-4xl md:text-5xl">
+            <h1 className="font-anton mt-4 max-w-3xl text-2xl font-extrabold leading-tight tracking-normal text-gray-900 sm:text-4xl md:text-5xl">
               {post.title}
             </h1>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600 md:text-lg">
@@ -158,18 +158,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <span>•</span>
               <span>{post.readTime}</span>
             </div>
-            {post.keywords.length > 0 && (
-              <div className="mt-5 flex flex-wrap gap-2">
-                {post.keywords.map((keyword) => (
-                  <span
-                    key={keyword}
-                    className="rounded-md border border-gray-200 bg-gray-50 px-2.5 py-1.5 text-xs font-semibold text-gray-500"
-                  >
-                    {keyword}
-                  </span>
-                ))}
-              </div>
-            )}
           </header>
 
           {post.thumbnail && (
@@ -195,6 +183,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="pt-8">
             <PostBody body={post.body} />
           </div>
+          {post.keywords.length > 0 && (
+            <div className="mt-5 flex flex-wrap gap-2">
+              {post.keywords.map((keyword) => (
+                <span
+                  key={keyword}
+                  className="rounded-md border border-gray-200 bg-gray-50 px-2.5 py-1.5 text-xs font-semibold text-gray-500"
+                >
+                  {keyword}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
         {relatedPosts.length > 0 && (

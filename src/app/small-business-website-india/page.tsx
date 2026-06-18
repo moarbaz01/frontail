@@ -253,7 +253,7 @@ export default function SmallBusinessWebsiteIndiaPage() {
           noiseOpacity={0.35}
         />
 
-        <div className="relative z-10 mx-auto max-w-screen-lg">
+        <div className="relative z-10 mx-auto max-w-screen-xl">
           <div className="mx-auto max-w-4xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-4 py-2 text-sm font-semibold text-gray-800 shadow-sm">
               <Globe2 className="h-4 w-4 text-primary" />
@@ -340,7 +340,7 @@ export default function SmallBusinessWebsiteIndiaPage() {
       </section>
 
       <section className="px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-screen-lg">
+        <div className="mx-auto max-w-screen-xl">
           <div className="mb-8 max-w-2xl">
             <p className="text-sm font-bold uppercase tracking-widest text-primary">
               Packages
@@ -404,7 +404,7 @@ export default function SmallBusinessWebsiteIndiaPage() {
         id="website-enquiry"
         className="scroll-mt-28 px-4 py-12 md:py-16"
       >
-        <div className="mx-auto grid max-w-screen-lg grid-cols-1 gap-6 lg:grid-cols-[0.82fr_1.18fr]">
+        <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 lg:grid-cols-[0.82fr_1.18fr]">
           <aside className="relative h-fit overflow-hidden rounded-md border border-primary/20 bg-primary/10 p-6 text-gray-900 shadow-sm md:p-7">
             <NoiseTexture
               className="opacity-[0.1] mix-blend-multiply"
@@ -446,7 +446,7 @@ export default function SmallBusinessWebsiteIndiaPage() {
       </section>
 
       <section className="px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-screen-lg">
+        <div className="mx-auto max-w-screen-xl">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
@@ -473,7 +473,7 @@ export default function SmallBusinessWebsiteIndiaPage() {
       </section>
 
       <section className="px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-screen-lg rounded-md border border-gray-300 bg-white p-6 shadow-sm md:p-8">
+        <div className="mx-auto max-w-screen-xl rounded-md border border-gray-300 bg-white p-6 shadow-sm md:p-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.7fr_1.3fr]">
             <div>
               <p className="text-sm font-bold uppercase tracking-widest text-primary">
@@ -506,7 +506,7 @@ export default function SmallBusinessWebsiteIndiaPage() {
       </section>
 
       <section className="px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-screen-lg">
+        <div className="mx-auto max-w-screen-xl">
           <div className="mb-8 text-center">
             <p className="text-sm font-bold uppercase tracking-widest text-primary">
               Questions
@@ -533,7 +533,7 @@ export default function SmallBusinessWebsiteIndiaPage() {
       </section>
 
       <section className="px-4 py-12 md:py-16">
-        <div className="relative mx-auto max-w-screen-lg overflow-hidden rounded-md border border-primary/20 bg-primary/10 p-6 text-center text-gray-900 shadow-sm md:p-10">
+        <div className="relative mx-auto max-w-screen-xl overflow-hidden rounded-md border border-primary/20 bg-primary/10 p-6 text-center text-gray-900 shadow-sm md:p-10">
           <NoiseTexture
             className="opacity-[0.1] mix-blend-multiply"
             frequency={0.7}

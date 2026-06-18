@@ -31,7 +31,8 @@ const getTechName = (tech: string | { name: string }) =>
 
 const getCtaTitle = (service: ServiceProps["service"]) => service.cta.headline;
 
-const getCtaSubtitle = (service: ServiceProps["service"]) => service.cta.subtext;
+const getCtaSubtitle = (service: ServiceProps["service"]) =>
+  service.cta.subtext;
 
 const getCtaButton = (service: ServiceProps["service"]) =>
   service.cta.primaryButton;
@@ -51,7 +52,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
     <div className="min-h-screen">
       <section className="relative overflow-hidden px-4 pb-12 pt-28">
         <div className="absolute inset-0 -z-[1] bg-grid-black/[0.04]" />
-        <div className="mx-auto max-w-screen-lg">
+        <div className="mx-auto max-w-screen-xl">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -82,7 +83,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
 
       {"painPoints" in service && (
         <section className="px-4 py-10">
-          <div className="mx-auto grid max-w-screen-lg grid-cols-1 gap-4 md:grid-cols-3">
+          <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-4 md:grid-cols-3">
             {service.painPoints.map((point, index) => (
               <motion.div
                 key={point.title}
@@ -95,7 +96,9 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                 <span className="mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-primary/10 text-primary">
                   <Zap className="h-4 w-4" />
                 </span>
-                <h3 className="text-lg font-bold text-gray-900">{point.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900">
+                  {point.title}
+                </h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600">
                   {point.description}
                 </p>
@@ -106,7 +109,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
       )}
 
       <section className="px-4 py-12">
-        <div className="mx-auto grid max-w-screen-lg grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +134,9 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                     <Zap className="h-4 w-4" />
                   </span>
                   <div>
-                    <h3 className="font-semibold text-gray-900">{getTitle(item)}</h3>
+                    <h3 className="font-semibold text-gray-900">
+                      {getTitle(item)}
+                    </h3>
                     <p className="mt-1 text-sm text-gray-600">
                       {getDescription(item) ||
                         "Built with a practical, launch-focused approach."}
@@ -161,7 +166,9 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                   >
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <span>
-                      <strong className="text-gray-900">{getTitle(reason)}</strong>
+                      <strong className="text-gray-900">
+                        {getTitle(reason)}
+                      </strong>
                       {getDescription(reason) && (
                         <span className="mt-1 block text-sm leading-relaxed text-gray-600">
                           {getDescription(reason)}
@@ -199,12 +206,14 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
       </section>
 
       <section className="px-4 py-12">
-        <div className="mx-auto max-w-screen-lg">
+        <div className="mx-auto max-w-screen-xl">
           <div className="mb-8 text-center">
             <h2 className="font-anton text-4xl font-extrabold tracking-normal text-gray-900 md:text-5xl">
               How We <span className="text-primary">Work</span>
             </h2>
-            <p className="mt-3 text-gray-600">A clear path from idea to launch.</p>
+            <p className="mt-3 text-gray-600">
+              A clear path from idea to launch.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -241,12 +250,17 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
 
       {"outcomes" in service && (
         <section className="px-4 py-12">
-          <div className="mx-auto grid max-w-screen-lg grid-cols-1 gap-6 lg:grid-cols-2">
+          <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 lg:grid-cols-2">
             <div className="rounded-md border border-gray-300 bg-white p-6 shadow-sm">
-              <h2 className="mb-5 text-2xl font-bold text-gray-900">What You Get</h2>
+              <h2 className="mb-5 text-2xl font-bold text-gray-900">
+                What You Get
+              </h2>
               <ul className="space-y-3">
                 {service.outcomes.map((outcome) => (
-                  <li key={outcome} className="flex items-start gap-3 text-gray-700">
+                  <li
+                    key={outcome}
+                    className="flex items-start gap-3 text-gray-700"
+                  >
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <span>{outcome}</span>
                   </li>
@@ -254,10 +268,15 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
               </ul>
             </div>
             <div className="rounded-md border border-gray-300 bg-white p-6 shadow-sm">
-              <h2 className="mb-5 text-2xl font-bold text-gray-900">Best For</h2>
+              <h2 className="mb-5 text-2xl font-bold text-gray-900">
+                Best For
+              </h2>
               <ul className="space-y-3">
                 {service.idealFor.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-gray-700">
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-gray-700"
+                  >
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <span>{item}</span>
                   </li>
@@ -270,7 +289,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
 
       {"comparisonTable" in service && (
         <section className="px-4 py-12">
-          <div className="mx-auto max-w-screen-lg overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm">
+          <div className="mx-auto max-w-screen-xl overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[680px] text-left text-sm">
                 <thead className="bg-gray-50 text-gray-900">
@@ -308,7 +327,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
 
       {"faqs" in service && (
         <section className="px-4 py-12">
-          <div className="mx-auto max-w-screen-lg">
+          <div className="mx-auto max-w-screen-xl">
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-gray-900">
               <HelpCircle className="h-6 w-6 text-primary" />
               Questions
@@ -331,7 +350,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
       )}
 
       <section className="px-4 py-12">
-        <div className="mx-auto max-w-screen-lg">
+        <div className="mx-auto max-w-screen-xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

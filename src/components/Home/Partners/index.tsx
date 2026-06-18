@@ -15,7 +15,7 @@ const partners = [
 const Partners = () => {
   return (
     <section className="py-16 bg-gray-50">
-      <div className="max-w-screen-lg mx-auto px-4">
+      <div className="max-w-screen-xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,7 +27,8 @@ const Partners = () => {
             Trusted by Leading Brands
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We&apos;re proud to work with amazing companies and help them achieve their digital goals.
+            We&apos;re proud to work with amazing companies and help them
+            achieve their digital goals.
           </p>
         </motion.div>
 

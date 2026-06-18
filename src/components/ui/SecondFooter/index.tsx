@@ -24,7 +24,7 @@ const SecondFooter = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
       viewport={{ once: true, amount: 0.1 }}
-      className="relative mx-4 mb-4 overflow-hidden rounded-md border border-gray-300 bg-[#f7f3eb] bg-dot-black/[0.12] py-10 md:py-16 md:max-w-screen-lg md:mx-auto"
+      className="relative mx-4 mb-4 overflow-hidden rounded-md border border-gray-300 bg-[#f7f3eb] bg-dot-black/[0.12] py-10 md:py-16 md:max-w-screen-xl md:mx-auto"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-[#f7f3eb] via-[#f7f3eb]/90 to-primary/15" />
       <NoiseTexture
@@ -36,7 +36,7 @@ const SecondFooter = () => {
       />
       <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-screen-lg px-5 text-center md:px-10">
+      <div className="relative mx-auto max-w-screen-xl px-5 text-center md:px-10">
         <div className="mb-3 inline-flex items-center gap-2 rounded-md border border-primary/20 bg-white/70 px-3 py-2 text-xs font-bold uppercase tracking-widest text-primary md:mb-5">
           <Sparkles className="h-4 w-4" />
           Build With Frontail

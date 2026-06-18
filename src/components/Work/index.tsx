@@ -9,7 +9,7 @@ import { containerVariants } from "@/varients";
 const Work = () => {
   return (
     <section className="min-h-screen pt-28 pb-16 md:px-6 px-4 bg-grid-black/5 relative overflow-hidden">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         <motion.div
           initial="hidden"
           animate="visible"

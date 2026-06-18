@@ -21,7 +21,7 @@ const BlogSection = async () => {
 
   return (
     <section className="px-4 py-12 md:py-16 lg:py-20">
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-auto max-w-screen-xl">
         <div className="mb-8 text-center">
           <h2 className="font-anton text-4xl font-extrabold tracking-normal text-gray-900 md:text-5xl">
             Latest <span className="text-primary">Guides</span>
