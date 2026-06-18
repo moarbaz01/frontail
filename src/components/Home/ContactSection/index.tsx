@@ -87,7 +87,7 @@ const ContactSection = () => {
             </p>
 
             <button
-              onClick={() => router.push("/start-project")}
+              onClick={() => router.push("/contact")}
               className="btn-3d bg-primary text-white px-7 py-4 rounded-md font-bold uppercase tracking-widest text-sm"
             >
               Book Free Consultation

@@ -52,6 +52,26 @@ const blogs = [
     label: "Wrong MVP how to know 48 hours",
     href: "/blog/wrong-mvp-how-to-know-48-hours",
   },
+  {
+    label: "A Practical Social Media Strategy for Local Service Businesses",
+    href: "/blog/social-media-strategy-local-service-business",
+  },
+  {
+    label: "Your Local Business Website Is Losing You Customers",
+    href: "/blog/local-business-website-that-generates-leads",
+  },
+  {
+    label: "Business Optimization Guide for Local Businesses in 2026",
+    href: "/blog/google-my-business-optimization-local-business-2026",
+  },
+  {
+    label: "Why Your Local Business Isn't Getting Enquiries?",
+    href: "/blog/how-local-business-can-get-more-enquiries",
+  },
+  {
+    label: "How Coaching Centers Can Build a Strong Online Presence",
+    href: "/blog/how-coaching-centers-can-build-online-presence",
+  },
 ];
 
 export default function Footer() {
@@ -74,7 +94,7 @@ export default function Footer() {
               businesses.
             </p>
             <Link
-              href="/start-project"
+              href="/contact"
               className="btn-3d mt-5 inline-flex rounded-md bg-primary px-5 py-3 text-sm font-bold text-white"
             >
               Start a Project

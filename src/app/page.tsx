@@ -11,6 +11,7 @@ import JsonLd from "@/components/JsonLd";
 import { faqSections } from "@/data";
 import BlogSection from "@/components/Home/BlogSection";
 import PricingSection from "@/components/Home/PricingSection";
+import AchievementsSection from "@/components/Home/Achievement";
 
 export const metadata: Metadata = {
   title: "MVP, SaaS, AI & Mobile App Development Agency",
@@ -47,7 +48,7 @@ export default async function Home() {
     <main>
       <JsonLd data={faqSchema} />
       <HeroPage />
-      {/* <AchievementsSection /> */}
+      <AchievementsSection />
       {/* <ProjectShowcase /> */}
       <Services />
       <ProcessTimeline />
