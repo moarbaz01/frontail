@@ -38,7 +38,7 @@ const Work = () => {
 
         <div className="flex flex-col gap-6 pb-10">
           {projectsData.map((project, index) => (
-            <ProjectRow project={project} index={index} key={index} />
+            <ProjectRow project={project} index={index} key={index} parallax />
           ))}
         </div>
       </div>

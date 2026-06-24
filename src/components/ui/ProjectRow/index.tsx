@@ -1,6 +1,12 @@
-import { motion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { useRef } from "react";
 
 interface Project {
   title: string;
@@ -14,14 +20,45 @@ interface Project {
   themeColor?: string;
 }
 
-const ProjectRow = ({ project, index }: { project: Project; index: number }) => {
+const ProjectRow = ({
+  project,
+  index,
+  parallax = false,
+}: {
+  project: Project;
+  index: number;
+  parallax?: boolean;
+}) => {
+  const rowRef = useRef<HTMLDivElement | null>(null);
+  const shouldReduceMotion = useReducedMotion();
   const titleParts = project.title.split(" ");
   const accentWord = titleParts[0];
   const restTitle = titleParts.slice(1).join(" ");
   const imageOnRight = index % 2 === 0;
+  const { scrollYProgress } = useScroll({
+    target: rowRef,
+    offset: ["start end", "end start"],
+  });
+  const imageY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    imageOnRight ? [-34, 34] : [34, -34],
+  );
+  const contentY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    imageOnRight ? [16, -16] : [-16, 16],
+  );
+  const glowX = useTransform(
+    scrollYProgress,
+    [0, 1],
+    imageOnRight ? [-18, 18] : [18, -18],
+  );
+  const enableParallax = parallax && !shouldReduceMotion;
 
   return (
     <motion.div
+      ref={rowRef}
       initial={{ y: 40, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.45, ease: "easeOut", delay: index * 0.06 }}
@@ -35,11 +72,17 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
             imageOnRight ? "lg:order-2" : "lg:order-1"
           }`}
         >
-          <div
+          <motion.div
             className="absolute bottom-0 right-4 h-44 w-44 rounded-full opacity-15 blur-3xl transition-opacity duration-300 group-hover:opacity-30"
-            style={{ backgroundColor: project.themeColor || "#fe7d02" }}
+            style={{
+              x: enableParallax ? glowX : 0,
+              backgroundColor: project.themeColor || "#fe7d02",
+            }}
           />
-          <div className="relative h-[220px] w-full max-w-md transition-transform duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.03] md:h-[320px] lg:h-[430px]">
+          <motion.div
+            style={{ y: enableParallax ? imageY : 0 }}
+            className="relative h-[220px] w-full max-w-md transition-transform duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.03] md:h-[320px] lg:h-[430px]"
+          >
             <Image
               src={project.image}
               alt={project.title}
@@ -47,11 +90,12 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
               unoptimized
               className="object-contain object-bottom drop-shadow-2xl transition-[filter] duration-300 group-hover:drop-shadow-[0_22px_28px_rgba(0,0,0,0.22)]"
             />
-          </div>
+          </motion.div>
         </div>
 
         {/* Content Side */}
-        <div
+        <motion.div
+          style={{ y: enableParallax ? contentY : 0 }}
           className={`order-2 space-y-5 lg:space-y-6 ${
             imageOnRight ? "lg:order-1" : "lg:order-2"
           }`}
@@ -116,7 +160,7 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
             View Details
             <ArrowUpRight className="h-4 w-4" />
           </a>
-        </div>
+        </motion.div>
 
       </div>
     </motion.div>
