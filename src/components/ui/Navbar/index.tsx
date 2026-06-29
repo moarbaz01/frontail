@@ -156,10 +156,10 @@ const Navbar: React.FC = () => {
             whileTap="tap"
           >
             <Image
-              src={"/logo.svg"}
+              src={"/logo.png"}
               height={200}
               width={1000}
-              className="w-auto h-14 md:h-16"
+              className="w-auto h-14 md:h-20"
               alt="Frontail Technology"
             />
           </motion.div>
