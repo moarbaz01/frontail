@@ -6,6 +6,7 @@ import Footer from "@/components/ui/Footer";
 import SecondFooter from "@/components/ui/SecondFooter";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
+import ConsultationPopup from "@/components/ui/ConsultationPopup";
 
 const AppShell = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -25,6 +26,7 @@ const AppShell = ({ children }: { children: React.ReactNode }) => {
         <Footer />
       </main>
       <WhatsAppFloat />
+      <ConsultationPopup />
     </>
   );
 };

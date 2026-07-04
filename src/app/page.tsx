@@ -12,6 +12,8 @@ import { faqSections } from "@/data";
 import BlogSection from "@/components/Home/BlogSection";
 import PricingSection from "@/components/Home/PricingSection";
 import AchievementsSection from "@/components/Home/Achievement";
+import TechExpertise from "@/components/Home/TechExpertise";
+import Industries from "@/components/Home/Industries";
 
 export const metadata: Metadata = {
   title: "MVP, SaaS, AI & Mobile App Development Agency",
@@ -53,6 +55,8 @@ export default async function Home() {
       <Services />
       <ProcessTimeline />
       <ProjectsSection />
+      <Industries />
+      <TechExpertise />
       {/* <BigText /> */}
       <ComparisonSection />
       {/* <PricingSection /> */}
