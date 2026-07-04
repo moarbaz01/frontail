@@ -3,6 +3,7 @@ import ComparisonSection from "@/components/Home/ComparisonSection";
 import ContactSection from "@/components/Home/ContactSection";
 import FAQSection from "@/components/Home/FaqsSection";
 import HeroPage from "@/components/Home/HeroPage";
+import TrustBadges from "@/components/Home/TrustBadges";
 import Services from "@/components/Home/Services";
 import Testimonials from "@/components/Home/Testimonials";
 import ProcessTimeline from "@/components/Home/ProcessTimeline";
@@ -50,6 +51,7 @@ export default async function Home() {
     <main>
       <JsonLd data={faqSchema} />
       <HeroPage />
+      <TrustBadges />
       <AchievementsSection />
       {/* <ProjectShowcase /> */}
       <Services />
