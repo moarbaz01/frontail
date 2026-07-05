@@ -180,7 +180,7 @@ const ConsultationPopup = () => {
           <X className="h-4 w-4" />
         </button>
 
-        <div className="relative overflow-hidden rounded-md bg-primary p-5 text-white md:p-7">
+        <div className="relative hidden overflow-hidden rounded-md bg-primary p-5 text-white md:block md:p-7">
           <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-white/15 blur-2xl" />
           <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/10 to-transparent" />
 

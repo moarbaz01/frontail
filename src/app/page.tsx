@@ -15,6 +15,7 @@ import PricingSection from "@/components/Home/PricingSection";
 import AchievementsSection from "@/components/Home/Achievement";
 import TechExpertise from "@/components/Home/TechExpertise";
 import Industries from "@/components/Home/Industries";
+import InstagramSection from "@/components/Home/InstagramSection";
 
 export const metadata: Metadata = {
   title: "MVP, SaaS, AI & Mobile App Development Agency",
@@ -65,6 +66,7 @@ export default async function Home() {
       <Testimonials />
       <ContactSection />
       <FAQSection />
+      <InstagramSection />
       <BlogSection />
     </main>
   );

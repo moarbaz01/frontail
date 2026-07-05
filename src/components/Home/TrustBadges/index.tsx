@@ -1,14 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, FileCheck, FileBadge } from "lucide-react";
+import { ShieldCheck, FileCheck, FileBadge, Award } from "lucide-react";
 
 const badges = [
-  {
-    title: "Verified Business",
-    subtitle: "Trusted Partner",
-    icon: ShieldCheck,
-  },
+
   {
     title: "Udyam Registered",
     subtitle: "Govt. of India",
@@ -19,13 +15,14 @@ const badges = [
     subtitle: "Regular Taxpayer",
     icon: FileCheck,
   },
+
 ];
 
 const TrustBadges = () => {
   return (
     <section className="py-8 border-b border-gray-100">
       <div className="mx-auto max-w-screen-xl px-4">
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 lg:gap-32">
+        <div className="grid grid-cols-2 gap-x-2 gap-y-8 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-8 md:gap-16 lg:gap-32">
           {badges.map((badge, index) => {
             const Icon = badge.icon;
             return (

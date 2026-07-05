@@ -74,7 +74,7 @@ const AchievementsSection: React.FC = () => {
           <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-primary/10 blur-[90px]" />
           <div className="pointer-events-none absolute -bottom-24 left-8 h-52 w-52 rounded-full bg-primary/5 blur-[80px]" />
 
-          <div className="relative grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="relative grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={achievement.id}
