@@ -55,12 +55,13 @@ const ProjectRow = ({
     imageOnRight ? [-18, 18] : [18, -18],
   );
   const enableParallax = parallax && !shouldReduceMotion;
+  const isRasterProject = project.image.endsWith(".png");
 
   return (
     <motion.div
       ref={rowRef}
-      initial={{ y: 40, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
+      initial={{ y: 24 }}
+      whileInView={{ y: 0 }}
       transition={{ duration: 0.45, ease: "easeOut", delay: index * 0.06 }}
       viewport={{ once: true, margin: "-100px" }}
       className="group relative overflow-hidden rounded-md border border-gray-300 bg-white p-5 shadow-sm md:p-7"
@@ -68,7 +69,7 @@ const ProjectRow = ({
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_0.95fr]">
         {/* Image Side */}
         <div
-          className={`relative order-1 flex min-h-[220px] items-end justify-center overflow-hidden lg:min-h-[280px] ${
+          className={`relative order-1 flex min-h-[220px] items-center justify-center overflow-hidden rounded-md bg-gradient-to-br from-white via-white to-gray-50 lg:min-h-[280px] ${
             imageOnRight ? "lg:order-2" : "lg:order-1"
           }`}
         >
@@ -81,14 +82,20 @@ const ProjectRow = ({
           />
           <motion.div
             style={{ y: enableParallax ? imageY : 0 }}
-            className="relative h-[220px] w-full max-w-md transition-transform duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.03] md:h-[320px] lg:h-[430px]"
+            className={`relative w-full transition-transform duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.03] ${
+              isRasterProject
+                ? "h-[220px] max-w-xl md:h-[300px] lg:h-[360px]"
+                : "h-[220px] max-w-md md:h-[320px] lg:h-[430px]"
+            }`}
           >
             <Image
               src={project.image}
               alt={project.title}
               fill
               unoptimized
-              className="object-contain object-bottom drop-shadow-2xl transition-[filter] duration-300 group-hover:drop-shadow-[0_22px_28px_rgba(0,0,0,0.22)]"
+              className={`object-contain drop-shadow-2xl transition-[filter] duration-300 group-hover:drop-shadow-[0_22px_28px_rgba(0,0,0,0.22)] ${
+                isRasterProject ? "object-center" : "object-bottom"
+              }`}
             />
           </motion.div>
         </div>
@@ -151,15 +158,21 @@ const ProjectRow = ({
             {project.description}
           </p>
 
-          <a
-            href={project.link || "#"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-3d inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-xs font-bold uppercase tracking-widest text-white"
-          >
-            View Details
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
+          {project.link ? (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-3d inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-xs font-bold uppercase tracking-widest text-white"
+            >
+              View Details
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          ) : (
+            <span className="inline-flex w-fit items-center justify-center rounded-md border border-gray-300 bg-gray-50 px-6 py-3 text-xs font-bold uppercase tracking-widest text-gray-600">
+              Case Study Preview
+            </span>
+          )}
         </motion.div>
 
       </div>

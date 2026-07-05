@@ -5,48 +5,54 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  BrainCircuit,
   CheckCircle2,
-  ShieldCheck,
-  FileCheck,
   FileBadge,
-  Zap,
+  FileCheck,
+  Globe,
   Layers,
+  LayoutDashboard,
   MessageCircle,
   Rocket,
-  LayoutDashboard,
+  ShieldCheck,
   Smartphone,
-  BrainCircuit,
-  Globe,
+  Zap,
 } from "lucide-react";
+
+const floatTransition = {
+  duration: 3.8,
+  repeat: Infinity,
+  ease: "easeInOut" as const,
+};
 
 const whatWeBuild = [
   {
     icon: Globe,
     title: "SaaS Platforms",
-    description: "End-to-end multi-tenant platforms built to scale from day one.",
+    description: "Multi-tenant products, dashboards, subscriptions, and APIs.",
   },
   {
     icon: Smartphone,
-    title: "Mobile Applications",
-    description: "Cross-platform mobile apps with React Native & Flutter.",
+    title: "Mobile Apps",
+    description: "React Native and Flutter apps for Android and iOS launches.",
   },
   {
     icon: LayoutDashboard,
-    title: "Admin Dashboards",
-    description: "Operator-facing dashboards with clean data architecture.",
+    title: "Dashboards",
+    description: "Admin panels, CRMs, reporting tools, and internal workflows.",
   },
   {
     icon: BrainCircuit,
-    title: "Automation Systems",
-    description: "Business workflows automated to save hours every week.",
+    title: "Automation",
+    description: "AI tools and workflow automation for growing operations.",
   },
 ];
 
-const whyFrontail = [
-  { icon: Zap, title: "Fast MVP delivery", detail: "15–45 days" },
-  { icon: Layers, title: "Clean scalable architecture", detail: "Built to grow" },
-  { icon: Rocket, title: "Product-first mindset", detail: "Not just code" },
-  { icon: MessageCircle, title: "Direct founder communication", detail: "No middlemen" },
+const reasons = [
+  { icon: Zap, title: "Fast MVP delivery", detail: "Focused launch scope" },
+  { icon: Layers, title: "Scalable architecture", detail: "Built to grow" },
+  { icon: Rocket, title: "Product-first build", detail: "Not just code" },
+  { icon: MessageCircle, title: "Founder communication", detail: "Direct updates" },
 ];
 
 const trustBadges = [
@@ -58,476 +64,283 @@ const trustBadges = [
   {
     icon: FileCheck,
     title: "GST Verified Business",
-    subtitle: "Regular Taxpayer",
+    subtitle: "Regular taxpayer",
   },
   {
     icon: ShieldCheck,
-    title: "India-Based Digital Agency",
-    subtitle: "Founded & operated in India",
+    title: "India-Based Studio",
+    subtitle: "Remote worldwide delivery",
   },
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 20 },
   show: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.45, ease: "easeOut" },
+    transition: { delay: i * 0.08, duration: 0.4, ease: "easeOut" },
   }),
 };
 
+const FounderVisual = () => (
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    animate="show"
+    className="relative"
+  >
+    <div className="absolute -left-6 top-10 h-28 w-28 rounded-full bg-primary/15 blur-3xl" />
+    <div className="absolute -right-6 bottom-8 h-32 w-32 rounded-full bg-sky-300/20 blur-3xl" />
+
+    <div className="relative overflow-hidden rounded-md border border-gray-300 bg-white p-3 shadow-sm">
+      <div className="relative overflow-hidden rounded-md bg-[#fff7ef]">
+        <Image
+          src="/founder-2.jpeg"
+          alt="Mohammed Arbaz, founder of Frontail Technology"
+          width={720}
+          height={860}
+          priority
+          sizes="(min-width: 1024px) 420px, 100vw"
+          className="h-[360px] w-full object-cover object-top md:h-[430px]"
+        />
+        <motion.div
+          animate={{ y: [0, -8, 0] }}
+          transition={floatTransition}
+          className="absolute left-4 top-4 rounded-md border border-white/70 bg-white/90 px-3 py-2 shadow-sm backdrop-blur"
+        >
+          <p className="text-xs font-bold text-gray-900">
+            Founder-led delivery
+          </p>
+          <p className="mt-0.5 text-[11px] text-gray-500">
+            Reviewed in-house
+          </p>
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ ...floatTransition, delay: 0.25 }}
+          className="absolute bottom-4 right-4 rounded-md border border-primary/20 bg-white/90 px-3 py-2 text-xs font-bold text-primary shadow-sm backdrop-blur"
+        >
+          Full-stack product builder
+        </motion.div>
+      </div>
+    </div>
+  </motion.div>
+);
+
+const BuildVisual = () => (
+  <div className="flex h-full min-h-[300px] items-center justify-center">
+    <Image
+      src="/mockup/about.png"
+      alt="Frontail software product mockup"
+      width={820}
+      height={620}
+      sizes="(min-width: 1024px) 400px, 100vw"
+      className="w-full max-w-[500px] object-contain"
+    />
+  </div>
+);
+
 export default function AboutContent() {
   return (
-    <main className="text-gray-900 antialiased">
+    <main className="bg-[#f7f3eb] text-gray-900 antialiased">
+      <section className="relative overflow-hidden px-4 pb-10 pt-28 md:pb-12 md:pt-32">
+        <div className="absolute inset-0 bg-grid-black/[0.035]" />
+        <div className="absolute left-1/2 top-12 h-80 w-80 -translate-x-1/2 rounded-full bg-primary/10 blur-[110px]" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-[#f7f3eb]" />
 
-      {/* ─────────────────────────── HERO ─────────────────────────── */}
-      <section className="relative overflow-hidden border-b border-gray-200 px-4 pb-20 pt-32 md:pb-28 md:pt-40">
-        <div className="pointer-events-none absolute inset-0 bg-dot-black/[0.06]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-[#f7f3eb]" />
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[140px]" />
-
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <motion.span
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gray-500 backdrop-blur-sm"
-          >
-            About Frontail Technologies
-          </motion.span>
-
-          <motion.h1
-            variants={fadeUp}
-            custom={1}
-            initial="hidden"
-            animate="show"
-            className="font-anton text-4xl font-extrabold leading-[1.1] tracking-tight text-gray-900 md:text-6xl"
-          >
-            A serious product studio built for{" "}
-            <span className="text-primary">scalable digital systems.</span>
-          </motion.h1>
-
-          <motion.p
-            variants={fadeUp}
-            custom={2}
-            initial="hidden"
-            animate="show"
-            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-500"
-          >
-            We help startups and businesses turn ideas into SaaS platforms,
-            mobile apps, and automation systems — with speed, clarity, and
-            strong architecture.
-          </motion.p>
-
-          <motion.div
-            variants={fadeUp}
-            custom={3}
-            initial="hidden"
-            animate="show"
-            className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
-          >
-            <Link
-              href="/contact"
-              className="btn-3d inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-bold text-white"
-            >
-              Start a Project <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 rounded-md border border-gray-300 bg-white/80 px-6 py-3.5 text-sm font-semibold text-gray-700 transition-colors hover:border-gray-400 hover:text-gray-900"
-            >
-              View Our Work
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ────────────────────────── FOUNDER ─────────────────────────── */}
-      <section className="px-4 py-20 md:py-28">
-        <div className="mx-auto max-w-screen-xl">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-
-            {/* Image */}
-            <motion.div
+        <div className="relative z-10 mx-auto grid max-w-screen-xl items-center gap-8 lg:grid-cols-[1fr_0.86fr]">
+          <div>
+            <motion.p
               variants={fadeUp}
               initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="relative overflow-hidden rounded-md border border-gray-300 shadow-sm"
+              animate="show"
+              className="text-xs font-bold uppercase tracking-widest text-primary"
             >
-              <Image
-                src="/founder-2.jpeg"
-                alt="Arbaz Khan – founder of Frontail Technology"
-                width={720}
-                height={860}
-                priority
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="h-full min-h-[420px] w-full object-cover object-top"
-              />
-              <div className="absolute left-4 top-4 rounded-lg border border-white/60 bg-white/90 px-3 py-2 shadow backdrop-blur-sm">
-                <p className="text-xs font-bold text-gray-900">Founder-led delivery</p>
-                <p className="mt-0.5 text-[11px] text-gray-500">Every project reviewed in-house</p>
-              </div>
-            </motion.div>
-
-            {/* Text */}
-            <div>
-              <motion.p
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="text-xs font-bold uppercase tracking-widest text-primary"
-              >
-                Meet the founder
-              </motion.p>
-
-              <motion.h2
-                variants={fadeUp}
-                custom={1}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="mt-3 font-anton text-3xl font-extrabold leading-tight tracking-tight text-gray-900 md:text-4xl"
-              >
-                Built by a Developer Who Thinks Like a{" "}
-                <span className="text-primary">Product Founder</span>
-              </motion.h2>
-
-              <motion.p
-                variants={fadeUp}
-                custom={2}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="mt-5 text-base leading-relaxed text-gray-600"
-              >
-                Mohammed Arbaz is the founder of Frontail Technologies. He
-                specializes in SaaS platforms, mobile applications, and
-                business automation systems.
-              </motion.p>
-
-              <motion.p
-                variants={fadeUp}
-                custom={3}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="mt-3 text-base leading-relaxed text-gray-600"
-              >
-                He is actively involved in architecture, UI/UX direction, and
-                full-stack development — ensuring every product ships with
-                performance and scalability built in.
-              </motion.p>
-
-              <motion.blockquote
-                variants={fadeUp}
-                custom={4}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="mt-7 border-l-[3px] border-primary pl-5"
-              >
-                <p className="text-base font-semibold italic text-gray-800">
-                  &ldquo;We don&apos;t outsource thinking. Everything is built
-                  and reviewed in-house.&rdquo;
-                </p>
-                <footer className="mt-2 text-sm font-bold text-primary">
-                  — Mohammed Arbaz, Founder
-                </footer>
-              </motion.blockquote>
-
-              <motion.div
-                variants={fadeUp}
-                custom={5}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="mt-8"
-              >
-                <Link
-                  href="/contact"
-                  className="btn-3d inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-white"
-                >
-                  Start a Conversation <ArrowRight className="h-4 w-4" />
-                </Link>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─────────────────────────── STORY ─────────────────────────── */}
-      <section className="relative px-4 py-20 md:py-28">
-        <div className="pointer-events-none absolute inset-0 bg-dot-black/[0.05]" />
-        <div className="relative z-10 mx-auto max-w-screen-xl">
-          <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.45fr] lg:gap-20">
-          <div className="text-center lg:text-left">
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="text-xs font-bold uppercase tracking-widest text-primary"
-          >
-            Our Story
-          </motion.p>
-          <motion.h2
-            variants={fadeUp}
-            custom={1}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="mt-3 font-anton text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl"
-          >
-            How Frontail Started
-          </motion.h2>
-          <motion.p
-            variants={fadeUp}
-            custom={2}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="mt-6 text-lg leading-relaxed text-gray-600"
-          >
-            Frontail was created to solve a major gap — most agencies build
-            websites, not real scalable products.
-          </motion.p>
-          <motion.p
-            variants={fadeUp}
-            custom={3}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="mt-4 text-base leading-relaxed text-gray-500"
-          >
-            We saw founders paying for pixel-perfect landing pages while their
-            actual product had no architecture. We focus on building systems,
-            not just UI pages — products that can handle growth, team expansion,
-            and real business pressure from day one.
-          </motion.p>
-          </div>
-
-          {/* Logo side */}
-          <motion.div
-            variants={fadeUp}
-            custom={2}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="flex items-center justify-center lg:justify-end"
-          >
-            <div className="flex h-44 w-44 md:h-56 md:w-56 items-center justify-center rounded-2xl border border-gray-300 bg-white shadow-md p-6">
-              <Image
-                src="/logo.png"
-                alt="Frontail Technologies logo"
-                width={160}
-                height={160}
-                className="h-auto w-full object-contain"
-              />
-            </div>
-          </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ────────────────────────── MISSION ─────────────────────────── */}
-      <section className="px-4 py-20 md:py-28">
-        <div className="mx-auto max-w-screen-xl">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-            <div>
-              <motion.p
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="text-xs font-bold uppercase tracking-widest text-primary"
-              >
-                Our Mission
-              </motion.p>
-              <motion.h2
-                variants={fadeUp}
-                custom={1}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="mt-3 font-anton text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl"
-              >
-                Build fast. Build right. Build to last.
-              </motion.h2>
-              <motion.p
-                variants={fadeUp}
-                custom={2}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="mt-5 text-base leading-relaxed text-gray-600"
-              >
-                To help startups and businesses launch scalable digital products
-                with speed, clarity, and strong architecture. No bloat. No
-                generic output. Just products that work.
-              </motion.p>
-            </div>
-
-            <motion.div
+              About Frontail Technology
+            </motion.p>
+            <motion.h1
               variants={fadeUp}
               custom={1}
               initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
+              animate="show"
+              className="mt-3 font-anton text-4xl font-extrabold leading-tight tracking-normal text-gray-900 md:text-5xl"
             >
-              {[
-                { value: "15–45", label: "Days to MVP launch" },
-                { value: "100%", label: "In-house development" },
-                { value: "0", label: "Outsourced thinking" },
-                { value: "∞", label: "Scalability mindset" },
-              ].map((s) => (
+              Software built by a developer who thinks like a product founder.
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              custom={2}
+              initial="hidden"
+              animate="show"
+              className="mt-4 max-w-2xl text-base leading-relaxed text-gray-600"
+            >
+              Frontail Technology is led by Mohammed Arbaz (ABR), a full-stack
+              developer who has worked on real-world ed-tech, B2B, B2C, and
+              multi-tenant platforms.
+            </motion.p>
+            <motion.div
+              variants={fadeUp}
+              custom={3}
+              initial="hidden"
+              animate="show"
+              className="mt-6 flex flex-wrap gap-3"
+            >
+              <Link
+                href="/contact"
+                className="btn-3d inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-white"
+              >
+                Start a Conversation <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/projects"
+                className="inline-flex items-center rounded-md border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-900 hover:text-primary"
+              >
+                View Projects
+              </Link>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              custom={4}
+              initial="hidden"
+              animate="show"
+              className="mt-7 grid grid-cols-3 gap-3"
+            >
+              {["MVPs", "SaaS", "Mobile Apps"].map((item) => (
                 <div
-                  key={s.label}
-                  className="rounded-md border border-gray-300 bg-white p-6 text-center shadow-sm"
+                  key={item}
+                  className="rounded-md border border-gray-300 bg-white/80 px-3 py-3 text-center text-xs font-bold text-gray-700 shadow-sm backdrop-blur"
                 >
-                  <p className="font-anton text-4xl font-extrabold text-primary">{s.value}</p>
-                  <p className="mt-1.5 text-xs font-semibold text-gray-500">{s.label}</p>
+                  {item}
                 </div>
               ))}
             </motion.div>
           </div>
+
+          <FounderVisual />
         </div>
       </section>
 
-      {/* ──────────────────────── WHAT WE BUILD ──────────────────────── */}
-      <section className="px-4 py-20 md:py-28">
-        <div className="mx-auto max-w-screen-xl">
-          <div className="mb-12 text-center">
-            <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="text-xs font-bold uppercase tracking-widest text-primary"
-            >
-              What We Build
-            </motion.p>
-            <motion.h2
-              variants={fadeUp}
-              custom={1}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="mt-3 font-anton text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl"
-            >
+      <section className="px-4 py-10 md:py-12">
+        <div className="mx-auto grid max-w-screen-xl gap-5 lg:grid-cols-[0.85fr_1.15fr]">
+          <BuildVisual />
+
+          <div className="rounded-md border border-gray-300 bg-white p-5 shadow-sm md:p-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary">
+              What we build
+            </p>
+            <h2 className="mt-2 font-anton text-3xl font-extrabold tracking-normal text-gray-900 md:text-4xl">
               Systems, not just screens.
-            </motion.h2>
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-gray-600 md:text-base">
+              We focus on products that can actually operate after launch:
+              dashboards, mobile apps, SaaS platforms, APIs, and automation
+              tools.
+            </p>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {whatWeBuild.map(({ icon: Icon, title, description }, index) => (
+                <motion.div
+                  key={title}
+                  variants={fadeUp}
+                  custom={index}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="rounded-md border border-gray-200 bg-[#f7f3eb] p-4"
+                >
+                  <div className="flex h-9 w-9 items-center justify-center rounded-md border border-primary/20 bg-white text-primary">
+                    <Icon className="h-4 w-4" strokeWidth={1.75} />
+                  </div>
+                  <h3 className="mt-3 text-sm font-bold text-gray-900">
+                    {title}
+                  </h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-gray-600">
+                    {description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden px-4 py-10 md:py-12">
+        <div className="absolute inset-0 bg-dot-black/[0.05]" />
+        <div className="relative z-10 mx-auto grid max-w-screen-xl gap-5 lg:grid-cols-[1fr_1fr]">
+          <div className="rounded-md border border-gray-300 bg-white/85 p-5 shadow-sm backdrop-blur md:p-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary">
+              Our story
+            </p>
+            <h2 className="mt-2 font-anton text-3xl font-extrabold tracking-normal text-gray-900">
+              Frontail started with one clear belief.
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-gray-600 md:text-base">
+              Many teams get beautiful pages but weak product foundations. We
+              build with architecture, workflows, performance, and real users in
+              mind from the first version.
+            </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {whatWeBuild.map(({ icon: Icon, title, description }, i) => (
+          <div className="grid gap-3 sm:grid-cols-2">
+            {reasons.map(({ icon: Icon, title, detail }, index) => (
               <motion.div
                 key={title}
                 variants={fadeUp}
-                custom={i * 0.5}
+                custom={index}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="group rounded-md border border-gray-300 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+                className="rounded-md border border-gray-300 bg-white p-4 shadow-sm"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Icon className="h-5 w-5" strokeWidth={1.75} />
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary/10 text-primary">
+                    <Icon className="h-4 w-4" strokeWidth={1.75} />
+                  </div>
+                  <CheckCircle2 className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="mt-5 text-base font-bold text-gray-900">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-500">{description}</p>
+                <p className="text-sm font-bold text-gray-900">{title}</p>
+                <p className="mt-1 text-xs font-semibold text-primary">
+                  {detail}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ───────────────────────── WHY FRONTAIL ─────────────────────── */}
-      <section className="px-4 py-20 md:py-28">
+      <section className="px-4 py-10 md:py-12">
         <div className="mx-auto max-w-screen-xl">
-          <div className="mb-12 text-center">
-            <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="text-xs font-bold uppercase tracking-widest text-primary"
-            >
-              Why Frontail
-            </motion.p>
-            <motion.h2
-              variants={fadeUp}
-              custom={1}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="mt-3 font-anton text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl"
-            >
-              Not like the rest.
-            </motion.h2>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {whyFrontail.map(({ icon: Icon, title, detail }, i) => (
-              <motion.div
-                key={title}
-                variants={fadeUp}
-                custom={i * 0.5}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="group rounded-md border border-gray-300 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Icon className="h-5 w-5" strokeWidth={1.75} />
-                </div>
-                <div className="mt-5">
-                  <p className="text-base font-bold text-gray-900">{title}</p>
-                  <p className="mt-1 text-sm font-semibold text-primary">{detail}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ───────────────────────── TRUST BADGES ─────────────────────── */}
-      <section className="px-4 py-16">
-        <div className="mx-auto max-w-screen-xl">
-          <div className="mb-8 flex items-center gap-2">
+          <div className="mb-5 flex items-center gap-2">
             <ShieldCheck className="h-5 w-5 text-primary" strokeWidth={1.75} />
             <h2 className="text-sm font-bold uppercase tracking-widest text-gray-700">
               Trust & Compliance
             </h2>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
-            {trustBadges.map(({ icon: Icon, title, subtitle }, i) => (
+          <div className="grid gap-3 sm:grid-cols-3">
+            {trustBadges.map(({ icon: Icon, title, subtitle }, index) => (
               <motion.div
                 key={title}
                 variants={fadeUp}
-                custom={i * 0.5}
+                custom={index}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="flex items-center gap-4 rounded-md border border-gray-300 bg-white px-5 py-4 shadow-sm"
+                className="flex items-center gap-3 rounded-md border border-gray-300 bg-white px-4 py-4 shadow-sm"
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10">
                   <Icon className="h-5 w-5 text-primary" strokeWidth={1.5} />
                 </div>
-                <div className="flex-1">
+                <div>
                   <p className="text-sm font-bold text-gray-900">{title}</p>
                   <p className="mt-0.5 text-xs text-gray-500">{subtitle}</p>
                 </div>
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-green-500" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-
-
     </main>
   );
 }

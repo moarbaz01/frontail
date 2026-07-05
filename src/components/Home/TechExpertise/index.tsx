@@ -49,8 +49,8 @@ const TechExpertise = () => {
                   <motion.div
                     key={tech.name}
                     className="group flex h-24 w-24 md:h-[110px] md:w-[110px] cursor-default flex-col items-center justify-center rounded-2xl md:rounded-[24px] bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ y: 16 }}
+                    whileInView={{ y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                   >
@@ -71,8 +71,8 @@ const TechExpertise = () => {
                   <motion.div
                     key={tech.name}
                     className="group flex h-24 w-24 md:h-[110px] md:w-[110px] cursor-default flex-col items-center justify-center rounded-2xl md:rounded-[24px] bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ y: 16 }}
+                    whileInView={{ y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 + i * 0.1 }}
                   >
@@ -93,8 +93,8 @@ const TechExpertise = () => {
                   <motion.div
                     key={tech.name}
                     className="group flex h-24 w-24 md:h-[110px] md:w-[110px] cursor-default flex-col items-center justify-center rounded-2xl md:rounded-[24px] bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ y: 16 }}
+                    whileInView={{ y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 + i * 0.1 }}
                   >

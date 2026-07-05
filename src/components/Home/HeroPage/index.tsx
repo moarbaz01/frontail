@@ -133,7 +133,7 @@ const HeroPage = () => {
   const router = useRouter();
 
   return (
-    <section className="w-full md:min-h-screen lg:pt-44 md:pb-16 pt-32 pb-32 flex items-start justify-center px-4 relative overflow-hidden">
+    <section className="w-full md:min-h-screen lg:pt-48 md:pb-16 pt-32 pb-32 flex items-start justify-center px-4 relative overflow-hidden">
       <AnimatedHeroBackground />
 
       <div className="mb-8 flex items-center relative text-center flex-col z-10">

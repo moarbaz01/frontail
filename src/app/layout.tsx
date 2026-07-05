@@ -1,21 +1,18 @@
 import type { Metadata } from "next";
-import { Libre_Baskerville, Inter, Sora } from "next/font/google";
+import { Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import AppShell from "@/components/AppShell";
 import Script from "next/script";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-
-const plusJakarta = Sora({
-  preload: true,
+const fontSans = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
-const libreBaskerville = Libre_Baskerville({
-  weight: ["400", "700"],
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  variable: "--font-libre-baskerville",
 });
 
 export const metadata: Metadata = {
@@ -95,7 +92,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", inter.variable)}>
+    <html
+      lang="en"
+      className={cn("font-sans", fontSans.variable, geistMono.variable)}
+    >
       <head>
         <meta name="author" content="Frontail Team" />
         <meta name="email" content="arbazmr123@gmail.com" />
@@ -176,9 +176,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-T3HH77B4');`}
         </Script>
       </head>
-      <body
-        className={` ${plusJakarta.className} ${libreBaskerville.variable} antialiased   `}
-      >
+      <body className="antialiased">
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-T3HH77B4"

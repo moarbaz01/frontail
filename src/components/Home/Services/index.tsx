@@ -313,8 +313,8 @@ const Services = () => {
           {displayedServices?.map((service, index) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ y: 16 }}
+              whileInView={{ y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               className="group bg-white rounded-md overflow-hidden border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"

@@ -53,7 +53,7 @@ const Page = () => {
               "@type": "CreativeWork",
               name: project.title,
               description: project.description,
-              url: project.link,
+              url: project.link || "https://frontail.com/projects",
               image: `https://frontail.com${project.image}`,
               creator: {
                 "@type": "Organization",

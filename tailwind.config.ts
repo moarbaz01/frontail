@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        baskerville: ["var(--font-libre-baskerville)", "serif"],
+        sans: ["var(--font-outfit)", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "monospace"],
       },
       keyframes: {
         gradient: {

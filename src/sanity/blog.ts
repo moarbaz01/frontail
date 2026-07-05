@@ -247,26 +247,37 @@ const blogFields = `{
 }`;
 
 async function sanityQuery<T>(query: string): Promise<T | null> {
-  if (!projectId) return null;
+  if (!projectId) {
+    console.log("[Sanity] projectId is missing!");
+    return null;
+  }
 
   const url = new URL(
     `https://${projectId}.api.sanity.io/${normalizedApiVersion}/data/query/${dataset}`,
   );
   url.searchParams.set("query", query);
 
-  const response = await fetch(url, {
-    headers: readToken
-      ? {
-          Authorization: `Bearer ${readToken}`,
-        }
-      : undefined,
-    next: { revalidate: 60 },
-  });
+  try {
+    const response = await fetch(url, {
+      headers: readToken
+        ? {
+            Authorization: `Bearer ${readToken}`,
+          }
+        : undefined,
+      next: { revalidate: 60 },
+    });
 
-  if (!response.ok) return null;
+    if (!response.ok) {
+      console.error(`[Sanity] Fetch failed: ${response.status} ${response.statusText}`, await response.text());
+      return null;
+    }
 
-  const data = (await response.json()) as { result?: T };
-  return data.result ?? null;
+    const data = (await response.json()) as { result?: T };
+    return data.result ?? null;
+  } catch (err) {
+    console.error("[Sanity] Network/Fetch error:", err);
+    return null;
+  }
 }
 
 export async function getBlogPosts() {

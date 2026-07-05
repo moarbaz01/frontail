@@ -52,6 +52,30 @@ export const projectsData = [
     deliverables: "E-Commerce Storefront, Payment Gateway",
     themeColor: "#ea580c", // Orange
   },
+  {
+    title: "Oh Shakes",
+    description:
+      "A clean cafe website built for a modern food brand, showcasing products, brand presence, and a smooth customer browsing experience.",
+    image: "/projects/ohshakes.png",
+    techs: ["Next.js", "Tailwind CSS", "Responsive UI"],
+    link: "https://ohshakes.com",
+    client: "Oh Shakes",
+    industry: "Cafe / Food & Beverage",
+    deliverables: "Cafe Website, Product Showcase, Responsive Frontend",
+    themeColor: "#f59e0b",
+  },
+  {
+    title: "Inbox Pull",
+    description:
+      "An email marketing tool built with Gmail API integration for pulling, managing, and supporting marketing workflows from inbox data.",
+    image: "/projects/inboxpull.png",
+    techs: ["Next.js", "Gmail API", "Elysia.js", "Bun"],
+    link: "",
+    client: "Inbox Pull",
+    industry: "Email Marketing / SaaS",
+    deliverables: "Marketing Tool, Gmail API Integration, Backend API",
+    themeColor: "#2563eb",
+  },
 ];
 
 export const faqSections = [

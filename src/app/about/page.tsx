@@ -5,14 +5,14 @@ import AboutContent from "./AboutContent";
 export const metadata: Metadata = {
   title: "About Frontail Technology | MVP & Software Development Agency",
   description:
-    "Frontail Technology is a product-first studio building scalable SaaS platforms, mobile apps, and business automation — led by founder Arbaz Khan.",
+    "Frontail Technology is a product-first studio building scalable SaaS platforms, mobile apps, and business automation led by founder Mohammed Arbaz.",
   alternates: {
     canonical: "https://frontail.com/about",
   },
   openGraph: {
     title: "About Frontail Technology",
     description:
-      "A serious product engineering studio run by a builder, not a generic IT agency. Scalable SaaS, apps & automation.",
+      "A product engineering studio run by a builder, not a generic IT agency. Scalable SaaS, apps, and automation.",
     url: "https://frontail.com/about",
     siteName: "Frontail Technology",
     images: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: "https://frontail.com/founder.jpeg",
         width: 1200,
         height: 1200,
-        alt: "Arbaz Khan, founder of Frontail Technology",
+        alt: "Mohammed Arbaz, founder of Frontail Technology",
       },
     ],
   },
@@ -35,8 +35,9 @@ const aboutSchema = {
     "Frontail Technology is a product-first software studio building MVPs, SaaS platforms, mobile apps, and custom business automation systems.",
   mainEntity: {
     "@type": "Person",
-    name: "Arbaz Khan",
-    jobTitle: "Founder & Lead Developer",
+    name: "Mohammed Arbaz",
+    alternateName: "ABR",
+    jobTitle: "Founder & Full-Stack Developer",
     image: "https://frontail.com/founder.jpeg",
     worksFor: {
       "@type": "Organization",
@@ -50,8 +51,18 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://frontail.com" },
-    { "@type": "ListItem", position: 2, name: "About", item: "https://frontail.com/about" },
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://frontail.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About",
+      item: "https://frontail.com/about",
+    },
   ],
 };
 
