@@ -10,7 +10,8 @@ import {
 export const projectsData = [
   {
     title: "CDR912",
-    description: "A comprehensive sports betting platform featuring a multi-level agent and master system.",
+    description:
+      "A comprehensive sports betting platform featuring a multi-level agent and master system.",
     image: "/projects/cdr.svg",
     techs: ["Next.js", "Elysia.js", "Bun"],
     link: "https://cdr912.com",
@@ -21,7 +22,8 @@ export const projectsData = [
   },
   {
     title: "Vriya PMS",
-    description: "A robust 3-in-1 platform integrating accountant workflows, apartment management, and HRM systems.",
+    description:
+      "A robust 3-in-1 platform integrating accountant workflows, apartment management, and HRM systems.",
     image: "/projects/vriya-pms.svg",
     techs: ["Next.js", "Elysia.js", "Bun"],
     link: "https://vriya.online",
@@ -32,7 +34,8 @@ export const projectsData = [
   },
   {
     title: "Master Topik",
-    description: "An advanced e-learning platform for the Korea TOPIK exam, enabling users to attend quizzes, watch courses, and learn vocabulary.",
+    description:
+      "An advanced e-learning platform for the Korea TOPIK exam, enabling users to attend quizzes, watch courses, and learn vocabulary.",
     image: "/projects/mastertopik.svg",
     techs: ["Next.js", "React", "Node.js"],
     link: "https://apps.apple.com/kh/app/master-topik/id6753724785",
@@ -43,7 +46,8 @@ export const projectsData = [
   },
   {
     title: "WinWin Topup",
-    description: "A high-performance top-up website where gamers can securely recharge their favorite online games.",
+    description:
+      "A high-performance top-up website where gamers can securely recharge their favorite online games.",
     image: "/projects/winwintopup.svg",
     techs: ["Next.js", "MongoDB", "Auth"],
     link: "https://winwintopup.com",
@@ -63,6 +67,18 @@ export const projectsData = [
     industry: "Cafe / Food & Beverage",
     deliverables: "Cafe Website, Product Showcase, Responsive Frontend",
     themeColor: "#f59e0b",
+  },
+  {
+    title: "VisaMate",
+    description:
+      "A dedicated passport and visa services platform helping applicants navigate documentation, applications, and travel requirements with ease.",
+    image: "/projects/visamate.png",
+    techs: ["Next.js", "Tailwind CSS", "Responsive UI"],
+    link: "https://visamate.co.in",
+    client: "VisaMate",
+    industry: "Travel / Immigration Services",
+    deliverables: "Service Website, Application Guidance, Responsive Frontend",
+    themeColor: "#0ea5e9",
   },
   {
     title: "Inbox Pull",
