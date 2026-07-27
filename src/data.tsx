@@ -81,6 +81,30 @@ export const projectsData = [
     themeColor: "#0ea5e9",
   },
   {
+    title: "UdhariPay",
+    description:
+      "A collections automation platform helping businesses onboard merchants, verify customers, create recurring mandates, and track EMI collections in real time.",
+    image: "/projects/udharipay.png",
+    techs: ["Next.js", "Tailwind CSS", "React Native"],
+    link: "https://udharipay.com",
+    client: "UdhariPay",
+    industry: "FinTech / SaaS",
+    deliverables: "Web Platform, Mobile App, Merchant Onboarding, EMI Tracking",
+    themeColor: "#a855f7",
+  },
+  {
+    title: "Delyka Store",
+    description:
+      "A high-performance top-up website where gamers can securely recharge their favorite online games.",
+    image: "/projects/delykastore.png",
+    techs: ["Next.js", "MongoDB", "Auth"],
+    link: "https://delykastore.com",
+    client: "Delyka Store",
+    industry: "Gaming / E-Commerce",
+    deliverables: "E-Commerce Storefront, Payment Gateway",
+    themeColor: "#9333ea",
+  },
+  {
     title: "Inbox Pull",
     description:
       "An email marketing tool built with Gmail API integration for pulling, managing, and supporting marketing workflows from inbox data.",

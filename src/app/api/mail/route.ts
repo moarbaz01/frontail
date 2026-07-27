@@ -1,6 +1,7 @@
 import {
   generateContactEmailTemplate,
   generateOnboardingEmailTemplate,
+  generateToolLeadEmailTemplate,
   generateWebsitePackageEmailTemplate,
 } from "@/templates/emailTemplate";
 import { sendEmail } from "@/utils/nodemailer";
@@ -29,6 +30,28 @@ export async function POST(req: Request) {
 
       return NextResponse.json(
         { message: "Project brief sent successfully" },
+        { status: 200 }
+      );
+    }
+
+    if (body.type === "tool-lead") {
+      const { name, email } = body;
+
+      if (!name || !email) {
+        return NextResponse.json(
+          { message: "Name and email are required" },
+          { status: 400 }
+        );
+      }
+
+      await sendEmail(
+        email,
+        `New Homepage Preview Lead: ${body.siteName || name}`,
+        generateToolLeadEmailTemplate(body)
+      );
+
+      return NextResponse.json(
+        { message: "Lead sent successfully" },
         { status: 200 }
       );
     }

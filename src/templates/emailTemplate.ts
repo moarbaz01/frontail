@@ -198,6 +198,72 @@ export function generateOnboardingEmailTemplate(data: OnboardingEmailData) {
   `;
 }
 
+type ToolLeadEmailData = {
+  name: string;
+  email: string;
+  phone?: string;
+  siteName?: string;
+  headline?: string;
+  themeColor?: string;
+  layoutStyle?: string;
+  device?: string;
+  navLinks?: string[];
+};
+
+export function generateToolLeadEmailTemplate(data: ToolLeadEmailData) {
+  const themeColorRow = data.themeColor?.trim()
+    ? `<tr>
+        <td style="padding: 12px 14px; border-bottom: 1px solid #eeeeee; color: #6b7280; font-size: 13px; width: 34%;">Theme color</td>
+        <td style="padding: 12px 14px; border-bottom: 1px solid #eeeeee; color: #111827; font-size: 14px; line-height: 1.55;">
+          <span style="display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: ${escapeHtml(data.themeColor)}; margin-right: 6px; vertical-align: middle;"></span>${escapeHtml(data.themeColor)}
+        </td>
+      </tr>`
+    : "";
+
+  return `
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>New Homepage Preview Tool Lead</title>
+      </head>
+      <body style="margin: 0; padding: 0; background: #f7f3eb; font-family: Arial, sans-serif;">
+        <div style="max-width: 680px; margin: 24px auto; padding: 0 16px;">
+          <div style="overflow: hidden; border: 1px solid #e5e7eb; border-radius: 8px; background: #ffffff;">
+            <div style="background: #fe7d02; color: #ffffff; padding: 22px 24px;">
+              <p style="margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">Homepage Preview Tool Lead</p>
+              <h1 style="margin: 0; font-size: 24px; line-height: 1.25;">${escapeHtml(data.siteName || data.name)}</h1>
+            </div>
+
+            <div style="padding: 22px 24px;">
+              <p style="margin: 0 0 18px; color: #374151; font-size: 15px; line-height: 1.6;">
+                A visitor built a live homepage preview and asked to have it built for real.
+              </p>
+
+              <table style="width: 100%; border-collapse: collapse; border: 1px solid #eeeeee; border-radius: 8px; overflow: hidden;">
+                ${detailRow("Name", data.name)}
+                ${detailRow("Email", data.email)}
+                ${detailRow("Phone", data.phone)}
+                ${detailRow("Site name", data.siteName)}
+                ${detailRow("Headline", data.headline)}
+                ${themeColorRow}
+                ${detailRow("Layout style", data.layoutStyle)}
+                ${detailRow("Device tested", data.device)}
+                ${detailRow("Nav links", data.navLinks?.filter(Boolean).join(", "))}
+              </table>
+            </div>
+
+            <div style="border-top: 1px solid #eeeeee; padding: 16px 24px; color: #6b7280; font-size: 12px;">
+              Sent from the Frontail Technology live homepage preview tool.
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  `;
+}
+
 export function generateWebsitePackageEmailTemplate(
   data: WebsitePackageEmailData
 ) {

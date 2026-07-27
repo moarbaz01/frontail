@@ -7,6 +7,7 @@ import {
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
+import { hexToRgba } from "@/utils/color";
 
 interface Project {
   title: string;
@@ -56,6 +57,7 @@ const ProjectRow = ({
   );
   const enableParallax = parallax && !shouldReduceMotion;
   const isRasterProject = project.image.endsWith(".png");
+  const themeColor = project.themeColor || "#fe7d02";
 
   return (
     <motion.div
@@ -77,7 +79,7 @@ const ProjectRow = ({
             className="absolute bottom-0 right-4 h-44 w-44 rounded-full opacity-15 blur-3xl transition-opacity duration-300 group-hover:opacity-30"
             style={{
               x: enableParallax ? glowX : 0,
-              backgroundColor: project.themeColor || "#fe7d02",
+              backgroundColor: themeColor,
             }}
           />
           <motion.div
@@ -112,14 +114,12 @@ const ProjectRow = ({
               Featured Project
             </p>
             <h3 className="font-anton text-3xl font-extrabold uppercase leading-tight tracking-normal text-gray-900 md:text-4xl">
-              <span style={{ color: project.themeColor || "#fe7d02" }}>
-                {accentWord}
-              </span>
+              <span style={{ color: themeColor }}>{accentWord}</span>
               {restTitle && <> {restTitle}</>}
             </h3>
             <div
               className="mt-3 h-1 w-16 rounded-full"
-              style={{ backgroundColor: project.themeColor || "#fe7d02" }}
+              style={{ backgroundColor: themeColor }}
             />
           </div>
 
@@ -163,7 +163,14 @@ const ProjectRow = ({
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-3d inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-xs font-bold uppercase tracking-widest text-white"
+              style={
+                {
+                  backgroundColor: themeColor,
+                  "--btn-shadow-edge": hexToRgba(themeColor, 0.78),
+                  "--btn-shadow-glow": hexToRgba(themeColor, 0.28),
+                } as React.CSSProperties
+              }
+              className="btn-3d inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-xs font-bold uppercase tracking-widest text-white"
             >
               View Details
               <ArrowUpRight className="h-4 w-4" />
