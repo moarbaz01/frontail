@@ -6,10 +6,19 @@ export const detailedServices = [
     image: "/images/services/mvp-development.jpg",
 
     // Hero section
-    tagline: "From idea to live product in weeks — not months.",
-    headline: "Build an MVP That Validates Fast, Attracts Investors, and Actually Works",
+    tagline: "Founder-Led MVP Development for Startups",
+    headline: "MVP Development for Startups That Need to Validate Fast",
     subheadline:
-      "Most founders waste months building something nobody uses. We help you skip that. We build lean, focused MVPs that get to real users fast — so you can learn, iterate, and grow with confidence.",
+      "We help founders and growing businesses turn product ideas into lean, production-grade MVPs in 4–8 weeks — built with clean architecture so you can validate, acquire users, and raise funding without technical debt.",
+    
+    // Dynamic Hero Visual
+    heroVisual: {
+      type: "project",
+      projectSlug: "vriya-pms",
+      desktopImage: "/projects/vriya-pms.svg",
+      mobileImage: "/projects/udharipay.png", // Using UdhariPay as a mobile example if Vriya doesn't have a standalone one
+      tags: ["SaaS", "Dashboard", "Mobile"],
+    },
 
     // Pain points — what the client is feeling before they find you
     painPoints: [
@@ -193,16 +202,188 @@ export const detailedServices = [
       { name: "MongoDB", category: "Database" },
     ],
 
-    metaTitle: "MVP Development for Startups | Frontail Technology",
+    metaTitle: "MVP Development Agency for Startups",
     metaDescription:
-      "Build and launch your startup MVP in 4–8 weeks. We scope, design, and develop focused MVPs that validate your idea, attract early users, and give investors something real to evaluate.",
+      "Founder-led MVP development services for startups. We scope, design, and build focused MVPs in 4–8 weeks to validate ideas, attract users, and pitch investors.",
     keywords: [
-      "mvp development",
-      "startup mvp",
+      "MVP development company",
+      "startup MVP development",
+      "MVP development services",
       "prototype development",
-      "early stage startup",
-      "mvp agency",
+      "early stage startup MVP",
       "build startup product",
+    ],
+
+    // ─── Hero trust badges (factual indicators, no invented numbers) ───
+    heroBadges: [
+      { label: "Founder-led", sublabel: "delivery" },
+      { label: "Web + Mobile", sublabel: "ready" },
+      { label: "Code ownership", sublabel: "guaranteed" },
+      { label: "Scalable", sublabel: "architecture" },
+    ],
+
+    // ─── What We Build — MVP product types ───
+    mvpTypes: [
+      {
+        title: "SaaS MVPs",
+        description:
+          "Multi-tenant web applications with subscriptions, role-based access, and admin panels — built to scale.",
+      },
+      {
+        title: "Mobile App MVPs",
+        description:
+          "Cross-platform iOS and Android apps using React Native — a single codebase, faster delivery, real users.",
+      },
+      {
+        title: "Marketplace MVPs",
+        description:
+          "Two-sided platforms connecting buyers and sellers with listings, profiles, payments, and communication.",
+      },
+      {
+        title: "FinTech MVPs",
+        description:
+          "Payments, collections, wallets, and transaction flows built with appropriate compliance and security in mind.",
+      },
+      {
+        title: "AI-Powered MVPs",
+        description:
+          "Products with LLM features, automation workflows, document processing, or AI-assisted decision support.",
+      },
+      {
+        title: "Internal Tool MVPs",
+        description:
+          "Custom dashboards, CRMs, admin panels, and workflow systems that replace messy spreadsheet operations.",
+      },
+      {
+        title: "Customer Portals",
+        description:
+          "Self-service portals where your customers can manage accounts, track orders, or access services directly.",
+      },
+      {
+        title: "Dashboard Products",
+        description:
+          "Data-driven applications showing analytics, reporting, or operational metrics your users depend on daily.",
+      },
+    ],
+
+    // ─── Feature prioritization (educational section) ───
+    featurePrioritization: {
+      intro:
+        "An MVP is not a low-quality product. It is the smallest version that delivers your core value and tests your key assumptions. Every feature gets classified before we build anything.",
+      categories: [
+        {
+          label: "Must-Have",
+          description:
+            "Features without which the product cannot deliver its core value or cannot be used at all.",
+          examples: [
+            "User authentication and account management",
+            "The primary user action (booking, purchase, search, upload)",
+            "Basic admin or management interface",
+            "Essential data storage and retrieval",
+          ],
+        },
+        {
+          label: "Important After Launch",
+          description:
+            "Features that improve the experience once real users are using the product and early feedback exists.",
+          examples: [
+            "Notifications and email alerts",
+            "Advanced filtering and search",
+            "Reporting and analytics dashboards",
+            "Subscription management flows",
+          ],
+        },
+        {
+          label: "Future Improvements",
+          description:
+            "Everything else — good ideas that belong on a roadmap, not in the first version.",
+          examples: [
+            "Advanced integrations and API connections",
+            "AI-powered features",
+            "Full mobile app (if web MVP was first)",
+            "Multi-language support",
+          ],
+        },
+      ],
+    },
+
+    // ─── Technology groups (organized by category) ───
+    technologyGroups: [
+      { group: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS"] },
+      { group: "Mobile", items: ["React Native"] },
+      { group: "Backend", items: ["Node.js", "Elysia.js", "Bun"] },
+      { group: "Database", items: ["PostgreSQL", "MongoDB"] },
+      { group: "Infrastructure", items: ["Vercel", "AWS"] },
+    ],
+
+    // ─── Timeline (no fabricated promises) ───
+    timeline: {
+      intro:
+        "There is no honest fixed answer to 'how long does an MVP take?' — it depends on what you are building. Here is what actually affects it:",
+      factors: [
+        "Number of user-facing screens and flows",
+        "Backend complexity: simple CRUD vs. multi-tenant logic",
+        "Third-party integrations: payments, auth, APIs, notifications",
+        "Mobile included or web only",
+        "Design: starting from scratch vs. existing brand/design system",
+        "Admin panel requirements",
+        "Number and pace of decisions on your end",
+        "Third-party approvals such as App Store review",
+      ],
+      note:
+        "Most focused web MVPs land in the 4–8 week range from scoping to launch. Mobile adds time. Complex backend logic adds time. We scope honestly in Discovery before any commitment.",
+    },
+
+    // ─── Cost factors (informational, no fake pricing) ───
+    costFactors: {
+      intro:
+        "MVP cost varies significantly based on what you are building. Here is what drives it:",
+      factors: [
+        "Scope and number of core features",
+        "Platform: web only vs. web + mobile",
+        "Backend complexity: simple API vs. multi-tenant SaaS architecture",
+        "Third-party integrations: payments, notifications, external APIs",
+        "Design requirements: new design system vs. existing Figma files",
+        "Admin panel and internal tools",
+        "Testing requirements and QA depth",
+        "Post-launch support window",
+      ],
+    },
+
+    // ─── Featured project (real Frontail project, no fabricated outcomes) ───
+    featuredProject: {
+      title: "Vriya PMS",
+      industry: "PropTech / HR / FinTech",
+      summary:
+        "A multi-tenant SaaS platform integrating apartment management, accountant workflows, and HR systems in a single product.",
+      whatWeBuilt: [
+        "Multi-tenant architecture with isolated data per organization",
+        "Apartment and property management module",
+        "Accountant workflow and financial tracking system",
+        "HRM module for staff and payroll management",
+        "Role-based access control across all three modules",
+      ],
+      technologies: ["Next.js", "Elysia.js", "Bun"],
+      link: "https://vriya.online",
+    },
+
+    // ─── Industries served (informational, no broken links) ───
+    industriesServed: [
+      "FinTech & Payments",
+      "EdTech & E-Learning",
+      "SaaS & Cloud Products",
+      "PropTech & Real Estate",
+      "Gaming & Entertainment",
+      "E-Commerce & Retail",
+      "Travel & Immigration",
+      "Business Operations",
+    ],
+
+    // ─── Related services (slugs — used for navigation when pages exist) ───
+    relatedServiceSlugs: [
+      "web-saas-development",
+      "mobile-app-development",
+      "ui-ux-for-startups",
     ],
 
     cta: {
@@ -223,10 +404,10 @@ export const detailedServices = [
     slug: "web-saas-development",
     image: "/images/services/saas-development.jpg",
 
-    tagline: "Your SaaS product — built to handle 10 users and 10,000.",
-    headline: "Scalable SaaS Development for Startups That Are Serious About Growth",
+    tagline: "Scalable SaaS & Web Applications Built for Growth",
+    headline: "SaaS & Web Application Development for High-Growth Startups",
     subheadline:
-      "A SaaS product is only as good as the architecture underneath it. We build multi-tenant, subscription-ready web applications that perform under pressure, stay secure as you scale, and don't need a rewrite when you hit your first 1,000 customers.",
+      "We design and build production-ready SaaS platforms and custom web applications with multi-tenant architecture, automated Stripe billing, and high-performance cloud infrastructure that scales effortlessly.",
 
     painPoints: [
       {
@@ -250,7 +431,7 @@ export const detailedServices = [
     ],
 
     overview:
-      "We design and build production-grade SaaS products that are ready for real scale. Whether you're starting from scratch or rebuilding a brittle codebase, we bring architecture-first thinking, clean code, and a deep understanding of what it takes to run a SaaS product that grows without breaking.",
+      "We design and build production-grade SaaS products and custom web applications that are ready for real scale. Whether you're starting from scratch or rebuilding a brittle codebase, we bring architecture-first thinking, clean code, and a deep understanding of what it takes to run a SaaS product that grows without breaking.",
 
     whatWeOffer: [
       {
@@ -398,16 +579,22 @@ export const detailedServices = [
       { name: "Stripe", category: "Payments" },
     ],
 
-    metaTitle: "SaaS & Web App Development for Startups | Frontail Technology",
+    metaTitle: "SaaS & Web Application Development Agency",
     metaDescription:
-      "We build scalable, multi-tenant SaaS applications with clean architecture, Stripe billing, and the security practices your customers expect. Built for startups serious about growth.",
+      "Scalable SaaS and custom web application development services. Multi-tenant architecture, Stripe billing, API integrations, and secure cloud infrastructure.",
     keywords: [
-      "saas development",
-      "web application development",
-      "subscription platform",
-      "startup saas",
-      "multi-tenant saas",
-      "saas architecture",
+      "SaaS development company",
+      "web application development company",
+      "SaaS product development",
+      "multi-tenant SaaS",
+      "custom web app development",
+      "SaaS architecture",
+    ],
+
+    relatedServiceSlugs: [
+      "mvp-development",
+      "ai-development",
+      "custom-software-development",
     ],
 
     cta: {
@@ -428,10 +615,10 @@ export const detailedServices = [
     slug: "mobile-app-development",
     image: "/images/services/mobile-app.jpg",
 
-    tagline: "One app. Android and iOS. Shipped fast.",
-    headline: "Cross-Platform Mobile Apps Built for Startups That Can't Afford to Wait",
+    tagline: "Cross-Platform iOS & Android Apps with Native Performance",
+    headline: "Cross-Platform Mobile App Development for Startups & Scaleups",
     subheadline:
-      "Building two separate native apps can eat 12+ months before your first user. We build cross-platform mobile apps that perform like native, ship in weeks, and stay practical for startup budgets — without the compromises you've heard about.",
+      "Build and ship iOS and Android apps from a unified React Native or Flutter codebase. Fast turnaround, 95% native performance, and complete App Store & Google Play deployment.",
 
     painPoints: [
       {
@@ -600,16 +787,22 @@ export const detailedServices = [
       { name: "Node.js", category: "Backend" },
     ],
 
-    metaTitle: "Mobile App Development for Startups | Frontail Technology",
+    metaTitle: "Mobile App Development Agency (iOS & Android)",
     metaDescription:
-      "Cross-platform React Native and Flutter mobile apps built for startup speed. Android and iOS from one codebase — with full App Store submission included.",
+      "Cross-platform mobile app development agency for iOS and Android using React Native and Flutter. Fast delivery, native performance, and full app store launch.",
     keywords: [
-      "mobile app development",
-      "startup mobile app",
-      "react native app",
-      "flutter app",
-      "cross-platform mobile",
-      "ios android app",
+      "mobile app development company",
+      "React Native development company",
+      "Flutter app development",
+      "cross-platform mobile app",
+      "startup mobile app development",
+      "iOS and Android app development",
+    ],
+
+    relatedServiceSlugs: [
+      "mvp-development",
+      "ui-ux-for-startups",
+      "web-saas-development",
     ],
 
     cta: {
@@ -630,10 +823,10 @@ export const detailedServices = [
     slug: "ui-ux-for-startups",
     image: "/images/services/ui-ux-design.jpg",
 
-    tagline: "Design that makes users stay, not just arrive.",
-    headline: "Startup UI/UX Design That Converts Signups Into Active, Paying Users",
+    tagline: "Conversion & Retention-Driven Product Design",
+    headline: "Product UI/UX Design Services for Startups & SaaS",
     subheadline:
-      "Most startup products leak users at onboarding. The design looks fine — but the flow is confusing, the value doesn't land fast enough, and users give up before they experience what makes your product worth paying for. We fix that.",
+      "Design user experiences that drive activation, reduce churn, and turn casual signups into loyal customers. Wireframing, Figma design systems, interactive prototypes, and developer-ready handoffs.",
 
     painPoints: [
       {
@@ -800,16 +993,22 @@ export const detailedServices = [
       { name: "Adobe XD", category: "Design Tool" },
     ],
 
-    metaTitle: "Startup UI/UX Design Services | Frontail Technology",
+    metaTitle: "Product UI/UX Design Services for Startups",
     metaDescription:
-      "UI/UX design for startups focused on activation, retention, and conversion. Design systems, prototypes, and developer-ready handoffs — built for products that need to grow.",
+      "Product UI/UX design services for startups and SaaS products. Wireframes, design systems in Figma, clickable prototypes, and dev-ready handoffs.",
     keywords: [
-      "startup ui ux",
-      "product design",
-      "saas ui design",
-      "mvp ui ux",
-      "ux design agency",
-      "design system startup",
+      "startup UI UX design",
+      "SaaS UI UX design",
+      "product design agency",
+      "MVP UI design",
+      "Figma design system",
+      "UX design agency",
+    ],
+
+    relatedServiceSlugs: [
+      "mvp-development",
+      "web-saas-development",
+      "mobile-app-development",
     ],
 
     cta: {
@@ -830,10 +1029,10 @@ export const detailedServices = [
     slug: "web3-development",
     image: "/images/services/web3-development.jpg",
 
-    tagline: "Web3 products that regular users can actually use.",
-    headline: "Web3 Development That Doesn't Sacrifice Usability for Decentralization",
+    tagline: "Intuitive dApps & Blockchain Products for Everyday Users",
+    headline: "Web3 & dApp Development Services for Real-World Users",
     subheadline:
-      "Most Web3 products are built for crypto natives, not mainstream users. Confusing wallet flows, missing error states, and intimidating interfaces keep adoption low. We build dApps and blockchain products that combine real decentralization with the UX quality users expect from Web2.",
+      "We build decentralized applications with seamless wallet onboarding, resilient smart contract frontends, and on-chain data tracking designed for mainstream adoption.",
 
     painPoints: [
       {
@@ -1003,16 +1202,22 @@ export const detailedServices = [
       { name: "Node.js", category: "Backend" },
     ],
 
-    metaTitle: "Web3 Development Services | Frontail Technology",
+    metaTitle: "Web3 & dApp Development Services",
     metaDescription:
-      "dApp development, wallet integration, and smart contract frontend work — built with mainstream-user UX quality and Web3-specific security practices.",
+      "Web3 product and dApp development services with intuitive user experience, secure wallet integrations, smart contract frontends, and on-chain analytics.",
     keywords: [
-      "web3 development",
-      "dapp development",
-      "blockchain app",
+      "web3 development services",
+      "dapp development company",
+      "blockchain product development",
       "wallet integration",
-      "nft marketplace development",
-      "defi frontend",
+      "smart contract frontend",
+      "NFT marketplace development",
+    ],
+
+    relatedServiceSlugs: [
+      "web-saas-development",
+      "mvp-development",
+      "ui-ux-for-startups",
     ],
 
     cta: {
@@ -1033,10 +1238,10 @@ export const detailedServices = [
     slug: "ai-development",
     image: "/images/services/ai-development.jpg",
 
-    tagline: "AI that actually works in production — not just in demos.",
-    headline: "AI Product Development for Startups That Need Results, Not Experiments",
+    tagline: "Production-Ready AI Products & Intelligent Automations",
+    headline: "AI Development Agency & Workflow Automation Services",
     subheadline:
-      "Everyone is adding AI to their product. Most of it is unreliable, expensive to run, and doesn't survive contact with real users. We build AI features and products that are designed for production — with the guardrails, cost controls, and UX quality that turns a demo into a feature people depend on.",
+      "We build production-ready AI products, intelligent workflow automations, and LLM integrations designed for reliability, measurable business impact, and predictable unit economics.",
 
     painPoints: [
       {
@@ -1207,17 +1412,23 @@ export const detailedServices = [
       { name: "TypeScript", category: "Language" },
     ],
 
-    metaTitle: "AI Development Services for Startups | Frontail Technology",
+    metaTitle: "AI Development Agency & Workflow Automation",
     metaDescription:
-      "AI app development, LLM integration, RAG systems, and workflow automation — built for production reliability, not just demos. For startups that need AI that actually works.",
+      "Production-ready AI product development and workflow automation. LLM integrations, RAG systems, smart assistants, and custom AI tools built for startups.",
     keywords: [
-      "ai development",
-      "ai app development",
-      "chatbot development",
-      "workflow automation",
-      "rag system development",
-      "llm integration",
-      "ai startup",
+      "AI development company",
+      "AI development services",
+      "AI workflow automation",
+      "custom AI solutions",
+      "LLM application development",
+      "RAG systems development",
+      "enterprise AI integration",
+    ],
+
+    relatedServiceSlugs: [
+      "web-saas-development",
+      "custom-software-development",
+      "mvp-development",
     ],
 
     cta: {
@@ -1234,14 +1445,14 @@ export const detailedServices = [
   // ─────────────────────────────────────────────
   {
     id: 7,
-    title: "Custom Tools Development",
-    slug: "custom-tools-development",
+    title: "Custom Software Development",
+    slug: "custom-software-development",
     image: "/images/services/custom-tools.jpg",
 
-    tagline: "Replace your spreadsheet chaos with a system that actually fits how you work.",
-    headline: "Custom Internal Tools That Give Your Team Back 10+ Hours Every Week",
+    tagline: "Tailored Business Software, Internal Tools & Workflow Systems",
+    headline: "Custom Software Development & Internal Tools for Growing Teams",
     subheadline:
-      "Generic software does 80% of what your team needs. The other 20% — the part specific to how your business actually runs — gets done in spreadsheets, Slack messages, and manual workarounds. We build the 20% that no off-the-shelf tool will ever cover.",
+      "Replace fragile spreadsheets and disjointed SaaS subscriptions with secure, tailored software, custom admin dashboards, and automated workflow systems built around how your team operates.",
 
     painPoints: [
       {
@@ -1265,33 +1476,33 @@ export const detailedServices = [
     ],
 
     overview:
-      "We build custom internal tools — dashboards, admin panels, CRMs, operations systems, and workflow tools — that are designed around how your team actually works. Not how some product manager at a SaaS company thought you might work. Your process, your data, your rules — in a fast, clean interface your non-technical team can use without training.",
+      "We build custom business software and internal tools — dashboards, admin panels, CRMs, operations systems, and workflow engines — designed around how your team actually works. Not how generic SaaS platforms think you should work. Your process, your data, your rules — in a fast, clean interface your non-technical team can use without friction.",
 
     whatWeOffer: [
       {
-        title: "Admin Dashboards & Panels",
+        title: "Admin Dashboards & Portals",
         description:
-          "Custom admin interfaces for managing your product's users, subscriptions, content, and operations — with the specific views, filters, and actions your team actually needs, not a generic CRUD interface.",
+          "Custom admin interfaces for managing your product's users, subscriptions, content, and operations — with specific views, filters, and actions your team actually needs.",
       },
       {
-        title: "CRM & Operations Tools",
+        title: "Custom CRM & Operations Systems",
         description:
-          "Customer relationship and operations tools built around your sales process, support workflow, or service delivery model — not Salesforce's model of how a business should run.",
+          "Customer relationship and operations platforms built around your sales process, support workflow, or service delivery model — tailored completely to your business rules.",
       },
       {
-        title: "Inventory & Workflow Systems",
+        title: "Workflow & Automation Engines",
         description:
-          "Inventory tracking, order management, project workflows, approval systems, and operational pipelines — with status tracking, notifications, and the ability to see exactly where everything is at any moment.",
+          "Order management, project workflows, approval systems, and operational pipelines with real-time status tracking, automated notifications, and external API sync.",
       },
       {
-        title: "Reporting & Analytics Dashboards",
+        title: "Reporting & Business Intelligence Dashboards",
         description:
-          "Real-time dashboards showing the metrics your team actually uses to make decisions — not a general-purpose analytics tool that requires an analyst to interpret. The right numbers, for the right people, updated automatically.",
+          "Real-time analytics dashboards presenting the exact metrics your leadership and ops teams need to make decisions — fast, clear, and updated automatically.",
       },
       {
-        title: "Role-Based Access & Team Management",
+        title: "Role-Based Access & Security Controls",
         description:
-          "Granular role and permission systems so each team member sees only what they need to see, can edit only what they should be able to edit, and every action is logged for accountability.",
+          "Granular role and permission systems so team members access only what they need, actions are fully audited, and sensitive data remains secure.",
       },
     ],
 
@@ -1349,10 +1560,10 @@ export const detailedServices = [
     ],
 
     comparisonTable: {
-      headers: ["Option", "Off-the-shelf SaaS", "Hiring ops staff", "Frontail Custom Tool"],
+      headers: ["Option", "Off-the-shelf SaaS", "Hiring ops staff", "Frontail Custom Software"],
       rows: [
         ["Fits your exact process", "Never", "Partially", "Completely"],
-        ["Pricing", "Ongoing subscription", "Ongoing salary", "Contact us"],
+        ["Pricing", "Ongoing subscription", "Ongoing salary", "Transparent project / retainer"],
         ["Integration with your stack", "Limited", "Manual", "Built in"],
         ["Access control", "Generic", "Trust-based", "Role-specific, audited"],
         ["Scales with your business", "Until you outgrow it", "Hire more", "Built to scale"],
@@ -1362,22 +1573,22 @@ export const detailedServices = [
 
     faqs: [
       {
-        question: "How do you figure out what to build?",
+        question: "How do you figure out what custom software to build?",
         answer:
-          "We start with a workflow audit — we talk to the people actually doing the work, not just the manager who commissioned the tool. We document the current process step by step, identify where time is being wasted, and design a tool around the real workflow rather than an idealized version of it.",
+          "We start with a workflow audit — we talk to the people actually doing the work, not just the manager who commissioned the tool. We document the current process step by step, identify where time is being wasted, and design software around the real workflow rather than an idealized version of it.",
       },
       {
         question: "Can you integrate with our existing tools — CRM, billing, ERP?",
         answer:
-          "Yes. Most modern tools have APIs we can integrate with. Common integrations we handle: Salesforce, HubSpot, Stripe, QuickBooks, Xero, Shopify, Airtable, Google Sheets, Slack, and most REST API-based tools. If a tool has an API, we can likely integrate it.",
+          "Yes. Most modern tools have APIs we can integrate with. Common integrations we handle: Salesforce, HubSpot, Stripe, QuickBooks, Xero, Shopify, Airtable, Google Sheets, Slack, and most REST API-based tools. If a tool has an API, we can integrate it.",
       },
       {
-        question: "What if our team's process changes after you build the tool?",
+        question: "What if our team's process changes after you build the software?",
         answer:
-          "We build internal tools with configurability in mind — admin-adjustable rules, flexible data models, and modular architecture that makes adding or changing features faster than starting from scratch. We also offer ongoing support retainers for teams that need regular updates.",
+          "We build custom software with configurability in mind — admin-adjustable rules, flexible data models, and modular architecture that makes adding or changing features faster than starting from scratch. We also offer ongoing support retainers for teams that need regular updates.",
       },
       {
-        question: "How long does it take to build a custom internal tool?",
+        question: "How long does it take to build custom software or an internal tool?",
         answer:
           "Depends heavily on scope. A focused dashboard or admin panel: 3–5 weeks. A full operations system with multiple modules and integrations: 8–16 weeks. We define the timeline clearly in the scoping phase and deliver in milestones so your team starts getting value before the full tool is complete.",
       },
@@ -1387,17 +1598,17 @@ export const detailedServices = [
       {
         title: "We audit before we build",
         description:
-          "The most common mistake in internal tool development is building what people say they want rather than what the actual workflow requires. Our workflow audit step exists specifically to close that gap.",
+          "The most common mistake in custom software development is building what people say they want rather than what the actual workflow requires. Our workflow audit step exists specifically to close that gap.",
       },
       {
         title: "We design for non-technical power users",
         description:
-          "Your operations team shouldn't need a developer to run a report or update a record. We design internal tools that are genuinely self-service — fast, clear, and usable without training.",
+          "Your operations team shouldn't need a developer to run a report or update a record. We design software that is genuinely self-service — fast, clear, and usable without extensive training.",
       },
       {
-        title: "One tool that replaces five",
+        title: "One system that replaces multiple disconnected tools",
         description:
-          "The goal isn't to add another tool to your stack — it's to replace the spreadsheet, the manual process, and the three generic SaaS tools with one system that does all of it better.",
+          "The goal isn't to add another tool to your stack — it's to replace messy spreadsheets, manual processes, and disconnected subscriptions with one cohesive system that does everything better.",
       },
     ],
 
@@ -1412,24 +1623,30 @@ export const detailedServices = [
       { name: "Prisma", category: "ORM" },
     ],
 
-    metaTitle: "Custom Internal Tools Development | Frontail Technology",
+    metaTitle: "Custom Software Development Agency",
     metaDescription:
-      "Custom admin panels, dashboards, CRMs, and workflow systems built around how your team actually works — not how a generic SaaS thinks you should work.",
+      "Custom software development services for growing businesses. Custom admin panels, CRMs, internal tools, and automated workflow systems tailored to your team.",
     keywords: [
-      "custom tools development",
-      "internal tools",
-      "admin dashboard",
-      "workflow software",
-      "custom crm development",
-      "operations dashboard",
+      "custom software development company",
+      "custom software development services",
+      "internal tools development",
+      "custom business software",
+      "custom admin dashboard development",
+      "custom CRM development",
+    ],
+
+    relatedServiceSlugs: [
+      "web-saas-development",
+      "ai-development",
+      "mvp-development",
     ],
 
     cta: {
       headline: "How many hours is your team losing to manual work every week?",
       subtext:
-        "Book a free workflow audit call. We'll map your current process, identify the biggest time sinks, and tell you exactly what a custom tool could automate.",
+        "Book a free workflow audit call. We'll map your current process, identify the biggest time sinks, and tell you exactly what custom software could automate.",
       primaryButton: "Book a Free Workflow Audit",
-      secondaryButton: "See Custom Tool Examples",
+      secondaryButton: "See Custom Software Examples",
     },
 
     social_proof_placeholder: "Add 2–3 testimonials from ops leaders who recovered significant team hours.",

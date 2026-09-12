@@ -53,7 +53,7 @@ const fallbackPosts: BlogPost[] = [
     excerpt:
       "A practical founder-friendly breakdown of MVP development cost, timelines, feature scope, and how to avoid overspending before product validation.",
     publishedAt: "2026-05-29",
-    author: "Frontail Technology",
+    author: "Frontail Technologies",
     category: "MVP Development",
     keywords: [
       "MVP development cost",
@@ -62,7 +62,7 @@ const fallbackPosts: BlogPost[] = [
       "how much does an MVP cost",
     ],
     readTime: "6 min read",
-    seoTitle: "How Much Does MVP Development Cost? | Frontail Technology",
+    seoTitle: "How Much Does MVP Development Cost? | Frontail Technologies",
     seoDescription:
       "Learn how much MVP development costs, what affects pricing, and how founders can launch a useful first version without wasting budget.",
     thumbnail: {
@@ -117,7 +117,7 @@ const fallbackPosts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "At Frontail Technology, we help founders define the leanest useful scope first, then build a scalable foundation so the product can grow after validation.",
+        text: "At Frontail Technologies, we help founders define the leanest useful scope first, then build a scalable foundation so the product can grow after validation.",
       },
     ],
   },
@@ -127,7 +127,7 @@ const fallbackPosts: BlogPost[] = [
     excerpt:
       "A clear guide to practical AI automation ideas for startups, from support assistants to internal workflow tools and document processing.",
     publishedAt: "2026-05-29",
-    author: "Frontail Technology",
+    author: "Frontail Technologies",
     category: "AI Development",
     keywords: [
       "AI automation tools for startups",
@@ -136,7 +136,7 @@ const fallbackPosts: BlogPost[] = [
       "startup automation software",
     ],
     readTime: "7 min read",
-    seoTitle: "AI Automation Tools for Startups | Frontail Technology",
+    seoTitle: "AI Automation Tools for Startups | Frontail Technologies",
     seoDescription:
       "Explore practical AI automation tools startups can build first, including support assistants, document workflows, lead qualification, and internal tools.",
     thumbnail: {
@@ -192,7 +192,7 @@ const fallbackPosts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "Frontail Technology builds AI features around real workflows, so the final product feels useful, controlled, and easy for teams to adopt.",
+        text: "Frontail Technologies builds AI features around real workflows, so the final product feels useful, controlled, and easy for teams to adopt.",
       },
     ],
   },

@@ -20,14 +20,14 @@ import InstagramSection from "@/components/Home/InstagramSection";
 export const metadata: Metadata = {
   title: "MVP, SaaS, AI & Mobile App Development Agency",
   description:
-    "Frontail Technology helps founders launch MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom business software.",
+    "Frontail Technologies helps founders launch MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom business software.",
   alternates: {
     canonical: "https://frontail.com",
   },
   openGraph: {
     title: "MVP, SaaS, AI & Mobile App Development Agency",
     description:
-      "Launch production-ready digital products with Frontail Technology.",
+      "Launch production-ready digital products with Frontail Technologies.",
     url: "https://frontail.com",
   },
 };

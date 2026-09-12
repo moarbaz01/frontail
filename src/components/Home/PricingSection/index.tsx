@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const plans = [
   {
@@ -42,8 +42,6 @@ const plans = [
 ];
 
 const PricingSection = () => {
-  const router = useRouter();
-
   return (
     <section className="px-4 py-12 md:py-16 lg:py-20">
       <div className="mx-auto max-w-screen-xl">
@@ -121,8 +119,8 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              <button
-                onClick={() => router.push("/contact")}
+              <Link
+                href="/contact"
                 className={`mt-7 inline-flex w-full items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold ${
                   plan.highlighted
                     ? "btn-3d bg-primary text-white"
@@ -131,7 +129,7 @@ const PricingSection = () => {
               >
                 {plan.cta}
                 <ArrowRight className="h-4 w-4" />
-              </button>
+              </Link>
             </motion.article>
           ))}
         </div>

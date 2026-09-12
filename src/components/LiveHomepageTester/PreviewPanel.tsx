@@ -1,4 +1,4 @@
-import DeviceFrame, { DeviceKind } from "./DeviceFrame";
+ import DeviceFrame, { DeviceKind } from "./DeviceFrame";
 import PreviewHomepage from "./PreviewHomepage";
 import { PreviewData } from "./preview/types";
 import MobileTabBar from "./preview/MobileTabBar";

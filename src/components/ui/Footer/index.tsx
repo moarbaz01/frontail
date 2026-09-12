@@ -12,9 +12,12 @@ const pages = [
 ];
 
 const services = [
-  "MVP Development",
-  "Web & SaaS Development",
-  "Mobile App Development",
+  { label: "MVP Development", href: "/services/mvp-development" },
+  { label: "Web & SaaS Development", href: "/services/web-saas-development" },
+  { label: "Mobile App Development", href: "/services/mobile-app-development" },
+  { label: "AI Development", href: "/services/ai-development" },
+  { label: "Custom Software Development", href: "/services/custom-software-development" },
+  { label: "UI/UX for Startups", href: "/services/ui-ux-for-startups" },
 ];
 
 const contact = [
@@ -87,7 +90,7 @@ export default function Footer() {
                 height={200}
                 width={1000}
                 className="h-14 w-auto"
-                alt="Frontail Technology"
+                alt="Frontail Technologies"
               />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-600">
@@ -122,12 +125,12 @@ export default function Footer() {
             <h3 className="mb-4 font-bold text-gray-900">Services</h3>
             <ul className="space-y-2 text-sm">
               {services.map((item) => (
-                <li key={item}>
+                <li key={item.label}>
                   <Link
-                    href="/services"
+                    href={item.href}
                     className="transition-colors hover:text-primary"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -186,7 +189,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col gap-4 border-t border-gray-300 pt-6 text-sm text-gray-600 md:flex-row md:items-center md:justify-between">
-          <p>&copy; 2026 Frontail. All Rights Reserved.</p>
+          <p>&copy; 2026 Frontail Technologies. All Rights Reserved.</p>
           <div className="flex flex-wrap gap-4">
             <Link href="/terms" className="hover:text-primary">
               Terms

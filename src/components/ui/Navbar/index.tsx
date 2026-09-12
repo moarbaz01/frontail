@@ -6,6 +6,8 @@ import { usePathname, useRouter } from "next/navigation";
 import GradientButton from "../GradientButton";
 import Image from "next/image";
 
+import Link from "next/link";
+
 // Navigation items
 const navItems = [
   { label: "Home", path: "/" },
@@ -66,7 +68,6 @@ const Navbar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const headerRef = useRef<HTMLElement | null>(null);
   const pathname = usePathname();
-  const router = useRouter();
 
   // Track scroll position for scroll-based animations
   useEffect(() => {
@@ -148,21 +149,21 @@ const Navbar: React.FC = () => {
             },
           }}
         >
-          <motion.div
-            onClick={() => router.push("/")}
-            className="cursor-pointer flex gap-2 items-center"
-            variants={logoVariants}
-            whileHover="hover"
-            whileTap="tap"
-          >
-            <Image
-              src={"/logo.png"}
-              height={200}
-              width={1000}
-              className="w-auto h-14 md:h-20"
-              alt="Frontail Technology"
-            />
-          </motion.div>
+          <Link href="/" className="cursor-pointer flex gap-2 items-center">
+            <motion.div
+              variants={logoVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
+              <Image
+                src={"/logo.png"}
+                height={200}
+                width={1000}
+                className="w-auto h-14 md:h-20"
+                alt="Frontail Technologies"
+              />
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <motion.ul className="md:flex items-center gap-6 pl-16 hidden">
@@ -174,50 +175,51 @@ const Navbar: React.FC = () => {
                   key={index}
                   variants={itemVariants}
                   custom={index}
-                  onClick={() => router.push(item.path)}
                   className="cursor-pointer relative"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <motion.div className="px-2 py-1 rounded-md flex items-center gap-1 relative z-10">
-                    <span
-                      className={`text-sm font-semibold transition-colors duration-300 ${
-                        isActive ? "text-primary" : "text-gray-800"
-                      }`}
-                    >
-                      {item.label}
-                    </span>
-                  </motion.div>
+                  <Link href={item.path} className="block">
+                    <motion.div className="px-2 py-1 rounded-md flex items-center gap-1 relative z-10">
+                      <span
+                        className={`text-sm font-semibold transition-colors duration-300 ${
+                          isActive ? "text-primary" : "text-gray-800"
+                        }`}
+                      >
+                        {item.label}
+                      </span>
+                    </motion.div>
 
-                  {/* Animated background for active states */}
-                  <AnimatePresence>
-                    {isActive && (
-                      <motion.div
-                        className="absolute inset-0 bg-white/10 rounded-md z-0"
-                        layoutId="activeNavBackground"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                    )}
-                  </AnimatePresence>
+                    {/* Animated background for active states */}
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.div
+                          className="absolute inset-0 bg-white/10 rounded-md z-0"
+                          layoutId="activeNavBackground"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                        />
+                      )}
+                    </AnimatePresence>
 
-                  {/* Underline effect on hover/active */}
-                  <motion.div
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full origin-center"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: isActive ? 1 : 0 }}
-                    whileHover={{
-                      scaleX: 1,
-                      height: "4px",
-                      transition: {
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 10,
-                      },
-                    }}
-                  />
+                    {/* Underline effect on hover/active */}
+                    <motion.div
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full origin-center"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: isActive ? 1 : 0 }}
+                      whileHover={{
+                        scaleX: 1,
+                        height: "4px",
+                        transition: {
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 10,
+                        },
+                      }}
+                    />
+                  </Link>
                 </motion.li>
               );
             })}
@@ -234,13 +236,14 @@ const Navbar: React.FC = () => {
               }}
               className="md:flex hidden  items-center gap-4 w-fit  "
             >
-              <GradientButton
-                onClick={() => router.push("/contact")}
-                className="flex items-center h-[34px] text-xs justify-center gap-1.5 relative group px-3 py-2 md:text-xs"
-              >
-                Let&apos;s Start
-                <ArrowRight className="h-4 w-4 group-hover:ml-1 transition-all" />
-              </GradientButton>
+              <Link href="/contact">
+                <GradientButton
+                  className="flex items-center h-[34px] text-xs justify-center gap-1.5 relative group px-3 py-2 md:text-xs"
+                >
+                  Let&apos;s Start
+                  <ArrowRight className="h-4 w-4 group-hover:ml-1 transition-all" />
+                </GradientButton>
+              </Link>
             </motion.div>
 
             {/* Mobile Menu Button */}
@@ -272,12 +275,10 @@ const Navbar: React.FC = () => {
               <div className="p-2">
                 <div className="space-y-1">
                   {navItems.map((item, index) => (
-                    <motion.button
+                    <Link
                       key={index}
-                      onClick={() => {
-                        router.push(item.path);
-                        setMobileMenuOpen(false);
-                      }}
+                      href={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
                       className={`flex w-full items-center justify-between px-3 py-2.5 rounded-md text-sm font-semibold transition-colors ${
                         pathname === item.path
                           ? "bg-primary/10 text-primary"
@@ -288,20 +289,18 @@ const Navbar: React.FC = () => {
                       {pathname === item.path && (
                         <span className="h-2 w-2 rounded-full bg-primary" />
                       )}
-                    </motion.button>
+                    </Link>
                   ))}
                 </div>
                 <div className="mt-2 pt-2 border-t border-gray-200">
-                  <button
-                    onClick={() => {
-                      router.push("/contact");
-                      setMobileMenuOpen(false);
-                    }}
+                  <Link
+                    href="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
                     className="btn-3d flex w-full items-center justify-center gap-2 bg-primary text-white px-3 py-2.5 rounded-md text-sm font-bold"
                   >
                     Let&apos;s Start
                     <ArrowRight className="h-4 w-4" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

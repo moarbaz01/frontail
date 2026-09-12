@@ -18,13 +18,13 @@ const AppShell = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <main>
+      <div className="relative min-h-screen">
         <ScrollProgress />
         <Navbar />
         {children}
         <SecondFooter />
         <Footer />
-      </main>
+      </div>
       <WhatsAppFloat />
       <ConsultationPopup />
     </>

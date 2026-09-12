@@ -2,12 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Code2, Sparkles } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { NoiseTexture } from "../noise-texture";
-import { useEffect } from "react";
 
 const SecondFooter = () => {
-  const router = useRouter();
   const pathname = usePathname();
 
   if (
@@ -65,17 +64,20 @@ const SecondFooter = () => {
           launch.
         </motion.p>
 
-        <motion.button
+        <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.3 }}
           viewport={{ once: true, amount: 0.1 }}
-          onClick={() => router.push("/contact")}
-          className="btn-3d mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-primary/80 md:mt-8 md:px-8 md:text-base"
         >
-          <Code2 className="h-5 w-5" />
-          Start Your Project
-        </motion.button>
+          <Link
+            href="/contact"
+            className="btn-3d mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-primary/80 md:mt-8 md:px-8 md:text-base"
+          >
+            <Code2 className="h-5 w-5" />
+            Start Your Project
+          </Link>
+        </motion.div>
       </div>
     </motion.section>
   );

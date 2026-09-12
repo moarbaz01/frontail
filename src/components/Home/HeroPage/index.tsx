@@ -1,7 +1,7 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
 import { Chip } from "@/components/ui/Chip";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import AnimatedTooltip from "@/components/ui/AnimatedTooltip";
 
@@ -109,9 +109,9 @@ const AnimatedHeroBackground = () => {
               shouldReduceMotion
                 ? undefined
                 : {
-                    opacity: [0.24, 0.62, 0.28],
-                    y: [0, index % 2 === 0 ? -14 : 12, 0],
-                  }
+                  opacity: [0.24, 0.62, 0.28],
+                  y: [0, index % 2 === 0 ? -14 : 12, 0],
+                }
             }
             transition={{
               duration: 4.5,
@@ -130,8 +130,6 @@ const AnimatedHeroBackground = () => {
 };
 
 const HeroPage = () => {
-  const router = useRouter();
-
   return (
     <section className="w-full md:min-h-screen lg:pt-48 md:pb-16 pt-32 pb-32 flex items-start justify-center px-4 relative overflow-hidden">
       <AnimatedHeroBackground />
@@ -144,7 +142,7 @@ const HeroPage = () => {
           animate="open"
           className="w-fit rounded-full bg-white"
         >
-          <Chip text="For Startups & SMEs. Fast, Scalable, AI-Ready." />
+          <Chip text="Product Engineering for Startups & Growing Businesses" />
         </motion.div>
 
         <motion.div
@@ -154,14 +152,12 @@ const HeroPage = () => {
           animate="open"
           className="max-w-screen-xl mx-4 md:mx-0"
         >
-          <h1 className="lg:text-7xl text-center text-gray-800 text-4xl mt-4 md:text-5xl font-extrabold leading-snug tracking-normal lg:leading-tight">
-            Launch Your App <span className="text-primary">Faster</span>
-            <br />
-            Than You <span className="text-primary">Think</span>.
+          <h1 className="lg:text-6xl xl:text-7xl text-center text-gray-800 text-4xl mt-3 md:text-5xl font-extrabold leading-tight tracking-tight">
+            MVP, SaaS, AI & Mobile App{" "}
+            <span className="text-primary">Development Agency</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base text-gray-600 md:text-lg">
-            We help founders and small teams turn ideas into polished MVPs, web
-            apps, and mobile-ready products.
+            We engineer production-ready digital products with founder-led architecture, modern tech stacks, and fast turnaround for startups and scaling businesses.
           </p>
         </motion.div>
 
@@ -172,19 +168,19 @@ const HeroPage = () => {
           animate="open"
           className="flex items-center mt-6 gap-4"
         >
-          <button
-            onClick={() => router.push("/contact")}
+          <Link
+            href="/contact"
             className="btn-3d py-3 font-bold px-6 bg-primary text-white rounded-md inline-flex items-center gap-2"
           >
             Get a Quote
             <ArrowRight className="h-4 w-4" />
-          </button>
-          <button
-            onClick={() => router.push("#process")}
+          </Link>
+          <a
+            href="#process"
             className="rounded-md border border-gray-300 bg-white px-6 py-3 font-bold text-gray-800 transition-colors hover:border-primary/40 hover:text-primary"
           >
             See Process
-          </button>
+          </a>
         </motion.div>
 
         <motion.div

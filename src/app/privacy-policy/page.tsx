@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Frontail Technology",
+  title: "Privacy Policy",
   description:
-    "Read how Frontail Technology collects, uses, stores, and protects personal information.",
+    "Read how Frontail Technologies collects, uses, stores, and protects personal information.",
+  openGraph: {
+    title: "Privacy Policy",
+  },
   alternates: {
     canonical: "https://frontail.com/privacy-policy",
   },
@@ -13,7 +16,7 @@ export const metadata: Metadata = {
 const definitions = [
   {
     term: "Company",
-    text: "means Frontail Technology, also referred to as Frontail, we, us, or our in this Privacy Policy.",
+    text: "means Frontail Technologies, also referred to as Frontail, we, us, or our in this Privacy Policy.",
   },
   {
     term: "Service",

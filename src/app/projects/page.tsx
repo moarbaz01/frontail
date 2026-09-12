@@ -6,14 +6,14 @@ import { projectsData } from "@/data";
 export const metadata: Metadata = {
   title: "Product Development Projects & Case Studies",
   description:
-    "Explore Frontail Technology projects across SaaS, EdTech, gaming, PropTech, sports platforms, mobile apps, and custom software.",
+    "Explore Frontail Technologies projects across SaaS, EdTech, gaming, PropTech, sports platforms, mobile apps, and custom software.",
   alternates: {
     canonical: "https://frontail.com/projects",
   },
   openGraph: {
     title: "Product Development Projects & Case Studies",
     description:
-      "See recent SaaS, app, platform, and custom software work by Frontail Technology.",
+      "See recent SaaS, app, platform, and custom software work by Frontail Technologies.",
     url: "https://frontail.com/projects",
   },
 };
@@ -57,7 +57,7 @@ const Page = () => {
               image: `https://frontail.com${project.image}`,
               creator: {
                 "@type": "Organization",
-                name: "Frontail Technology",
+                name: "Frontail Technologies",
                 url: "https://frontail.com",
               },
               about: project.industry,

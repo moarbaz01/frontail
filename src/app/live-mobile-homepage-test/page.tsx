@@ -16,11 +16,15 @@ export const metadata: Metadata = {
   title: "Live Mobile Homepage Test | Preview Your Site on Mobile — Frontail",
   description:
     "Test your website homepage on a mobile screen — live and free. Add your logo, nav links, banner, and brand color to instantly preview a mobile-ready homepage.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Live Mobile Homepage Test | Frontail Technology",
+    title: "Live Mobile Homepage Test | Frontail Technologies",
     description:
       "See how your business looks as a mobile homepage. Add your logo, nav links, banner image, and theme color and preview it live in a phone frame.",
     url: pageUrl,

@@ -3,12 +3,11 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { faqSections } from "@/data";
 
 const FAQSection = () => {
   const [openKey, setOpenKey] = useState("Projects-0");
-  const router = useRouter();
 
   const toggleFAQ = (key: string) => {
     setOpenKey(openKey === key ? "" : key);
@@ -42,13 +41,13 @@ const FAQSection = () => {
             <p className="text-sm text-gray-600 mb-6">
               Send us your idea and we&apos;ll point you in the right direction.
             </p>
-            <button
-              onClick={() => router.push("/contact")}
+            <Link
+              href="/contact"
               className="btn-3d inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-white"
             >
               Contact Us
               <ArrowRight className="h-4 w-4" />
-            </button>
+            </Link>
           </div>
 
           <div className="space-y-5">
@@ -81,11 +80,10 @@ const FAQSection = () => {
                           <motion.span
                             animate={{ rotate: isOpen ? 180 : 0 }}
                             transition={{ duration: 0.2 }}
-                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-md border ${
-                              isOpen
+                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-md border ${isOpen
                                 ? "border-primary/30 bg-primary/10 text-primary"
                                 : "border-gray-300 text-gray-600"
-                            }`}
+                              }`}
                           >
                             <ChevronDown className="h-4 w-4" />
                           </motion.span>

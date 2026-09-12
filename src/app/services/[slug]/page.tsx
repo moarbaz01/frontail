@@ -93,7 +93,7 @@ export default async function ServiceDetails({ params }: ServiceDetailsProps) {
         areaServed: "Worldwide",
         provider: {
           "@type": "Organization",
-          name: "Frontail Technology",
+          name: "Frontail Technologies",
           url: "https://frontail.com",
           logo: "https://frontail.com/favicon.png",
         },

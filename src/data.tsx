@@ -5,9 +5,49 @@ import {
   Rocket,
   Smartphone,
   Wrench,
+  Palette,
 } from "lucide-react";
 
 export const projectsData = [
+  {
+    title: "TRAVECO Mobility",
+    description:
+      "A modern visa and passport assistance platform with global document checklists, destination guidance, service discovery, and consultation workflows.",
+    image: "/projects/traveco.png",
+    techs: ["Next.js", "Tailwind CSS", "Node.js", "Nodemailer"],
+    link: "https://traveco.in",
+    client: "TRAVECO Mobility",
+    industry: "Travel / Visa Services",
+    deliverables:
+      "Business Website, Visa Services, Passport Services, Document Checklist, Consultation Forms",
+    themeColor: "#D49312",
+  },
+  {
+    title: "HN Enterprises",
+    description:
+      "A complete field operations and CGD management platform for managing projects, customers, workforce, billing, inventory, attendance, and daily operational activities.",
+    image: "/projects/hn-enterprises.png",
+    techs: ["Next.js", "React Native", "Node.js", "PostgreSQL"],
+    link: "",
+    client: "HN Enterprises",
+    industry: "CGD / Field Operations",
+    deliverables:
+      "Admin Dashboard, Mobile App, Project Management, Field Operations, Billing & Inventory",
+    themeColor: "#FF6500",
+  },
+  {
+    title: "VoxLogiX",
+    description:
+      "A voice-first industrial logging platform that helps field teams capture operational logs, monitor equipment, track readings, and access AI-assisted insights.",
+    image: "/projects/voxlogix.png",
+    techs: ["React Native", "Expo", "Node.js", "React Query", "Zustand"],
+    link: "https://voxlogix.in",
+    client: "VoxLogiX",
+    industry: "Industrial Operations / SaaS",
+    deliverables:
+      "Mobile App, Voice Logging, Equipment Tracking, Field Activity, Reports & AI Assistant",
+    themeColor: "#F5C400",
+  },
   {
     title: "CDR912",
     description:
@@ -249,20 +289,22 @@ export const services = [
   },
   {
     id: 7,
-    title: "Custom Tools Development",
-    slug: "custom-tools-development",
+    title: "Custom Software Development",
+    slug: "custom-software-development",
     description:
-      "Internal dashboards, admin systems, and workflow tools tailored to how your team works.",
+      "Custom business software, internal dashboards, and workflow automation tailored to your team.",
     icon: <Wrench className="w-8 h-8" />,
     image: "/services/web.jpeg",
   },
-  // {
-  //   id: 4,
-  //   title: "UI/UX for Startups",
-  //   description:
-  //     "Startup-focused UI/UX that improves usability, engagement, and conversions.",
-  //   icon: <Palette className="w-8 h-8" />,
-  // },
+  {
+    id: 4,
+    title: "UI/UX for Startups",
+    slug: "ui-ux-for-startups",
+    description:
+      "Startup-focused UI/UX that improves usability, engagement, and conversions.",
+    icon: <Palette className="w-8 h-8" />,
+    image: "/services/web.jpeg",
+  },
 ];
 
 export const detailedServices = [
@@ -301,7 +343,7 @@ export const detailedServices = [
       "TypeScript",
       "Tailwind CSS",
     ],
-    metaTitle: "MVP Development for Startups | Frontail Technology",
+    metaTitle: "MVP Development for Startups",
     metaDescription:
       "Build and launch your startup MVP fast with Frontail Technology. Validate ideas, attract users, and scale with confidence.",
     keywords: [
@@ -353,7 +395,7 @@ export const detailedServices = [
       "AWS",
       "Stripe",
     ],
-    metaTitle: "SaaS & Web App Development | Frontail Technology",
+    metaTitle: "SaaS & Web App Development for Startups",
     metaDescription:
       "We build scalable SaaS and web applications for startups — secure, fast, and ready to scale.",
     keywords: [
@@ -403,7 +445,7 @@ export const detailedServices = [
       "TypeScript",
       "Node.js",
     ],
-    metaTitle: "Mobile App Development for Startups | Frontail Technology",
+    metaTitle: "Mobile App Development for Startups",
     metaDescription:
       "Launch your startup mobile app faster with cross-platform Android and iOS development.",
     keywords: [
@@ -446,7 +488,7 @@ export const detailedServices = [
       "Simple, clean, and scalable UI",
     ],
     technologies: ["Figma", "Framer", "Webflow", "Adobe XD"],
-    metaTitle: "Startup UI/UX Design Services | Frontail Technology",
+    metaTitle: "Startup UI/UX Design Services",
     metaDescription:
       "UI/UX design services for startups focused on usability, growth, and conversions.",
     keywords: [
@@ -496,7 +538,7 @@ export const detailedServices = [
       "Node.js",
       "TypeScript",
     ],
-    metaTitle: "Web3 Development Services | Frontail Technology",
+    metaTitle: "Web3 Development Services",
     metaDescription:
       "Build wallet-ready Web3 apps, dApps, and blockchain product interfaces with Frontail Technology.",
     keywords: [
@@ -547,7 +589,7 @@ export const detailedServices = [
       "PostgreSQL",
       "TypeScript",
     ],
-    metaTitle: "AI Development Services | Frontail Technology",
+    metaTitle: "AI Development Services for Startups",
     metaDescription:
       "AI app development, chatbot development, and workflow automation for startups and businesses.",
     keywords: [
@@ -565,24 +607,24 @@ export const detailedServices = [
 
   {
     id: 7,
-    title: "Custom Tools Development",
-    slug: "custom-tools-development",
+    title: "Custom Software Development",
+    slug: "custom-software-development",
     image: "/images/services/custom-tools.jpg",
     overview:
-      "We create custom internal tools that replace messy spreadsheets, manual tracking, and disconnected workflows with clean systems built for your team.",
+      "We build custom business software and internal tools that replace messy spreadsheets, manual tracking, and disconnected workflows with clean systems built for your team.",
     whatWeOffer: [
-      "Admin dashboards and panels",
-      "CRM and operations tools",
+      "Admin dashboards and portals",
+      "Custom CRM and operations tools",
       "Inventory and workflow systems",
       "Reporting and analytics dashboards",
       "Role-based access and team management",
     ],
     process: [
-      "Workflow Audit â€“ Understanding how your team works",
-      "Scope Planning â€“ Prioritizing the highest-impact tools",
-      "UX Design â€“ Creating fast internal workflows",
-      "Development â€“ Building secure, reliable tools",
-      "Training â€“ Helping your team use it smoothly",
+      "Workflow Audit – Understanding how your team works",
+      "Scope Planning – Prioritizing the highest-impact tools",
+      "UX Design – Creating fast internal workflows",
+      "Development – Building secure, reliable software",
+      "Training – Helping your team use it smoothly",
     ],
     whyChooseUs: [
       "Built around your actual process",
@@ -598,19 +640,20 @@ export const detailedServices = [
       "Prisma",
       "Tailwind CSS",
     ],
-    metaTitle: "Custom Tools Development | Frontail Technology",
+    metaTitle: "Custom Software Development Agency",
     metaDescription:
-      "Custom admin panels, dashboards, internal tools, and workflow systems for growing teams.",
+      "Custom software development services for growing businesses. Custom admin panels, CRMs, internal tools, and automated workflow systems.",
     keywords: [
-      "custom tools development",
-      "internal tools",
-      "admin dashboard",
-      "workflow software",
+      "custom software development company",
+      "custom software development services",
+      "internal tools development",
+      "custom business software",
+      "admin dashboard development",
     ],
     cta: {
-      title: "Need a custom tool?",
-      subtitle: "Letâ€™s turn your daily workflow into a simple system.",
-      buttonText: "Build Custom Tool",
+      title: "Need custom software?",
+      subtitle: "Let's turn your daily workflow into a streamlined system.",
+      buttonText: "Build Custom Software",
     },
   },
 ];

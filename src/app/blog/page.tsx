@@ -57,7 +57,7 @@ export default async function BlogPage() {
       },
       {
         "@type": "Blog",
-        name: "Frontail Technology Blog",
+        name: "Frontail Technologies Blog",
         url: "https://frontail.com/blog",
         description: metadata.description,
         blogPost: posts.map((post) => ({

@@ -4,16 +4,16 @@ import JsonLd from "@/components/JsonLd";
 import { services } from "@/data";
 
 export const metadata: Metadata = {
-  title: "MVP, SaaS, AI, Web3 & Mobile App Development Services",
+  title: "MVP, SaaS, AI, Mobile App & Custom Software Services",
   description:
-    "Explore Frontail Technology services: MVP development, SaaS development, mobile app development, Web3 development, AI development, and custom tools.",
+    "Explore Frontail Technologies engineering services: MVP development, SaaS & web applications, mobile app development, AI solutions, custom software, and UI/UX design.",
   alternates: {
     canonical: "https://frontail.com/services",
   },
   openGraph: {
-    title: "MVP, SaaS, AI, Web3 & Mobile App Development Services",
+    title: "MVP, SaaS, AI, Mobile App & Custom Software Services",
     description:
-      "Startup-ready product development services for founders and businesses.",
+      "Full-cycle MVP, SaaS, AI, mobile app, and custom software development services for startups and growing businesses.",
     url: "https://frontail.com/services",
   },
 };
@@ -41,22 +41,25 @@ export default function ServicesPage() {
       },
       {
         "@type": "ItemList",
-        name: "Frontail Technology Services",
-        itemListElement: services.map((service, index) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          item: {
-            "@type": "Service",
-            name: service.title,
-            description: service.description,
-            url: `https://frontail.com/services/${service.slug}`,
-            provider: {
-              "@type": "Organization",
-              name: "Frontail Technology",
-              url: "https://frontail.com",
+        name: "Frontail Technologies Services",
+        itemListElement: services.map((service, index) => {
+          const url = `https://frontail.com/services/${service.slug}`;
+          return {
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+              "@type": "Service",
+              name: service.title,
+              description: service.description,
+              url: url,
+              provider: {
+                "@type": "Organization",
+                name: "Frontail Technologies",
+                url: "https://frontail.com",
+              },
             },
-          },
-        })),
+          };
+        }),
       },
     ],
   };

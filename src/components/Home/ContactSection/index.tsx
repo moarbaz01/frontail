@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { IoLogoWhatsapp } from "react-icons/io";
 
 const contactMethods = [
@@ -46,8 +46,6 @@ const steps = [
 ];
 
 const ContactSection = () => {
-  const router = useRouter();
-
   return (
     <section className="overflow-hidden bg-grid-black/5 px-4 py-12 md:py-16 lg:py-20">
       <div className="max-w-screen-xl mx-auto">
@@ -86,12 +84,12 @@ const ContactSection = () => {
               Book a free consultation and tell us what you want to create.
             </p>
 
-            <button
-              onClick={() => router.push("/contact")}
-              className="btn-3d bg-primary text-white px-7 py-4 rounded-md font-bold uppercase tracking-widest text-sm"
+            <Link
+              href="/contact"
+              className="btn-3d inline-block bg-primary text-white px-7 py-4 rounded-md font-bold uppercase tracking-widest text-sm"
             >
               Book Free Consultation
-            </button>
+            </Link>
 
             <div className="mt-10 space-y-5">
               {steps.map((step, index) => (

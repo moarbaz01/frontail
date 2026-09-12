@@ -10,11 +10,15 @@ export const metadata: Metadata = {
   title: "Live Website Homepage Test | Preview Your Site Free — Frontail",
   description:
     "Test your website homepage live and free. Add your logo, nav links, banner, and brand color to instantly preview a real homepage layout — no signup required.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Live Website Homepage Test | Frontail Technology",
+    title: "Live Website Homepage Test | Frontail Technologies",
     description:
       "Instantly preview your business as a real website homepage. Add your logo, nav links, banner image, and theme color and see it live.",
     url: pageUrl,

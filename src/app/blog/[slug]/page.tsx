@@ -116,7 +116,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         },
         publisher: {
           "@type": "Organization",
-          name: "Frontail Technology",
+          name: "Frontail Technologies",
           logo: {
             "@type": "ImageObject",
             url: "https://frontail.com/favicon.png",

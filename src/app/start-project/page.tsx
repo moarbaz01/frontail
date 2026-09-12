@@ -5,7 +5,7 @@ import { NoiseTexture } from "@/components/ui/noise-texture";
 export const metadata: Metadata = {
   title: "Start Your MVP Project",
   description:
-    "Share your MVP, SaaS, mobile app, or web app idea with Frontail Technology through a guided onboarding form.",
+    "Share your MVP, SaaS, mobile app, or web app idea with Frontail Technologies through a guided onboarding form.",
   alternates: {
     canonical: "https://frontail.com/start-project",
   },

@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Frontail Technology | MVP, SaaS, AI & Mobile App Development",
-    template: "%s | Frontail Technology",
+    default: "MVP, SaaS, AI & Mobile App Development Agency | Frontail Technologies",
+    template: "%s | Frontail Technologies",
   },
   description:
-    "Frontail Technology helps founders and businesses build MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom internal software.",
+    "Frontail Technologies helps founders and businesses build MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom internal software.",
   keywords: [
     "MVP development agency",
     "startup MVP development",
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     "custom tools development",
     "Web3 development agency",
     "Next.js development agency",
-    "Frontail Technology",
+    "Frontail Technologies",
   ],
   authors: [{ name: "Mohammed Arbaz", url: "https://frontail.com" }],
-  creator: "Frontail Technology",
-  publisher: "Frontail Technology",
+  creator: "Frontail Technologies",
+  publisher: "Frontail Technologies",
   formatDetection: {
     email: false,
     address: false,
@@ -48,17 +48,17 @@ export const metadata: Metadata = {
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Frontail Technology | MVP, SaaS, AI & Mobile App Development",
+    title: "MVP, SaaS, AI & Mobile App Development Agency | Frontail Technologies",
     description:
-      "Build production-ready MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom software with Frontail Technology.",
+      "Build production-ready MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom software with Frontail Technologies.",
     url: "https://frontail.com",
-    siteName: "Frontail Technology",
+    siteName: "Frontail Technologies",
     images: [
       {
         url: "https://frontail.com/seo/twitter-card.png",
         width: 1200,
         height: 630,
-        alt: "Frontail Technology - Product Development Agency",
+        alt: "Frontail Technologies — Product Development Agency",
       },
     ],
     locale: "en_US",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Frontail Technology | MVP, SaaS, AI & Mobile App Development",
+    title: "MVP, SaaS, AI & Mobile App Development Agency | Frontail Technologies",
     description:
       "Product development for founders: MVPs, SaaS, AI tools, mobile apps, Web3, and custom software.",
     images: ["https://frontail.com/seo/twitter-card.png"],
@@ -81,9 +81,6 @@ export const metadata: Metadata = {
     },
   },
   metadataBase: new URL("https://frontail.com"),
-  alternates: {
-    canonical: "https://frontail.com",
-  },
 };
 
 export default function RootLayout({
@@ -100,70 +97,60 @@ export default function RootLayout({
         <meta name="author" content="Frontail Team" />
         <meta name="email" content="arbazmr123@gmail.com" />
         <meta name="contact" content="+918741035190" />
-        <meta name="brand" content="Frontail Technology" />
-        <meta name="company" content="Frontail Technology" />
+        <meta name="brand" content="Frontail Technologies" />
+        <meta name="company" content="Frontail Technologies" />
         <meta name="domain" content="frontail.com" />
         <link rel="manifest" href="/site.webmanifest" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Frontail Technology",
-              alternateName: ["Frontail"],
-              url: "https://frontail.com",
-              logo: "https://frontail.com/favicon.png",
-              description:
-                "Frontail Technology builds MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom internal software for founders and businesses.",
-              areaServed: "Worldwide",
-              address: {
-                "@type": "PostalAddress",
-                addressCountry: "IN",
-              },
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+918741035190",
-                email: "contact@frontail.com",
-                contactType: "customer service",
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "Frontail Technologies",
+                alternateName: ["Frontail"],
+                url: "https://frontail.com",
+                logo: "https://frontail.com/favicon.png",
+                description:
+                  "Frontail Technologies builds MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom internal software for founders and businesses.",
                 areaServed: "Worldwide",
-                availableLanguage: "English",
+                address: {
+                  "@type": "PostalAddress",
+                  addressCountry: "IN",
+                },
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  telephone: "+918741035190",
+                  email: "contact@frontail.com",
+                  contactType: "customer service",
+                  areaServed: "Worldwide",
+                  availableLanguage: "English",
+                },
+                founder: {
+                  "@type": "Person",
+                  name: "Mohammed Arbaz",
+                  jobTitle: "Founder",
+                },
+                sameAs: ["https://t.me/arbazmr123"],
+                knowsAbout: [
+                  "MVP Development",
+                  "SaaS Development",
+                  "AI Development",
+                  "Mobile App Development",
+                  "Web3 Development",
+                  "Custom Software Development",
+                ],
               },
-              founder: {
-                "@type": "Person",
-                name: "Mohammed Arbaz", // Optional
-                jobTitle: "Founder", // Optional
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: "Frontail Technologies",
+                url: "https://frontail.com",
+                description:
+                  "MVP, SaaS, AI & mobile app development for startups and growing businesses.",
               },
-              sameAs: ["https://t.me/arbazmr123"],
-              knowsAbout: [
-                "MVP Development",
-                "SaaS Development",
-                "AI Development",
-                "Mobile App Development",
-                "Web3 Development",
-                "Custom Software Development",
-              ],
-              subjectOf: [
-                {
-                  "@type": "WebPage",
-                  name: "Our Process",
-                  description: "How Frontail Technology builds products.",
-                  url: "https://frontail.com/#process",
-                },
-                {
-                  "@type": "ContactPage",
-                  name: "Contact Frontail Technology",
-                  description: "Start your product development project.",
-                  url: "https://frontail.com/contact",
-                },
-                {
-                  "@type": "WorkPage",
-                  name: "Projects",
-                  description: "See product development case studies.",
-                  url: "https://frontail.com/projects",
-                },
-              ],
-            }),
+            ]).replace(/</g, "\\u003c"),
           }}
         />
 
