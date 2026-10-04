@@ -62,10 +62,11 @@ const ComparisonSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Frontail Side */}
             <motion.div
-              className="bg-white rounded-md p-8 border border-gray-300"
+              className="relative overflow-hidden rounded-2xl border border-white/90 bg-gradient-to-b from-white/90 via-white/70 to-white/50 p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] backdrop-blur-md transition-all duration-300 hover:shadow-xl hover:border-primary/40 hover:bg-white"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
+              <span className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
               <div className="flex items-center mb-6">
                 <div className="mr-4 p-3 bg-primary/10 rounded-md">
                   <CheckCircle className="text-primary" size={28} />
@@ -107,7 +108,7 @@ const ComparisonSection = () => {
 
             {/* Other Agencies Side */}
             <motion.div
-              className="bg-gray-50 rounded-md p-8 border border-gray-300"
+              className="relative overflow-hidden rounded-2xl border border-white/60 bg-gradient-to-b from-white/50 via-white/30 to-white/20 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-md hover:bg-white/60"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >

@@ -29,6 +29,7 @@ export const logoImages = {
 };
 
 export const projectImages = {
+  stockharvesting: "/projects/stockharvesting.png",
   digir: "/digir.png",
   zoland: "/zoland_store_project.png",
   ohshakes: "/oh-shakes.png",

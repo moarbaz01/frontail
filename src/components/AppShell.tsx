@@ -7,6 +7,7 @@ import SecondFooter from "@/components/ui/SecondFooter";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 import ConsultationPopup from "@/components/ui/ConsultationPopup";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
 const AppShell = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -18,13 +19,15 @@ const AppShell = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div className="relative min-h-screen">
-        <ScrollProgress />
-        <Navbar />
-        {children}
-        <SecondFooter />
-        <Footer />
-      </div>
+      <ScrollProgress />
+      <Navbar />
+      <SmoothScroll>
+        <div className="relative min-h-screen">
+          {children}
+          <SecondFooter />
+          <Footer />
+        </div>
+      </SmoothScroll>
       <WhatsAppFloat />
       <ConsultationPopup />
     </>

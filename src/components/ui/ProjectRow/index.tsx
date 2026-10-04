@@ -5,6 +5,7 @@ import {
   useTransform,
 } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 import { hexToRgba } from "@/utils/color";
@@ -19,6 +20,7 @@ interface Project {
   industry?: string;
   deliverables?: string;
   themeColor?: string;
+  caseStudySlug?: string;
 }
 
 const ProjectRow = ({
@@ -66,8 +68,9 @@ const ProjectRow = ({
       whileInView={{ y: 0 }}
       transition={{ duration: 0.45, ease: "easeOut", delay: index * 0.06 }}
       viewport={{ once: true, margin: "-100px" }}
-      className="group relative overflow-hidden rounded-md border border-gray-300 bg-white p-5 shadow-sm md:p-7"
+      className="group relative overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 backdrop-blur-md p-5 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:shadow-xl hover:border-primary/40 hover:bg-white md:p-7"
     >
+      <span className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent z-10" />
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_0.95fr]">
         {/* Image Side */}
         <div
@@ -158,30 +161,59 @@ const ProjectRow = ({
             {project.description}
           </p>
 
-          {project.link ? (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={
-                {
-                  backgroundColor: themeColor,
-                  "--btn-shadow-edge": hexToRgba(themeColor, 0.78),
-                  "--btn-shadow-glow": hexToRgba(themeColor, 0.28),
-                } as React.CSSProperties
-              }
-              className="btn-3d inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-xs font-bold uppercase tracking-widest text-white"
-            >
-              View Details
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-          ) : (
-            <span className="inline-flex w-fit items-center justify-center rounded-md border border-gray-300 bg-gray-50 px-6 py-3 text-xs font-bold uppercase tracking-widest text-gray-600">
-              Case Study Preview
-            </span>
-          )}
+          <div className="flex flex-wrap items-center gap-3 pt-2">
+            {project.caseStudySlug ? (
+              <>
+                <Link
+                  href={`/case-studies/${project.caseStudySlug}`}
+                  style={
+                    {
+                      backgroundColor: themeColor,
+                      "--btn-shadow-edge": hexToRgba(themeColor, 0.78),
+                      "--btn-shadow-glow": hexToRgba(themeColor, 0.28),
+                    } as React.CSSProperties
+                  }
+                  className="btn-3d inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-xs font-bold uppercase tracking-widest text-white shadow-md hover:opacity-95 transition-opacity"
+                >
+                  View Case Study
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 rounded-md border border-gray-300 bg-white px-4 py-3 text-xs font-bold uppercase tracking-widest text-gray-700 hover:border-primary/50 hover:text-primary transition-colors"
+                  >
+                    Visit Live Site
+                    <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                )}
+              </>
+            ) : project.link ? (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={
+                  {
+                    backgroundColor: themeColor,
+                    "--btn-shadow-edge": hexToRgba(themeColor, 0.78),
+                    "--btn-shadow-glow": hexToRgba(themeColor, 0.28),
+                  } as React.CSSProperties
+                }
+                className="btn-3d inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-xs font-bold uppercase tracking-widest text-white"
+              >
+                View Details
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            ) : (
+              <span className="inline-flex w-fit items-center justify-center rounded-md border border-gray-300 bg-gray-50 px-6 py-3 text-xs font-bold uppercase tracking-widest text-gray-600">
+                Case Study Preview
+              </span>
+            )}
+          </div>
         </motion.div>
-
       </div>
     </motion.div>
   );

@@ -314,8 +314,9 @@ const Services = () => {
               whileInView={{ y: 0 }}
               transition={{ delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="group bg-white rounded-md overflow-hidden border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 flex flex-col justify-between"
+              className="group relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5 flex flex-col justify-between"
             >
+              <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
               <div>
                 <ServiceVisual id={service.id} icon={service.icon} />
                 <div className="p-5">

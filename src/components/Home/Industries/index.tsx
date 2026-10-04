@@ -86,12 +86,13 @@ const Industries = () => {
             return (
               <motion.div
                 key={industry.name}
-                className="group bg-white rounded-md overflow-hidden border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 flex flex-col items-center justify-center p-4 py-6 md:p-8"
+                className="group relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5 flex flex-col items-center justify-center p-4 py-6 md:p-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
+                <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
                 {/* Icon Container */}
                 <div className="flex h-14 w-14 md:h-20 md:w-20 items-center justify-center rounded-full bg-primary/5 transition-transform duration-300 group-hover:scale-110 mb-4 md:mb-6">
                   <Icon

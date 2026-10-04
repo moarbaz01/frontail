@@ -95,15 +95,16 @@ export default async function BlogPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5"
             >
+              <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
               {post.thumbnail && (
-                <div className="relative aspect-[16/9] border-b border-gray-200 bg-primary/5">
+                <div className="relative aspect-[16/9] border-b border-gray-200/70 bg-primary/5">
                   <Image
                     src={post.thumbnail.url}
                     alt={post.thumbnail.alt}
@@ -113,31 +114,35 @@ export default async function BlogPage() {
                   />
                 </div>
               )}
-              <div className="p-5">
-                <div className="flex items-center gap-2">
-                  <p className="text-xs font-bold uppercase tracking-widest text-primary">
-                    {post.category}
+              <div className="p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <p className="text-xs font-bold uppercase tracking-widest text-primary">
+                      {post.category}
+                    </p>
+                    {isRecentlyAdded(post.publishedAt) && (
+                      <span className="rounded-md bg-primary/10 px-2 py-1 text-[10px] font-extrabold uppercase tracking-widest text-primary">
+                        New
+                      </span>
+                    )}
+                  </div>
+                  <h2 className="mt-4 text-lg font-bold leading-tight text-gray-900 group-hover:text-primary transition-colors">
+                    {post.title}
+                  </h2>
+                  <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-gray-600">
+                    {post.excerpt}
                   </p>
-                  {isRecentlyAdded(post.publishedAt) && (
-                    <span className="rounded-md bg-primary/10 px-2 py-1 text-[10px] font-extrabold uppercase tracking-widest text-primary">
-                      New
-                    </span>
-                  )}
                 </div>
-                <h2 className="mt-4 text-lg font-bold leading-tight text-gray-900">
-                  {post.title}
-                </h2>
-                <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-gray-600">
-                  {post.excerpt}
-                </p>
-                <div className="mt-6 flex items-center justify-between text-xs text-gray-500">
-                  <span>{post.readTime}</span>
-                  <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+                <div>
+                  <div className="mt-6 flex items-center justify-between text-xs text-gray-500">
+                    <span>{post.readTime}</span>
+                    <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+                  </div>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary">
+                    Read Guide
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </div>
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary">
-                  Read Guide
-                  <ArrowRight className="h-4 w-4" />
-                </span>
               </div>
             </Link>
           ))}

@@ -34,7 +34,8 @@ const FAQSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 max-w-screen-xl mx-auto">
-          <div className="rounded-md border border-gray-300 bg-white p-6 h-fit">
+          <div className="relative overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 backdrop-blur-md p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-fit">
+            <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             <h3 className="font-anton text-3xl font-bold text-gray-900 mb-4">
               Still curious?
             </h3>
@@ -58,8 +59,9 @@ const FAQSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: sectionIndex * 0.08 }}
                 viewport={{ once: true }}
-                className="rounded-md border border-gray-300 bg-white p-4"
+                className="relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
               >
+                <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
                 <h3 className="mb-3 px-2 text-sm font-bold uppercase tracking-widest text-primary">
                   {section.title}
                 </h3>

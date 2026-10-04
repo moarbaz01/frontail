@@ -256,11 +256,14 @@ const ProcessTimeline: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="group bg-white rounded-md border border-gray-300 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+              className="group relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md p-5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5"
             >
-              <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-primary">
-                Step {String(step.id).padStart(2, "0")}
-              </p>
+              <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+              <div className="mb-4 flex items-center justify-between">
+                <span className="inline-block rounded-full border border-primary/20 bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-widest text-primary">
+                  Step {String(step.id).padStart(2, "0")}
+                </span>
+              </div>
               <ProcessVisual type={step.visual} />
               <div className="mt-6">
                 <h3 className="font-anton text-lg font-bold uppercase text-gray-900 mb-2">

@@ -113,6 +113,17 @@ const nextConfig = {
         destination: "/services/custom-software-development",
         permanent: true,
       },
+      // Blog consolidation redirects
+      {
+        source: "/blog/how-much-does-mvp-development-cost",
+        destination: "/blog/mvp-development-cost",
+        permanent: true,
+      },
+      {
+        source: "/blog/ai-automation-tools-for-startups",
+        destination: "/blog/ai-app-development",
+        permanent: true,
+      },
     ];
   },
   images: {

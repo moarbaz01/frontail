@@ -48,7 +48,7 @@ const TechExpertise = () => {
                 return (
                   <motion.div
                     key={tech.name}
-                    className="group flex h-24 w-24 md:h-[110px] md:w-[110px] cursor-default flex-col items-center justify-center rounded-2xl md:rounded-[24px] bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30"
+                    className="group flex h-24 w-24 md:h-[110px] md:w-[110px] cursor-default flex-col items-center justify-center rounded-2xl md:rounded-[24px] border border-white/80 bg-gradient-to-b from-white/85 via-white/60 to-white/40 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30 hover:bg-white"
                     initial={{ y: 16 }}
                     whileInView={{ y: 0 }}
                     viewport={{ once: true }}
@@ -70,7 +70,7 @@ const TechExpertise = () => {
                 return (
                   <motion.div
                     key={tech.name}
-                    className="group flex h-24 w-24 md:h-[110px] md:w-[110px] cursor-default flex-col items-center justify-center rounded-2xl md:rounded-[24px] bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30"
+                    className="group flex h-24 w-24 md:h-[110px] md:w-[110px] cursor-default flex-col items-center justify-center rounded-2xl md:rounded-[24px] border border-white/80 bg-gradient-to-b from-white/85 via-white/60 to-white/40 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30 hover:bg-white"
                     initial={{ y: 16 }}
                     whileInView={{ y: 0 }}
                     viewport={{ once: true }}
@@ -92,7 +92,7 @@ const TechExpertise = () => {
                 return (
                   <motion.div
                     key={tech.name}
-                    className="group flex h-24 w-24 md:h-[110px] md:w-[110px] cursor-default flex-col items-center justify-center rounded-2xl md:rounded-[24px] bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30"
+                    className="group flex h-24 w-24 md:h-[110px] md:w-[110px] cursor-default flex-col items-center justify-center rounded-2xl md:rounded-[24px] border border-white/80 bg-gradient-to-b from-white/85 via-white/60 to-white/40 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30 hover:bg-white"
                     initial={{ y: 16 }}
                     whileInView={{ y: 0 }}
                     viewport={{ once: true }}

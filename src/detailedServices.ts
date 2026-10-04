@@ -13,11 +13,9 @@ export const detailedServices = [
     
     // Dynamic Hero Visual
     heroVisual: {
-      type: "project",
-      projectSlug: "vriya-pms",
-      desktopImage: "/projects/vriya-pms.svg",
-      mobileImage: "/projects/udharipay.png", // Using UdhariPay as a mobile example if Vriya doesn't have a standalone one
-      tags: ["SaaS", "Dashboard", "Mobile"],
+      type: "mvp",
+      desktopImage: "/landing/mvp/hero-dashboard.png",
+      tags: ["SaaS MVPs", "Admin Systems", "Web & Mobile"],
     },
 
     // Pain points — what the client is feeling before they find you
@@ -265,6 +263,70 @@ export const detailedServices = [
           "Data-driven applications showing analytics, reporting, or operational metrics your users depend on daily.",
       },
     ],
+
+    // ─── Real Sample MVPs & Interfaces (Visual Showcase) ───
+    sampleMvps: [
+      {
+        title: "SaaS & Analytics Dashboard",
+        category: "Multi-Tenant Platform",
+        image: "/landing/mvp/sample-saas-dashboard.png",
+        description:
+          "Production-ready multi-tenant SaaS architecture with user telemetry, subscription tiers, and interactive data visualization.",
+        tags: ["Next.js", "Analytics", "Multi-Tenant", "Tailwind CSS"],
+      },
+      {
+        title: "Booking & Marketplace Workflows",
+        category: "Customer Experience & Checkout",
+        image: "/landing/mvp/sample-booking-app.png",
+        description:
+          "Interactive availability calendars, frictionless checkout journeys, automated booking confirmations, and customer portals.",
+        tags: ["React", "Payment Gateways", "Calendars", "Responsive"],
+      },
+      {
+        title: "Admin & Operations Management",
+        category: "Internal Tooling & Operations",
+        image: "/landing/mvp/sample-admin-system.png",
+        description:
+          "High-productivity internal operations engine with role-based access control, audit logging, and automated workflow triggers.",
+        tags: ["Role-Based Access", "CRUD Operations", "Data Tables", "APIs"],
+      },
+    ],
+
+    // ─── What You Walk Away With (Deliverable Handover Package) ───
+    walkawayPackage: {
+      badge: "Complete Launch Package",
+      title: "What You Walk Away With",
+      subtitle:
+        "We deliver complete, production-grade assets so you can onboard early customers, iterate with confidence, and pitch investors without technical debt.",
+      image: "/landing/mvp/walkaway-box.png",
+      items: [
+        {
+          title: "100% Code & IP Ownership",
+          description:
+            "Clean, well-architected TypeScript repository with zero vendor lock-in and complete intellectual property ownership.",
+        },
+        {
+          title: "Production Cloud Deployment",
+          description:
+            "Automated CI/CD pipelines, SSL certificates, environment configs, and scalable cloud hosting ready for real users.",
+        },
+        {
+          title: "Documented Architecture & API Schema",
+          description:
+            "Clear technical documentation, system design diagrams, and API specifications so any future developer can step in seamlessly.",
+        },
+        {
+          title: "30-Day Post-Launch Support Window",
+          description:
+            "Dedicated post-launch bug fixing, system monitoring, and performance optimizations during your initial user onboarding.",
+        },
+        {
+          title: "Investor-Ready Functional Prototype",
+          description:
+            "A high-performing, polished product ready for live stakeholder demos, user validation tests, and fundraising pitches.",
+        },
+      ],
+    },
 
     // ─── Feature prioritization (educational section) ───
     featurePrioritization: {
@@ -619,6 +681,77 @@ export const detailedServices = [
     headline: "Cross-Platform Mobile App Development for Startups & Scaleups",
     subheadline:
       "Build and ship iOS and Android apps from a unified React Native or Flutter codebase. Fast turnaround, 95% native performance, and complete App Store & Google Play deployment.",
+
+    // Dynamic Hero Visual
+    heroVisual: {
+      type: "mobile",
+      desktopImage: "/landing/mobile/hero-mobile-app.png",
+      tags: ["React Native", "Flutter", "iOS & Android"],
+    },
+
+    // ─── Real Sample Mobile Apps & Interfaces (Visual Showcase) ───
+    sampleMvps: [
+      {
+        title: "FinTech & Digital Wallet App",
+        category: "Payments & Banking",
+        image: "/landing/mobile/sample-fintech-app.png",
+        description:
+          "Multi-currency account management, instant peer-to-peer transfers, biometric authorization, and automated spend analytics.",
+        tags: ["React Native", "FinTech", "Biometrics", "Stripe / Plaid"],
+      },
+      {
+        title: "E-Commerce & Retail Marketplace App",
+        category: "Consumer Commerce",
+        image: "/landing/mobile/sample-ecommerce-app.png",
+        description:
+          "Fast product discovery, flash sales countdowns, instant mobile checkout, real-time push notifications, and live order tracking.",
+        tags: ["Flutter", "E-Commerce", "Push Notifications", "Apple Pay / Google Pay"],
+      },
+      {
+        title: "Fitness & Habit Tracking App",
+        category: "Health & Lifestyle",
+        image: "/landing/mobile/sample-fitness-app.png",
+        description:
+          "Real-time daily activity tracking, interactive workout routines, streak milestones, background sensor sync, and community feeds.",
+        tags: ["Cross-Platform", "HealthKit / Google Fit", "Offline Sync", "Real-Time"],
+      },
+    ],
+
+    // ─── What You Walk Away With (Deliverable Handover Package) ───
+    walkawayPackage: {
+      badge: "Full App Store Launch Package",
+      title: "What You Walk Away With",
+      subtitle:
+        "Everything you need to launch on the App Store & Google Play, scale your active user base, and maintain a unified mobile codebase.",
+      image: "/landing/mobile/walkaway-box.png",
+      items: [
+        {
+          title: "100% Shared Source Code (iOS & Android)",
+          description:
+            "Clean, modular React Native or Flutter codebase with zero proprietary lock-in and complete intellectual property ownership.",
+        },
+        {
+          title: "App Store & Google Play Store Approval",
+          description:
+            "Complete handling of provisioning profiles, signing certificates, store compliance checklists, and initial rollout management.",
+        },
+        {
+          title: "Push Notifications & Analytics Pipelines",
+          description:
+            "Integrated Firebase / OneSignal push notification system, crash reporting (Sentry), and user engagement telemetry.",
+        },
+        {
+          title: "Documented Mobile Architecture & API Contracts",
+          description:
+            "Comprehensive state management guides, offline sync architecture, and API integration specifications for your dev team.",
+        },
+        {
+          title: "30-Day Post-Launch Support & OS Updates",
+          description:
+            "Dedicated post-launch bug fixing, device performance monitoring, and rapid store hotfix support during initial user onboarding.",
+        },
+      ],
+    },
 
     painPoints: [
       {

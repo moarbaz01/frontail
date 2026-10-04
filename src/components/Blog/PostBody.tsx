@@ -1,5 +1,66 @@
+import React from "react";
 import type { BlogBlock } from "@/sanity/blog";
 import Image from "next/image";
+import Link from "next/link";
+
+const renderFormattedText = (text: string) => {
+  if (!text) return null;
+
+  const regex = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g;
+  const elements: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      elements.push(text.substring(lastIndex, match.index));
+    }
+
+    if (match[1] && match[2]) {
+      const label = match[1];
+      const href = match[2];
+      const isInternal = href.startsWith("/") || href.startsWith("#");
+
+      if (isInternal) {
+        elements.push(
+          <Link
+            key={match.index}
+            href={href}
+            className="font-semibold text-primary underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
+          >
+            {label}
+          </Link>
+        );
+      } else {
+        elements.push(
+          <a
+            key={match.index}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-primary underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
+          >
+            {label}
+          </a>
+        );
+      }
+    } else if (match[3]) {
+      elements.push(
+        <strong key={match.index} className="font-bold text-gray-900">
+          {match[3]}
+        </strong>
+      );
+    }
+
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    elements.push(text.substring(lastIndex));
+  }
+
+  return elements.length > 0 ? elements : text;
+};
 
 const PostBody = ({ body }: { body: BlogBlock[] }) => {
   return (
@@ -19,27 +80,30 @@ const PostBody = ({ body }: { body: BlogBlock[] }) => {
         if (block.type === "list") {
           return (
             <ul
-              key={`${block.items.join("-")}-${index}`}
+              key={`${block.items?.join("-") || "list"}-${index}`}
               className="list-disc space-y-2 pl-5 leading-relaxed"
             >
-              {block.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
+              {block.items &&
+                block.items.map((item, itemIdx) => (
+                  <li key={`${item}-${itemIdx}`}>{renderFormattedText(item)}</li>
+                ))}
             </ul>
           );
         }
 
         if (block.type === "image") {
           return (
-            <figure key={`${block.url}-${index}`} className="py-2">
+            <figure key={`${block.url || "img"}-${index}`} className="py-2">
               <div className="relative aspect-[16/9] overflow-hidden rounded-md border border-gray-200 bg-gray-50">
-                <Image
-                  src={block.url}
-                  alt={block.alt}
-                  fill
-                  sizes="(min-width: 1024px) 960px, 100vw"
-                  className="object-cover"
-                />
+                {block.url && (
+                  <Image
+                    src={block.url}
+                    alt={block.alt || ""}
+                    fill
+                    sizes="(min-width: 1024px) 960px, 100vw"
+                    className="object-cover"
+                  />
+                )}
               </div>
               {block.caption && (
                 <figcaption className="mt-2 text-center text-xs text-gray-500">
@@ -58,7 +122,7 @@ const PostBody = ({ body }: { body: BlogBlock[] }) => {
             >
               <div className="overflow-x-auto rounded-md border border-gray-200">
                 <table className="min-w-[640px] w-full border-collapse bg-white text-sm">
-                  {block.headers.length > 0 && (
+                  {block.headers && block.headers.length > 0 && (
                     <thead className="bg-gray-50 text-left text-gray-900">
                       <tr>
                         {block.headers.map((header) => (
@@ -73,21 +137,23 @@ const PostBody = ({ body }: { body: BlogBlock[] }) => {
                     </thead>
                   )}
                   <tbody>
-                    {block.rows.map((row, rowIndex) => (
-                      <tr
-                        key={rowIndex}
-                        className="odd:bg-white even:bg-gray-50"
-                      >
-                        {row.map((cell, cellIndex) => (
-                          <td
-                            key={`${rowIndex}-${cellIndex}`}
-                            className="border-b border-gray-100 px-4 py-3 text-gray-700"
-                          >
-                            {cell}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
+                    {block.rows &&
+                      block.rows.map((row, rowIndex) => (
+                        <tr
+                          key={rowIndex}
+                          className="odd:bg-white even:bg-gray-50"
+                        >
+                          {Array.isArray(row) &&
+                            row.map((cell, cellIndex) => (
+                              <td
+                                key={`${rowIndex}-${cellIndex}`}
+                                className="border-b border-gray-100 px-4 py-3 text-gray-700"
+                              >
+                                {renderFormattedText(cell)}
+                              </td>
+                            ))}
+                        </tr>
+                      ))}
                   </tbody>
                 </table>
               </div>
@@ -102,7 +168,7 @@ const PostBody = ({ body }: { body: BlogBlock[] }) => {
 
         return (
           <p key={`${block.text}-${index}`} className="leading-relaxed">
-            {block.text}
+            {renderFormattedText(block.text)}
           </p>
         );
       })}

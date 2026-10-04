@@ -64,7 +64,7 @@ export const blogPost = defineType({
       name: "author",
       title: "Author",
       type: "string",
-      initialValue: "Frontail Technology",
+      initialValue: "Frontail Technologies",
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -77,6 +77,7 @@ export const blogPost = defineType({
           "AI Development",
           "SaaS Development",
           "Mobile App Development",
+          "Custom Software Development",
           "Web3 Development",
           "Custom Tools",
           "Startup Guides",

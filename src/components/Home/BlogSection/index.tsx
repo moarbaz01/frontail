@@ -35,8 +35,9 @@ const BlogSection = async () => {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+              className="group relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5"
             >
+              <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
               {post.thumbnail && (
                 <div className="relative aspect-[16/9] border-b border-gray-200 bg-primary/5">
                   <Image

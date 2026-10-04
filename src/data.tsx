@@ -10,6 +10,20 @@ import {
 
 export const projectsData = [
   {
+    title: "Stock Harvesting",
+    description:
+      "An advanced stock analytics and backtesting platform featuring sector-wise harvest backtesting, interactive candlestick charts, real-time market data, and customizable stock watchlists.",
+    image: "/projects/stockharvesting.png",
+    techs: ["Next.js", "TypeScript", "Tailwind CSS", "TradingView Charts", "Node.js"],
+    link: "https://stockharvesting.in",
+    client: "Stock Harvesting",
+    industry: "FinTech / Trading Analytics",
+    deliverables:
+      "Web Dashboard, Harvest Backtesting Engine, Interactive Stock Charts, Watchlists, Real-Time Market Analytics",
+    themeColor: "#EAB308",
+    caseStudySlug: "stock-harvesting",
+  },
+  {
     title: "TRAVECO Mobility",
     description:
       "A modern visa and passport assistance platform with global document checklists, destination guidance, service discovery, and consultation workflows.",
@@ -34,6 +48,7 @@ export const projectsData = [
     deliverables:
       "Admin Dashboard, Mobile App, Project Management, Field Operations, Billing & Inventory",
     themeColor: "#FF6500",
+    caseStudySlug: "hn-enterprises",
   },
   {
     title: "VoxLogiX",
@@ -47,6 +62,7 @@ export const projectsData = [
     deliverables:
       "Mobile App, Voice Logging, Equipment Tracking, Field Activity, Reports & AI Assistant",
     themeColor: "#F5C400",
+    caseStudySlug: "voxlogix",
   },
   {
     title: "CDR912",
@@ -59,6 +75,7 @@ export const projectsData = [
     industry: "Sports Betting / Gaming",
     deliverables: "Web Platform, Agent System, Backend Architecture",
     themeColor: "#2563eb", // Blue
+    caseStudySlug: "cdr912",
   },
   {
     title: "Vriya PMS",
@@ -71,6 +88,7 @@ export const projectsData = [
     industry: "PropTech / HR / FinTech",
     deliverables: "SaaS Platform, Multi-tenant System",
     themeColor: "#1d4ed8", // Royal blue
+    caseStudySlug: "vriya-pms",
   },
   {
     title: "Master Topik",
@@ -131,6 +149,7 @@ export const projectsData = [
     industry: "FinTech / SaaS",
     deliverables: "Web Platform, Mobile App, Merchant Onboarding, EMI Tracking",
     themeColor: "#a855f7",
+    caseStudySlug: "udharipay",
   },
   {
     title: "Delyka Store",
@@ -143,6 +162,7 @@ export const projectsData = [
     industry: "Gaming / E-Commerce",
     deliverables: "E-Commerce Storefront, Payment Gateway",
     themeColor: "#9333ea",
+    caseStudySlug: "delyka-store",
   },
   {
     title: "Inbox Pull",
@@ -155,6 +175,7 @@ export const projectsData = [
     industry: "Email Marketing / SaaS",
     deliverables: "Marketing Tool, Gmail API Integration, Backend API",
     themeColor: "#2563eb",
+    caseStudySlug: "inbox-pull",
   },
 ];
 

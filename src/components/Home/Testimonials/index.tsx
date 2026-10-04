@@ -148,7 +148,7 @@ const TestimonialCard = ({
         />
       </div>
 
-      <div className="flex min-h-[260px] flex-col justify-between rounded-md border border-gray-200 bg-white px-5 pb-6 pt-16 shadow-sm">
+      <div className="flex min-h-[260px] flex-col justify-between rounded-xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 backdrop-blur-md px-5 pb-6 pt-16 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:bg-white hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5">
         <p className="text-sm leading-relaxed text-gray-700">
           {testimonial.message}
         </p>

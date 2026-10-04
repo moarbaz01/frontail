@@ -30,14 +30,6 @@ const getDescription = (item: TitleDescription) =>
 const getTechName = (tech: string | { name: string }) =>
   typeof tech === "string" ? tech : tech.name;
 
-const getCtaTitle = (service: ServiceProps["service"]) => service.cta.headline;
-
-const getCtaSubtitle = (service: ServiceProps["service"]) =>
-  service.cta.subtext;
-
-const getCtaButton = (service: ServiceProps["service"]) =>
-  service.cta.primaryButton;
-
 const splitStep = (step: string) => {
   const parts = step.split(/—|–|Ã¢â‚¬â€œ/);
   return {
@@ -228,9 +220,10 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="rounded-md border border-gray-300 bg-white p-5 shadow-sm"
+                    className="group relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md p-5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5"
                   >
-                    <span className="mb-3 flex h-9 w-9 items-center justify-center rounded-md bg-primary/10 text-primary">
+                    <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+                    <span className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg border border-primary/15 bg-primary/10 text-primary transition-all duration-300 group-hover:scale-105 group-hover:bg-primary group-hover:text-white">
                       <Rocket className="h-4 w-4" />
                     </span>
                     <h3 className="font-bold text-gray-900">{type.title}</h3>
@@ -240,6 +233,78 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                   </motion.div>
                 )
               )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── SAMPLE MVPS & INTERFACES SHOWCASE ── */}
+      {"sampleMvps" in service && (
+        <section className="px-4 py-16 bg-cream/40 border-y border-gray-200/80">
+          <div className="mx-auto max-w-screen-xl">
+            <div className="mb-12 text-center">
+              <span className="mb-3 inline-block rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-primary">
+                Production-Ready Builds
+              </span>
+              <h2 className="font-anton text-3xl font-extrabold tracking-normal text-gray-900 md:text-5xl">
+                Sample MVPs & <span className="text-primary">Real Interfaces</span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-600 md:text-base">
+                From high-growth SaaS and consumer booking workflows to internal operations hubs — here is how we engineer lean, high-polish MVPs.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+              {extService.sampleMvps.map((item: any, index: number) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="group flex flex-col justify-between overflow-hidden rounded-xl border border-gray-300 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
+                >
+                  <div>
+                    {/* Visual Screenshot Frame */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100 border-b border-gray-200">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute top-3 left-3">
+                        <span className="rounded-md bg-gray-900/85 backdrop-blur-md px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm">
+                          {item.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2.5 text-sm leading-relaxed text-gray-600">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="px-6 pb-6 pt-0">
+                    <div className="flex flex-wrap gap-1.5 border-t border-gray-100 pt-4">
+                      {item.tags.map((tag: string) => (
+                        <span
+                          key={tag}
+                          className="rounded-md border border-gray-200 bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-600"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -256,9 +321,10 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="rounded-md border border-gray-300 bg-white p-5 shadow-sm"
+                className="group relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md p-5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5"
               >
-                <span className="mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-primary/10 text-primary">
+                <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+                <span className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg border border-primary/15 bg-primary/10 text-primary transition-all duration-300 group-hover:scale-105 group-hover:bg-primary group-hover:text-white">
                   <Zap className="h-4 w-4" />
                 </span>
                 <h3 className="text-lg font-bold text-gray-900">
@@ -280,8 +346,9 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-md border border-gray-300 bg-white p-6 shadow-sm"
+            className="relative overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 backdrop-blur-md p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
           >
+            <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-gray-900">
               <Layers className="h-6 w-6 text-primary" />
               What We Offer
@@ -294,7 +361,7 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.06 }}
-                  className="flex items-start gap-3 rounded-md border border-gray-200 bg-gray-50 p-4"
+                  className="flex items-start gap-3 rounded-lg border border-gray-200/80 bg-white/80 p-4 backdrop-blur-sm"
                 >
                   <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
                     <Zap className="h-4 w-4" />
@@ -318,8 +385,9 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-md border border-gray-300 bg-white p-6 shadow-sm"
+              className="relative overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 backdrop-blur-md p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
             >
+              <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
               <h2 className="mb-5 flex items-center gap-3 text-2xl font-bold text-gray-900">
                 <Rocket className="h-6 w-6 text-primary" />
                 Why Choose Us
@@ -401,9 +469,10 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.06 }}
-                  className="rounded-md border border-gray-300 bg-white p-5 shadow-sm"
+                  className="group relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md p-5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5"
                 >
-                  <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-primary text-sm font-bold text-white">
+                  <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+                  <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-primary/15 bg-primary/10 text-sm font-bold text-primary transition-all duration-300 group-hover:scale-105 group-hover:bg-primary group-hover:text-white">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mb-2 text-lg font-bold text-gray-900">
@@ -447,8 +516,9 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.08 }}
-                    className="rounded-md border border-gray-300 bg-white p-6 shadow-sm"
+                    className="relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
                   >
+                    <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
                     <span
                       className={`mb-4 inline-block rounded-md px-3 py-1 text-xs font-bold uppercase tracking-widest ${
                         index === 0
@@ -499,8 +569,9 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                 (group: { group: string; items: string[] }) => (
                   <div
                     key={group.group}
-                    className="rounded-md border border-gray-300 bg-white p-4 shadow-sm"
+                    className="relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
                   >
+                    <span className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
                     <p className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">
                       {group.group}
                     </p>
@@ -539,8 +610,9 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-md border border-gray-300 bg-white p-6 shadow-sm md:p-8"
+              className="relative overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 backdrop-blur-md p-6 shadow-[0_4px_24px_rgba(0,0,0,0.03)] md:p-8"
             >
+              <span className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
               <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr]">
                 <div>
                   <p className="mb-1 text-xs font-bold uppercase tracking-widest text-primary">
@@ -604,11 +676,80 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
         </section>
       )}
 
+      {/* ── WHAT YOU WALK AWAY WITH (HANDOVER PACKAGE) ── */}
+      {"walkawayPackage" in service && (
+        <section className="px-4 py-16">
+          <div className="mx-auto max-w-screen-xl">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="overflow-hidden rounded-2xl border border-gray-300/80 bg-gradient-to-br from-white via-orange-50/20 to-amber-50/30 p-8 shadow-sm md:p-12"
+            >
+              <div className="grid gap-10 lg:grid-cols-[1fr_1.35fr] lg:items-center">
+                {/* Left: 3D Walkaway Box Visual */}
+                <div className="relative flex flex-col items-center justify-center text-center">
+                  <div className="relative mx-auto w-full max-w-sm">
+                    <div className="absolute -inset-4 rounded-3xl bg-primary/10 blur-2xl -z-10" />
+                    <img
+                      src={extService.walkawayPackage.image}
+                      alt={extService.walkawayPackage.title}
+                      className="mx-auto max-h-[340px] w-auto drop-shadow-2xl transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                  <span className="mt-6 inline-block rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-primary">
+                    {extService.walkawayPackage.badge}
+                  </span>
+                </div>
+
+                {/* Right: Deliverables List */}
+                <div>
+                  <h2 className="font-anton text-3xl font-extrabold tracking-normal text-gray-900 md:text-4xl">
+                    {extService.walkawayPackage.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-600 md:text-base">
+                    {extService.walkawayPackage.subtitle}
+                  </p>
+
+                  <div className="mt-8 space-y-3.5">
+                    {extService.walkawayPackage.items.map(
+                      (item: any, idx: number) => (
+                        <motion.div
+                          key={item.title}
+                          initial={{ opacity: 0, x: 20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: idx * 0.08 }}
+                          className="flex items-start gap-4 rounded-lg border border-gray-200 bg-white/90 p-4 shadow-sm backdrop-blur-sm"
+                        >
+                          <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-primary text-white text-xs font-bold">
+                            {idx + 1}
+                          </div>
+                          <div>
+                            <h3 className="font-bold text-gray-900 text-sm md:text-base">
+                              {item.title}
+                            </h3>
+                            <p className="mt-1 text-xs leading-relaxed text-gray-600 md:text-sm">
+                              {item.description}
+                            </p>
+                          </div>
+                        </motion.div>
+                      )
+                    )}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* ── OUTCOMES + IDEAL FOR ── */}
       {"outcomes" in service && (
         <section className="px-4 py-12">
           <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 lg:grid-cols-2">
-            <div className="rounded-md border border-gray-300 bg-white p-6 shadow-sm">
+            <div className="relative overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 backdrop-blur-md p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+              <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
               <h2 className="mb-5 text-2xl font-bold text-gray-900">
                 What You Get
               </h2>
@@ -624,7 +765,8 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                 ))}
               </ul>
             </div>
-            <div className="rounded-md border border-gray-300 bg-white p-6 shadow-sm">
+            <div className="relative overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 backdrop-blur-md p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+              <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
               <h2 className="mb-5 text-2xl font-bold text-gray-900">
                 Best For
               </h2>
@@ -826,8 +968,9 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
                       initial={{ opacity: 0, y: 16 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      className="group rounded-md border border-gray-300 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 flex flex-col justify-between"
+                      className="group relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5 flex flex-col justify-between"
                     >
+                      <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
                       <div>
                         {"tagline" in relatedService && (
                           <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">
@@ -859,31 +1002,6 @@ const ServiceDetailsView: React.FC<ServiceProps> = ({ service }) => {
           </div>
         </section>
       )}
-
-      {/* ── FINAL CTA ── */}
-      <section className="px-4 py-12">
-        <div className="mx-auto max-w-screen-xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="rounded-md border border-gray-300 bg-white bg-dot-black/[0.06] p-8 text-center shadow-sm md:p-10"
-          >
-            <h2 className="font-anton text-4xl font-extrabold tracking-normal text-gray-900 md:text-5xl">
-              {getCtaTitle(service)}
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-gray-600">
-              {getCtaSubtitle(service)}
-            </p>
-            <Link
-              href="/contact"
-              className="btn-3d mt-7 inline-block rounded-md bg-primary px-7 py-3 text-sm font-bold text-white"
-            >
-              {getCtaButton(service)}
-            </Link>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };

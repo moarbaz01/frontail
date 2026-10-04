@@ -82,9 +82,9 @@ const AchievementsSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-md border border-gray-200 bg-white/90 p-5 shadow-sm transition hover:-translate-y-1 hover:border-primary/35 hover:bg-[#fff8f1] hover:shadow-md"
+                className="group relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/80 via-white/60 to-white/40 backdrop-blur-md p-5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5"
               >
-                <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/45 to-transparent" />
+                <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <div className="font-anton text-4xl font-extrabold tracking-normal text-gray-900">
@@ -94,11 +94,11 @@ const AchievementsSection: React.FC = () => {
                       {achievement.title}
                     </h3>
                   </div>
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-primary/15 bg-primary/10 text-primary transition group-hover:scale-105">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-primary/15 bg-primary/10 text-primary transition-all duration-300 group-hover:scale-105 group-hover:bg-primary group-hover:text-white">
                     {achievement.icon}
                   </div>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-gray-600 md:text-base">
+                <p className="mt-3 text-xs leading-relaxed text-gray-600 md:text-sm">
                   {achievement.description}
                 </p>
               </motion.div>

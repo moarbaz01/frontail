@@ -236,7 +236,10 @@ const blogFields = `{
     items,
     caption,
     headers,
-    "rows": rows[].cells,
+    "rows": select(
+      defined(rows[0].cells) => rows[].cells,
+      rows
+    ),
     "url": select(
       defined(image.asset) => image.asset->url,
       defined(url) => url,
@@ -282,7 +285,7 @@ async function sanityQuery<T>(query: string): Promise<T | null> {
 
 export async function getBlogPosts() {
   const posts = await sanityQuery<BlogPost[]>(
-    `*[_type == "blogPost"] | order(publishedAt desc) ${blogFields}`,
+    `*[_type == "blogPost" && !(_id in path("drafts.**")) && dateTime(publishedAt) <= dateTime(now())] | order(publishedAt desc) ${blogFields}`,
   );
 
   return posts?.length ? posts : fallbackPosts;
@@ -291,7 +294,7 @@ export async function getBlogPosts() {
 export async function getBlogPost(slug: string) {
   const safeSlug = slug.replace(/"/g, '\\"');
   const post = await sanityQuery<BlogPost>(
-    `*[_type == "blogPost" && slug.current == "${safeSlug}"][0] ${blogFields}`,
+    `*[_type == "blogPost" && slug.current == "${safeSlug}" && !(_id in path("drafts.**")) && dateTime(publishedAt) <= dateTime(now())][0] ${blogFields}`,
   );
 
   return post || fallbackPosts.find((item) => item.slug === slug) || null;
@@ -299,7 +302,7 @@ export async function getBlogPost(slug: string) {
 
 export async function getBlogSlugs() {
   const slugs = await sanityQuery<string[]>(
-    `*[_type == "blogPost" && defined(slug.current)].slug.current`,
+    `*[_type == "blogPost" && defined(slug.current) && !(_id in path("drafts.**")) && dateTime(publishedAt) <= dateTime(now())].slug.current`,
   );
 
   return slugs?.length ? slugs : fallbackPosts.map((post) => post.slug);

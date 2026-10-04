@@ -92,8 +92,8 @@ const FounderVisual = () => (
     <div className="absolute -left-6 top-10 h-28 w-28 rounded-full bg-primary/15 blur-3xl" />
     <div className="absolute -right-6 bottom-8 h-32 w-32 rounded-full bg-sky-300/20 blur-3xl" />
 
-    <div className="relative overflow-hidden rounded-md border border-gray-300 bg-white p-3 shadow-sm">
-      <div className="relative overflow-hidden rounded-md bg-[#fff7ef]">
+    <div className="relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/90 via-white/75 to-white/60 p-3 shadow-[0_4px_20px_rgba(0,0,0,0.03)] backdrop-blur-md">
+      <div className="relative overflow-hidden rounded-lg bg-[#fff7ef]">
         <Image
           src="/founder-2.jpeg"
           alt="Mohammed Arbaz, founder of Frontail Technology"
@@ -106,7 +106,7 @@ const FounderVisual = () => (
         <motion.div
           animate={{ y: [0, -8, 0] }}
           transition={floatTransition}
-          className="absolute left-4 top-4 rounded-md border border-white/70 bg-white/90 px-3 py-2 shadow-sm backdrop-blur"
+          className="absolute left-4 top-4 rounded-lg border border-white/80 bg-white/90 px-3 py-2 shadow-sm backdrop-blur"
         >
           <p className="text-xs font-bold text-gray-900">
             Founder-led delivery
@@ -118,7 +118,7 @@ const FounderVisual = () => (
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ ...floatTransition, delay: 0.25 }}
-          className="absolute bottom-4 right-4 rounded-md border border-primary/20 bg-white/90 px-3 py-2 text-xs font-bold text-primary shadow-sm backdrop-blur"
+          className="absolute bottom-4 right-4 rounded-lg border border-primary/20 bg-white/90 px-3 py-2 text-xs font-bold text-primary shadow-sm backdrop-blur"
         >
           Full-stack product builder
         </motion.div>
@@ -193,7 +193,7 @@ export default function AboutContent() {
               </Link>
               <Link
                 href="/projects"
-                className="inline-flex items-center rounded-md border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-900 hover:text-primary"
+                className="inline-flex items-center rounded-md border border-white/80 bg-white/90 px-5 py-3 text-sm font-bold text-gray-900 shadow-2xs backdrop-blur-xs hover:text-primary hover:border-primary/40"
               >
                 View Projects
               </Link>
@@ -209,7 +209,7 @@ export default function AboutContent() {
               {["MVPs", "SaaS", "Mobile Apps"].map((item) => (
                 <div
                   key={item}
-                  className="rounded-md border border-gray-300 bg-white/80 px-3 py-3 text-center text-xs font-bold text-gray-700 shadow-sm backdrop-blur"
+                  className="rounded-xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 px-3 py-3 text-center text-xs font-bold text-gray-800 shadow-[0_4px_20px_rgba(0,0,0,0.03)] backdrop-blur-md"
                 >
                   {item}
                 </div>
@@ -222,10 +222,11 @@ export default function AboutContent() {
       </section>
 
       <section className="px-4 py-10 md:py-12">
-        <div className="mx-auto grid max-w-screen-xl gap-5 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-screen-xl gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <BuildVisual />
 
-          <div className="rounded-md border border-gray-300 bg-white p-5 shadow-sm md:p-6">
+          <div className="relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] backdrop-blur-md md:p-8">
+            <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             <p className="text-xs font-bold uppercase tracking-widest text-primary">
               What we build
             </p>
@@ -238,7 +239,7 @@ export default function AboutContent() {
               tools.
             </p>
 
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {whatWeBuild.map(({ icon: Icon, title, description }, index) => (
                 <motion.div
                   key={title}
@@ -247,9 +248,9 @@ export default function AboutContent() {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true }}
-                  className="rounded-md border border-gray-200 bg-[#f7f3eb] p-4"
+                  className="rounded-xl border border-white/80 bg-white/75 p-4 shadow-2xs backdrop-blur-xs transition-all duration-300 hover:bg-white hover:border-primary/40 hover:-translate-y-0.5"
                 >
-                  <div className="flex h-9 w-9 items-center justify-center rounded-md border border-primary/20 bg-white text-primary">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-primary/20 bg-primary/10 text-primary">
                     <Icon className="h-4 w-4" strokeWidth={1.75} />
                   </div>
                   <h3 className="mt-3 text-sm font-bold text-gray-900">
@@ -267,8 +268,9 @@ export default function AboutContent() {
 
       <section className="relative overflow-hidden px-4 py-10 md:py-12">
         <div className="absolute inset-0 bg-dot-black/[0.05]" />
-        <div className="relative z-10 mx-auto grid max-w-screen-xl gap-5 lg:grid-cols-[1fr_1fr]">
-          <div className="rounded-md border border-gray-300 bg-white/85 p-5 shadow-sm backdrop-blur md:p-6">
+        <div className="relative z-10 mx-auto grid max-w-screen-xl gap-6 lg:grid-cols-[1fr_1fr]">
+          <div className="relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] backdrop-blur-md md:p-8">
+            <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             <p className="text-xs font-bold uppercase tracking-widest text-primary">
               Our story
             </p>
@@ -282,7 +284,7 @@ export default function AboutContent() {
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             {reasons.map(({ icon: Icon, title, detail }, index) => (
               <motion.div
                 key={title}
@@ -291,10 +293,11 @@ export default function AboutContent() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="rounded-md border border-gray-300 bg-white p-4 shadow-sm"
+                className="group relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 p-5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5"
               >
+                <span className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
                 <div className="mb-4 flex items-center justify-between">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary/10 text-primary">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Icon className="h-4 w-4" strokeWidth={1.75} />
                   </div>
                   <CheckCircle2 className="h-5 w-5 text-primary" />
@@ -311,14 +314,14 @@ export default function AboutContent() {
 
       <section className="px-4 py-10 md:py-12">
         <div className="mx-auto max-w-screen-xl">
-          <div className="mb-5 flex items-center gap-2">
+          <div className="mb-6 flex items-center gap-2">
             <ShieldCheck className="h-5 w-5 text-primary" strokeWidth={1.75} />
             <h2 className="text-sm font-bold uppercase tracking-widest text-gray-700">
               Trust & Compliance
             </h2>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-3">
             {trustBadges.map(({ icon: Icon, title, subtitle }, index) => (
               <motion.div
                 key={title}
@@ -327,10 +330,11 @@ export default function AboutContent() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="flex items-center gap-3 rounded-md border border-gray-300 bg-white px-4 py-4 shadow-sm"
+                className="group relative flex items-center gap-3.5 overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 p-5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10">
-                  <Icon className="h-5 w-5 text-primary" strokeWidth={1.5} />
+                <span className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Icon className="h-5 w-5" strokeWidth={1.5} />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-900">{title}</p>

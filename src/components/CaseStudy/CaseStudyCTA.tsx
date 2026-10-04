@@ -1,0 +1,83 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { Code2, Sparkles, MessageSquare } from "lucide-react";
+import Link from "next/link";
+import { NoiseTexture } from "@/components/ui/noise-texture";
+
+export const CaseStudyCTA: React.FC = () => {
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      viewport={{ once: true, amount: 0.1 }}
+      className="relative mx-4 my-12 overflow-hidden rounded-md border border-gray-300 bg-[#f7f3eb] bg-dot-black/[0.12] py-10 md:py-16 md:max-w-screen-xl md:mx-auto"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f7f3eb] via-[#f7f3eb]/90 to-primary/15" />
+      <NoiseTexture
+        frequency={0.7}
+        octaves={4}
+        slope={0.12}
+        noiseOpacity={0.45}
+        className="opacity-[0.16] mix-blend-multiply pointer-events-none"
+      />
+      <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
+
+      <div className="relative mx-auto max-w-screen-xl px-5 text-center md:px-10">
+        <div className="mb-3 inline-flex items-center gap-2 rounded-md border border-primary/20 bg-white/80 px-3 py-2 text-xs font-bold uppercase tracking-widest text-primary md:mb-5">
+          <Sparkles className="h-4 w-4" />
+          Build With Frontail
+        </div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          className="font-anton text-3xl font-extrabold leading-tight text-gray-900 md:text-5xl"
+        >
+          Ready to Build
+          <br />
+          Your Next Digital Product?
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
+          className="mx-auto mt-3 max-w-xl text-center text-sm text-gray-600 md:mt-5 md:text-lg leading-relaxed"
+        >
+          Share your idea and we&apos;ll help you scope the architecture, features, and fastest path to launch.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
+          className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 md:mt-8"
+        >
+          <Link
+            href="/contact"
+            className="btn-3d inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-bold text-white hover:bg-primary/80 md:px-8 md:text-base w-full sm:w-auto"
+          >
+            <Code2 className="h-5 w-5" />
+            Start Your Project
+          </Link>
+          <Link
+            href="/services"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-gray-300 bg-white/90 px-6 py-3.5 text-sm font-bold text-gray-800 shadow-2xs hover:border-primary/50 transition-colors w-full sm:w-auto"
+          >
+            <MessageSquare className="h-4 w-4 text-primary" />
+            Explore Services
+          </Link>
+        </motion.div>
+      </div>
+    </motion.section>
+  );
+};
+
+export default CaseStudyCTA;

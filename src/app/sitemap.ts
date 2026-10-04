@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { detailedServices } from "@/detailedServices";
 import { getBlogPosts } from "@/sanity/blog";
+import { caseStudiesData } from "@/data/caseStudies";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://frontail.com";
@@ -50,6 +51,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/case-studies`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
       changeFrequency: "yearly",
@@ -66,6 +73,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Canonical Service Pages
   const servicePages: MetadataRoute.Sitemap = detailedServices.map((service) => ({
     url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.85,
+  }));
+
+  // Flagship Product Engineering Case Studies
+  const caseStudyPages: MetadataRoute.Sitemap = caseStudiesData.map((cs) => ({
+    url: `${baseUrl}/case-studies/${cs.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.85,
@@ -100,5 +115,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("[Sitemap] Failed to fetch dynamic blog posts:", error);
   }
 
-  return [...staticPages, ...servicePages, ...blogPages];
+  return [...staticPages, ...servicePages, ...caseStudyPages, ...blogPages];
 }

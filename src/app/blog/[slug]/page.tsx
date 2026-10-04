@@ -29,7 +29,7 @@ export async function generateMetadata({
   return {
     title: post.seoTitle || post.title,
     description: post.seoDescription || post.excerpt,
-    keywords: post.keywords.join(", "),
+    keywords: post.keywords?.join(", ") || "",
     alternates: {
       canonical: `https://frontail.com/blog/${post.slug}`,
     },
@@ -123,7 +123,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           },
         },
         mainEntityOfPage: postUrl,
-        keywords: post.keywords.join(", "),
+        keywords: post.keywords?.join(", ") || "",
       },
     ],
   };
@@ -140,8 +140,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           Back to Blog
         </Link>
 
-        <div className="rounded-md  p-4 bg-white shadow-sm md:p-10">
-          <header className="border-b border-gray-200 pb-8">
+        <div className="relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/90 via-white/75 to-white/60 p-5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] backdrop-blur-md md:p-10">
+          <span className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <header className="border-b border-gray-200/80 pb-8">
             <p className="text-xs font-bold uppercase tracking-widest text-primary">
               {post.category}
             </p>
@@ -162,7 +163,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {post.thumbnail && (
             <figure className="pt-8">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-md border border-gray-200 bg-primary/5">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-lg border border-gray-200/80 bg-primary/5">
                 <Image
                   src={post.thumbnail.url}
                   alt={post.thumbnail.alt}
@@ -183,12 +184,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="pt-8">
             <PostBody body={post.body} />
           </div>
-          {post.keywords.length > 0 && (
+          {post.keywords && post.keywords.length > 0 && (
             <div className="mt-5 flex flex-wrap gap-2">
               {post.keywords.map((keyword) => (
                 <span
                   key={keyword}
-                  className="rounded-md border border-gray-200 bg-gray-50 px-2.5 py-1.5 text-xs font-semibold text-gray-500"
+                  className="rounded-md border border-gray-200/80 bg-white/70 px-2.5 py-1.5 text-xs font-semibold text-gray-600 backdrop-blur-xs"
                 >
                   {keyword}
                 </span>
@@ -198,24 +199,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {relatedPosts.length > 0 && (
-          <section className="mt-8">
-            <div className="mb-4 flex items-center justify-between gap-4">
-              <h2 className="font-anton text-2xl font-extrabold tracking-normal text-gray-900">
+          <section className="mt-12">
+            <div className="mb-6 flex items-center justify-between gap-4">
+              <h2 className="font-anton text-2xl font-extrabold tracking-normal text-gray-900 md:text-3xl">
                 Related Posts
               </h2>
-              <Link href="/blog" className="text-sm font-bold text-primary">
+              <Link href="/blog" className="text-sm font-bold text-primary hover:text-primary/80">
                 View all
               </Link>
             </div>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               {relatedPosts.map((related) => (
                 <Link
                   key={related.slug}
                   href={`/blog/${related.slug}`}
-                  className="group overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/85 via-white/65 to-white/45 p-0 shadow-[0_4px_20px_rgba(0,0,0,0.03)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white hover:shadow-lg hover:shadow-primary/5"
                 >
+                  <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
                   {related.thumbnail && (
-                    <div className="relative aspect-[16/9] border-b border-gray-200 bg-primary/5">
+                    <div className="relative aspect-[16/9] border-b border-gray-200/70 bg-primary/5">
                       <Image
                         src={related.thumbnail.url}
                         alt={related.thumbnail.alt}
@@ -225,16 +227,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       />
                     </div>
                   )}
-                  <div className="p-4">
-                    <p className="text-[11px] font-bold uppercase tracking-widest text-primary">
-                      {related.category}
-                    </p>
-                    <h3 className="mt-2 line-clamp-2 text-base font-bold leading-snug text-gray-900">
-                      {related.title}
-                    </h3>
-                    <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-gray-600">
-                      {related.excerpt}
-                    </p>
+                  <div className="p-5 flex flex-col justify-between flex-1">
+                    <div>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-primary">
+                        {related.category}
+                      </p>
+                      <h3 className="mt-2 line-clamp-2 text-base font-bold leading-snug text-gray-900 group-hover:text-primary transition-colors">
+                        {related.title}
+                      </h3>
+                      <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-gray-600">
+                        {related.excerpt}
+                      </p>
+                    </div>
                     <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-primary">
                       Read
                       <ArrowLeft className="h-3.5 w-3.5 rotate-180 transition-transform group-hover:translate-x-1" />

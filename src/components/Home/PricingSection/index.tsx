@@ -73,12 +73,13 @@ const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08 }}
               viewport={{ once: true }}
-              className={`relative overflow-hidden rounded-md border max-w-sm bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg md:p-7 ${
+              className={`relative overflow-hidden rounded-2xl border max-w-sm bg-gradient-to-b from-white/85 via-white/65 to-white/45 backdrop-blur-md p-6 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white md:p-7 ${
                 plan.highlighted
                   ? "border-primary/50 hover:shadow-primary/10"
-                  : "border-gray-300 hover:border-primary/40"
+                  : "border-white/80 hover:border-primary/40"
               }`}
             >
+              <span className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
               {plan.highlighted && (
                 <div className="absolute right-0 top-0 rounded-bl-md bg-primary px-4 py-2 text-xs font-bold uppercase tracking-widest text-white">
                   Popular

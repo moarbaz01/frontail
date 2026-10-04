@@ -103,23 +103,24 @@ const Contact = () => {
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.35, delay: 0.18 }}
-            className="bg-white border border-gray-300 rounded-md p-6 md:p-8 shadow-sm"
+            className="relative overflow-hidden rounded-xl border border-white/80 bg-gradient-to-b from-white/90 via-white/75 to-white/60 p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] backdrop-blur-md"
           >
+            <span className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             <h3 className="font-anton text-3xl font-extrabold text-gray-900 mb-6">
               Get In Touch
             </h3>
-            <div className="border-t border-dashed border-gray-300 pt-6 space-y-6">
+            <div className="border-t border-dashed border-gray-300/80 pt-6 space-y-6">
               {contactMethods.map(({ label, value, href, icon: Icon }) => {
                 const content = (
                   <>
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-50 text-gray-700 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/80 bg-white/80 text-gray-700 shadow-2xs backdrop-blur-xs transition-all duration-200 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary">
                       <Icon className="h-5 w-5" />
                     </span>
                     <span>
-                      <span className="block font-bold text-gray-900">
+                      <span className="block font-bold text-gray-900 transition-colors group-hover:text-primary">
                         {label}
                       </span>
-                      <span className="block text-gray-600 break-all">
+                      <span className="block text-gray-600 break-all text-sm">
                         {value}
                       </span>
                     </span>
@@ -136,14 +137,14 @@ const Contact = () => {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="group flex items-center gap-4 rounded-md transition-colors hover:text-primary"
+                    className="group flex items-center gap-4 rounded-xl p-2 -mx-2 transition-all hover:bg-white/60"
                   >
                     {content}
                   </a>
                 ) : (
                   <div
                     key={label}
-                    className="group flex items-center gap-4 rounded-md"
+                    className="group flex items-center gap-4 rounded-xl p-2 -mx-2"
                   >
                     {content}
                   </div>
