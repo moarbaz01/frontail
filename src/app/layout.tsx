@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "MVP, SaaS, AI & Mobile App Development Agency | Frontail Technologies",
+    default: "Frontail Technologies | MVP, SaaS, AI & Mobile App Development Agency",
     template: "%s | Frontail Technologies",
   },
   description:
@@ -147,6 +147,8 @@ export default function RootLayout({
                 sameAs: [
                   "https://www.linkedin.com/company/frontail-technologies/",
                   "https://www.instagram.com/frontailtechnology/",
+                  "https://www.crunchbase.com/organization/frontail-technologies",
+                  "https://www.sortlist.com/agency/frontail-technologies",
                 ],
                 knowsAbout: [
                   "MVP Development",
@@ -161,6 +163,7 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "WebSite",
                 name: "Frontail Technologies",
+                alternateName: ["Frontail", "frontail.com"],
                 url: "https://frontail.com",
                 description:
                   "MVP, SaaS, AI & mobile app development for startups and growing businesses.",
