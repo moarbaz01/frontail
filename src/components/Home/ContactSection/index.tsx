@@ -21,8 +21,8 @@ const contactMethods = [
   },
   {
     label: "Email",
-    value: "frontailtechnology@gmail.com",
-    href: "mailto:frontailtechnology@gmail.com",
+    value: "contact@frontail.com",
+    href: "mailto:contact@frontail.com",
     icon: Mail,
   },
   {
@@ -33,7 +33,7 @@ const contactMethods = [
   },
   {
     label: "Address",
-    value: "Working remotely worldwide",
+    value: "11, Nand Puri, Amer Road, Jaipur, Rajasthan 302002, India",
     href: "",
     icon: MapPin,
   },

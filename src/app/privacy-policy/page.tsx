@@ -56,7 +56,7 @@ const disclosures = [
   "Service providers who help us operate the website, manage communication, host projects, or deliver technical services.",
   "Third-party platforms you choose to contact us through, such as WhatsApp, Telegram, email providers, hosting providers, or payment services.",
   "Legal authorities if required by law, regulation, valid legal request, or to protect our rights and users.",
-  "Business transfers if Frontail Technology is involved in a merger, acquisition, restructuring, or asset transfer.",
+  "Business transfers if Frontail Technologies is involved in a merger, acquisition, restructuring, or asset transfer.",
 ];
 
 export default function PrivacyPolicyPage() {
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
               Last updated: May 29, 2026
             </p>
             <p className="mt-6 max-w-3xl leading-relaxed text-gray-600">
-              This Privacy Policy explains how Frontail Technology collects,
+              This Privacy Policy explains how Frontail Technologies collects,
               uses, stores, and protects information when you visit our website,
               contact us, request a consultation, or work with us on a project.
               By using our website or services, you agree to the practices
@@ -121,7 +121,7 @@ export default function PrivacyPolicyPage() {
                 Use of Your Personal Data
               </h2>
               <p className="mb-4 leading-relaxed">
-                Frontail Technology may use personal information for the
+                Frontail Technologies may use personal information for the
                 following purposes:
               </p>
               <ul className="list-disc space-y-2 pl-5">
@@ -251,10 +251,10 @@ export default function PrivacyPolicyPage() {
               <p className="leading-relaxed">
                 For privacy questions or data requests, contact us at{" "}
                 <a
-                  href="mailto:frontailtechnology@gmail.com"
+                  href="mailto:contact@frontail.com"
                   className="font-semibold text-primary"
                 >
-                  frontailtechnology@gmail.com
+                  contact@frontail.com
                 </a>{" "}
                 or through our{" "}
                 <Link href="/contact" className="font-semibold text-primary">

@@ -251,7 +251,7 @@ const ContactForm = ({ showInfo = true }: ContactFormProps) => {
                 <div>
                   <h4 className="font-semibold text-gray-800">Address</h4>
                   <p className="text-gray-600">
-                    Working remotely worldwide
+                    11, Nand Puri, Amer Road, Jaipur, Rajasthan 302002, India
                   </p>
                 </div>
               </div>

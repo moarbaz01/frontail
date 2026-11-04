@@ -203,7 +203,7 @@ export default function SmallBusinessWebsiteGlobalPage() {
           "Affordable, mobile-ready website development packages for small businesses outside India.",
         provider: {
           "@type": "Organization",
-          name: "Frontail Technology",
+          name: "Frontail Technologies",
           url: "https://frontail.com",
         },
         areaServed: "Worldwide",

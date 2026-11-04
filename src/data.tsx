@@ -366,7 +366,7 @@ export const detailedServices = [
     ],
     metaTitle: "MVP Development for Startups",
     metaDescription:
-      "Build and launch your startup MVP fast with Frontail Technology. Validate ideas, attract users, and scale with confidence.",
+      "Build and launch your startup MVP fast with Frontail Technologies. Validate ideas, attract users, and scale with confidence.",
     keywords: [
       "mvp development",
       "startup mvp",
@@ -561,7 +561,7 @@ export const detailedServices = [
     ],
     metaTitle: "Web3 Development Services",
     metaDescription:
-      "Build wallet-ready Web3 apps, dApps, and blockchain product interfaces with Frontail Technology.",
+      "Build wallet-ready Web3 apps, dApps, and blockchain product interfaces with Frontail Technologies.",
     keywords: [
       "web3 development",
       "dapp development",

@@ -15,30 +15,30 @@ const achievements: Achievement[] = [
   {
     id: 1,
     icon: <Award size={24} />,
-    title: "Projects Completed",
+    title: "Projects Delivered",
     value: "50+",
-    description: "Completed projects with clients worldwide.",
+    description: "Shipped by our founder for startups and businesses worldwide.",
   },
   {
     id: 2,
     icon: <Users size={24} />,
-    title: "Happy Clients",
+    title: "Clients Served",
     value: "50+",
-    description: "Satisfied clients worldwide.",
+    description: "Founders and businesses our founder has built for.",
   },
   {
     id: 3,
     icon: <Globe size={24} />,
     title: "Countries",
     value: "4+",
-    description: "Countries with clients.",
+    description: "Countries our founder's clients are based in.",
   },
   {
     id: 4,
     icon: <Briefcase size={24} />,
-    title: "Years of Experience",
+    title: "Years Hands-on",
     value: "3+",
-    description: "Years of experience in the industry.",
+    description: "Of founder-led full-stack product development.",
   },
 ];
 
@@ -64,8 +64,9 @@ const AchievementsSection: React.FC = () => {
             transition={{ delay: 0.08 }}
             className="max-w-2xl text-sm leading-relaxed text-center text-gray-600 md:text-base"
           >
-            We keep the process lean, ship polished products, and stay close to
-            the business goal behind every build.
+            Founded in 2026, Frontail is built on our founder&apos;s track
+            record. We keep the process lean, ship polished products, and stay
+            close to the business goal behind every build.
           </motion.p>
         </div>
 

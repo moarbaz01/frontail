@@ -202,7 +202,7 @@ export default function SmallBusinessWebsiteIndiaPage() {
           "Affordable, mobile-ready website development packages for Indian small businesses with 1-year hosting included.",
         provider: {
           "@type": "Organization",
-          name: "Frontail Technology",
+          name: "Frontail Technologies",
           url: "https://frontail.com",
         },
         areaServed: {

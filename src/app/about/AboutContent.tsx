@@ -96,7 +96,7 @@ const FounderVisual = () => (
       <div className="relative overflow-hidden rounded-lg bg-[#fff7ef]">
         <Image
           src="/founder-2.jpeg"
-          alt="Mohammed Arbaz, founder of Frontail Technology"
+          alt="Mohammed Arbaz, founder of Frontail Technologies"
           width={720}
           height={860}
           priority
@@ -156,7 +156,7 @@ export default function AboutContent() {
               animate="show"
               className="text-xs font-bold uppercase tracking-widest text-primary"
             >
-              About Frontail Technology
+              About Frontail Technologies
             </motion.p>
             <motion.h1
               variants={fadeUp}
@@ -174,7 +174,7 @@ export default function AboutContent() {
               animate="show"
               className="mt-4 max-w-2xl text-base leading-relaxed text-gray-600"
             >
-              Frontail Technology is led by Mohammed Arbaz (ABR), a full-stack
+              Frontail Technologies is led by Mohammed Arbaz (ABR), a full-stack
               developer who has worked on real-world ed-tech, B2B, B2C, and
               multi-tenant platforms.
             </motion.p>

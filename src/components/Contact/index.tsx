@@ -20,8 +20,8 @@ const contactMethods = [
   },
   {
     label: "Email",
-    value: "frontailtechnology@gmail.com",
-    href: "mailto:frontailtechnology@gmail.com?subject=Project%20Inquiry&body=Hi%2C%20I%20have%20a%20project%20I%27d%20like%20to%20discuss.%20Here%27s%20a%20brief%20overview%3A%0A%0A",
+    value: "contact@frontail.com",
+    href: "mailto:contact@frontail.com?subject=Project%20Inquiry&body=Hi%2C%20I%20have%20a%20project%20I%27d%20like%20to%20discuss.%20Here%27s%20a%20brief%20overview%3A%0A%0A",
     icon: Mail,
   },
   {
@@ -32,7 +32,7 @@ const contactMethods = [
   },
   {
     label: "Address",
-    value: "Working remotely worldwide",
+    value: "11, Nand Puri, Amer Road, Jaipur, Rajasthan 302002, India",
     href: "",
     icon: MapPin,
   },

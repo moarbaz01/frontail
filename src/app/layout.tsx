@@ -115,13 +115,25 @@ export default function RootLayout({
                 description:
                   "Frontail Technologies builds MVPs, SaaS platforms, AI tools, mobile apps, Web3 products, and custom internal software for founders and businesses.",
                 areaServed: "Worldwide",
+                foundingDate: "2026-02",
+                email: "contact@frontail.com",
+                telephone: "+918824097435",
+                numberOfEmployees: {
+                  "@type": "QuantitativeValue",
+                  minValue: 2,
+                  maxValue: 10,
+                },
                 address: {
                   "@type": "PostalAddress",
+                  streetAddress: "11, Nand Puri, Amer Road",
+                  addressLocality: "Jaipur",
+                  addressRegion: "Rajasthan",
+                  postalCode: "302002",
                   addressCountry: "IN",
                 },
                 contactPoint: {
                   "@type": "ContactPoint",
-                  telephone: "+918741035190",
+                  telephone: "+918824097435",
                   email: "contact@frontail.com",
                   contactType: "customer service",
                   areaServed: "Worldwide",
@@ -132,7 +144,10 @@ export default function RootLayout({
                   name: "Mohammed Arbaz",
                   jobTitle: "Founder",
                 },
-                sameAs: ["https://t.me/arbazmr123"],
+                sameAs: [
+                  "https://www.linkedin.com/company/frontail-technologies/",
+                  "https://www.instagram.com/frontailtechnology/",
+                ],
                 knowsAbout: [
                   "MVP Development",
                   "SaaS Development",

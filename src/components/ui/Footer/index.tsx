@@ -28,8 +28,8 @@ const contact = [
     icon: Phone,
   },
   {
-    label: "frontailtechnology@gmail.com",
-    href: "mailto:frontailtechnology@gmail.com",
+    label: "contact@frontail.com",
+    href: "mailto:contact@frontail.com",
     icon: Mail,
   },
   {
@@ -38,7 +38,7 @@ const contact = [
     icon: Send,
   },
   {
-    label: "Working remotely worldwide",
+    label: "11, Nand Puri, Amer Road, Jaipur, Rajasthan 302002, India",
     href: "",
     icon: MapPin,
   },

@@ -189,7 +189,7 @@ export function generateOnboardingEmailTemplate(data: OnboardingEmailData) {
             </div>
 
             <div style="border-top: 1px solid #eeeeee; padding: 16px 24px; color: #6b7280; font-size: 12px;">
-              Sent from Frontail Technology start project onboarding form.
+              Sent from Frontail Technologies start project onboarding form.
             </div>
           </div>
         </div>
@@ -255,7 +255,7 @@ export function generateToolLeadEmailTemplate(data: ToolLeadEmailData) {
             </div>
 
             <div style="border-top: 1px solid #eeeeee; padding: 16px 24px; color: #6b7280; font-size: 12px;">
-              Sent from the Frontail Technology live homepage preview tool.
+              Sent from the Frontail Technologies live homepage preview tool.
             </div>
           </div>
         </div>
@@ -301,7 +301,7 @@ export function generateWebsitePackageEmailTemplate(
             </div>
 
             <div style="border-top: 1px solid #eeeeee; padding: 16px 24px; color: #6b7280; font-size: 12px;">
-              Sent from Frontail Technology small business website page.
+              Sent from Frontail Technologies small business website page.
             </div>
           </div>
         </div>

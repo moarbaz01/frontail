@@ -189,7 +189,7 @@ const ConsultationPopup = () => {
               <div className="mb-6 inline-flex rounded-md bg-white px-3 py-2 shadow-sm">
                 <Image
                   src="/logo.png"
-                  alt="Frontail Technology"
+                  alt="Frontail Technologies"
                   width={120}
                   height={48}
                   className="h-8 w-auto object-contain"
